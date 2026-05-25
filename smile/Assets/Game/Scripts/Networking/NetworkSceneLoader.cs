@@ -33,6 +33,14 @@ Invoke("DoYaThang", timeTillThanging);
         if(Input.GetKey(KeyCode.C))
         {
             forceClient = true;
+            try
+            {
+                 NetworkManager.Singleton.StartClient();
+            }
+            catch
+            {
+                
+            }
         }
     }
     public void DoYaThang()
