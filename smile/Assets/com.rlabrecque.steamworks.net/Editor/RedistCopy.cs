@@ -34,18 +34,19 @@ public class RedistCopy {
 		// Create if it doesn't exist yet
 		Directory.CreateDirectory(pluginsDir);
 
-		string[] DebugInfo = {
-			"Steamworks.NET created by Riley Labrecque",
-			"http://steamworks.github.io",
-			"",
-			"Steamworks.NET Version: " + Steamworks.Version.SteamworksNETVersion,
-			"Steamworks SDK Version: " + Steamworks.Version.SteamworksSDKVersion,
-			"Steam API DLL Version:  " + Steamworks.Version.SteamAPIDLLVersion,
-			"Steam API DLL Size:     " + Steamworks.Version.SteamAPIDLLSize,
-			"Steam API64 DLL Size:   " + Steamworks.Version.SteamAPI64DLLSize,
-			""
-		};
-		File.WriteAllLines(Path.Combine(pluginsDir, "Steamworks.NET.txt"), DebugInfo);
+		// fucked up
+		//string[] DebugInfo = {
+		//	"Steamworks.NET created by Riley Labrecque",
+		//	"http://steamworks.github.io",
+		//	"",
+		//	"Steamworks.NET Version: " + Steamworks.Version.SteamworksNETVersion,
+		//	"Steamworks SDK Version: " + Steamworks.Version.SteamworksSDKVersion,
+		//	"Steam API DLL Version:  " + Steamworks.Version.SteamAPIDLLVersion,
+		//	"Steam API DLL Size:     " + Steamworks.Version.SteamAPIDLLSize,
+		//	"Steam API64 DLL Size:   " + Steamworks.Version.SteamAPI64DLLSize,
+		//	""
+		//};
+		//File.WriteAllLines(Path.Combine(pluginsDir, "Steamworks.NET.txt"), DebugInfo);
 	}
 
 	static void DeleteOldSteamApiDlls(BuildTarget target, string pathToBuiltProject) {
