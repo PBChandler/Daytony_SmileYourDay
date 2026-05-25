@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NWK_LobbyTracker : MonoBehaviour
 {
-    public MakeLobby ml;
+    //public MakeLobby ml;
     public TextMeshProUGUI label;
     public void Start()
     {
@@ -13,7 +13,8 @@ public class NWK_LobbyTracker : MonoBehaviour
 
     public void Update()
     {
-        if(ml.myLobby.Data != null)
+        //don't run this code if smile your game manager is in "Testing" (I.E not STEAM) mode.
+        //if(ml.myLobby.Data != null && !SmileGameManager.instance.Testing)
             setup();
     }
 
@@ -21,10 +22,7 @@ public class NWK_LobbyTracker : MonoBehaviour
     {
         string builder = "PLAYERS CONNECTED\n";
 
-        foreach(var p in ml.myLobby.Members)
-        {
-            builder += p.Name + " | " + p.Nickname + "\n";
-        }
+       
         label.text = builder;
     }
 }

@@ -9,7 +9,7 @@ public class GameNetworkManager : MonoBehaviour
         DontDestroyOnLoad(this);
         try
         {
-            SteamClient.Init(appID, true);
+            //SteamClient.Init(appID, true);
             Debug.Log("Steam is running");
         }catch (System.Exception e)
         {
@@ -21,7 +21,7 @@ public class GameNetworkManager : MonoBehaviour
     {
         try
         {
-            Steamworks.SteamClient.Shutdown();
+            //Steamworks.SteamClient.Shutdown();
         }catch(System.Exception e)
         {
             Debug.Log(e.Message);
