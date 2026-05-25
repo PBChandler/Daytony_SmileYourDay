@@ -519,7 +519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetworkSceneLoader
   timeTillThanging: 1.67
-  sceneName: RunnerPlayground
+  sceneName: Avery_Runner_Building
+  isGaster: 1
 --- !u!4 &1285052954
 Transform:
   m_ObjectHideFlags: 0
@@ -598,7 +599,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: -21.37
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
