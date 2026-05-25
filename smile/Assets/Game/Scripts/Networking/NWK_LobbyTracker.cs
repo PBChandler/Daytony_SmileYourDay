@@ -1,30 +1,19 @@
+using System.Collections.Generic;
 using JetBrains.Annotations;
+using Steamworks;
 using TMPro;
 using UnityEngine;
 
 public class NWK_LobbyTracker : MonoBehaviour
 {
-    public MakeLobby ml;
-    public TextMeshProUGUI label;
-    public void Start()
-    {
-        label = GetComponent<TextMeshProUGUI>();
-    }
+    public List<SteamworksLobbyButton> garfield = new List<SteamworksLobbyButton>();
 
-    public void Update()
+    public void FixedUpdate()
     {
-        if(ml.myLobby.Data != null)
-            setup();
-    }
-
-    public void setup()
-    {
-        string builder = "PLAYERS CONNECTED\n";
-
-        foreach(var p in ml.myLobby.Members)
+        SteamFriends.GetFriendByIndex(0, EFriendFlags.k_EFriendFlagAll);
+        for(int i = 0; i < garfield.Count; i++)
         {
-            builder += p.Name + " | " + p.Nickname + "\n";
+            
         }
-        label.text = builder;
     }
 }
