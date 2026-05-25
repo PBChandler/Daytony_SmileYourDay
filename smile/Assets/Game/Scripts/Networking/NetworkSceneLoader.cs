@@ -7,18 +7,40 @@ public class NetworkSceneLoader : MonoBehaviour
     public string sceneName;
     public bool isGaster;
 
+    public bool forceClient = false;
     public void OnEnable()
     {
-        if(isGaster && !Gaster.DEVICE_SCENE.Contains("_NoNWK"))
+
+        Gaster aGaster = Gaster.instance;
+        try
         {
-            sceneName = Gaster.DEVICE_SCENE;
-            timeTillThanging = 0.67f; //SIX SEVEN
+            if (isGaster && !Gaster.DEVICE_SCENE.Contains("_NoNWK") && Gaster.DEVICE_SCENE != "EntryNumber17") //can't have the funny infinite loop cos it breaks the multiplayer hting
+            {
+                sceneName = Gaster.DEVICE_SCENE;
+                timeTillThanging = 0.67f; //SIX SEVEN
+            }
+            Invoke("DoYaThang", timeTillThanging);
         }
-        Invoke("DoYaThang", timeTillThanging);
+        catch
+        {
+Invoke("DoYaThang", timeTillThanging);
+        }
+
+    }
+
+    public void Update()
+    {
+        if(Input.GetKey(KeyCode.C))
+        {
+            forceClient = true;
+        }
     }
     public void DoYaThang()
     {
-        NetworkManager.Singleton.StartHost();
+        if(forceClient)
+            NetworkManager.Singleton.StartClient();
+        else
+            NetworkManager.Singleton.StartHost();
         NetworkManager.Singleton.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 }

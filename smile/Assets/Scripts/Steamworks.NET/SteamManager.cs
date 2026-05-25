@@ -24,6 +24,8 @@ public class SteamManager : MonoBehaviour {
 #if !DISABLESTEAMWORKS
 	protected static bool s_EverInitialized = false;
 
+	public bool DISABLE_STEAM_GASTER = false;
+
 	protected static SteamManager s_instance;
 	protected static SteamManager Instance {
 		get {
@@ -66,6 +68,8 @@ public class SteamManager : MonoBehaviour {
 			Destroy(gameObject);
 			return;
 		}
+		if(DISABLE_STEAM_GASTER)
+		return;
 		s_instance = this;
 
 		if(s_EverInitialized) {
