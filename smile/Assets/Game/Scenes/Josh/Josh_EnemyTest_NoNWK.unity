@@ -2191,122 +2191,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1 &88367529
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 88367534}
-  - component: {fileID: 88367533}
-  - component: {fileID: 88367532}
-  - component: {fileID: 88367531}
-  - component: {fileID: 88367530}
-  m_Layer: 0
-  m_Name: STEAMMANAGER!!!
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &88367530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88367529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc969201f8a731d4a916afc52c70b0a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
---- !u!114 &88367531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88367529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc4ccaff1920208429cca7c350560301, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SteamNetworkingSockets Transport for Netcode for GameObjects::Netcode.Transports.SteamNetworkingSocketsTransport
-  ConnectToSteamID: 480
-  options: []
---- !u!114 &88367532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88367529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 593a2fe42fa9d37498c96f9a383b6521, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkManager
-  NetworkManagerExpanded: 0
-  NetworkConfig:
-    ProtocolVersion: 0
-    NetworkTransport: {fileID: 88367531}
-    PlayerPrefab: {fileID: 6626755631715315566, guid: 884ddbd9dddffb04380851f4881292f9, type: 3}
-    Prefabs:
-      NetworkPrefabsLists:
-      - {fileID: 11400000, guid: 64053294bd78f484286aad94c0f07f61, type: 2}
-    TickRate: 30
-    ClientConnectionBufferTimeout: 10
-    ConnectionApproval: 0
-    ConnectionData: 
-    EnableTimeResync: 0
-    TimeResyncInterval: 30
-    EnsureNetworkVariableLengthSafety: 0
-    EnableSceneManagement: 1
-    ForceSamePrefabs: 1
-    RecycleNetworkIds: 1
-    NetworkIdRecycleDelay: 120
-    RpcHashSize: 0
-    LoadSceneTimeOut: 120
-    SpawnTimeout: 10
-    EnableNetworkLogs: 1
-    NetworkTopology: 0
-    UseCMBService: 0
-    AutoSpawnPlayerPrefabClientSide: 1
-    NetworkProfilingMetrics: 1
-    OldPrefabList: []
-  RunInBackground: 1
-  LogLevel: 0
---- !u!114 &88367533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88367529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SteamManager
-  DISABLE_STEAM_GASTER: 0
---- !u!4 &88367534
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88367529}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &104573015
 Mesh:
   m_ObjectHideFlags: 0
@@ -7355,6 +7239,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &326475631 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6146731799950609241, guid: 5d6289becd8f43546bcff6c6a32a402b, type: 3}
+  m_PrefabInstance: {fileID: 1619216662485708559}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619216662485708562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e495bb6abb616bc49b294806e2bc4efd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStateMachine
 --- !u!43 &329043955
 Mesh:
   m_ObjectHideFlags: 0
@@ -42071,6 +41966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8575628621799434947, guid: 8a36dce5e48f7f349a61f41b1492d33d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -42104,6 +42003,14 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 1671187410
       objectReference: {fileID: 0}
+    - target: {fileID: 1336523019799043403, guid: 5d6289becd8f43546bcff6c6a32a402b, type: 3}
+      propertyPath: machine
+      value: 
+      objectReference: {fileID: 326475631}
+    - target: {fileID: 5316784919126005575, guid: 5d6289becd8f43546bcff6c6a32a402b, type: 3}
+      propertyPath: machine
+      value: 
+      objectReference: {fileID: 326475631}
     - target: {fileID: 6796166575760780140, guid: 5d6289becd8f43546bcff6c6a32a402b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -42232,7 +42139,6 @@ SceneRoots:
   - {fileID: 1925510061}
   - {fileID: 1331461854}
   - {fileID: 559569774}
-  - {fileID: 88367534}
   - {fileID: 289599975}
   - {fileID: 502700649105648461}
   - {fileID: 1198774621}

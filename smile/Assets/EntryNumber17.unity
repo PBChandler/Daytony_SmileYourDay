@@ -525,6 +525,7 @@ GameObject:
   - component: {fileID: 1132761611}
   - component: {fileID: 1132761612}
   - component: {fileID: 1132761613}
+  - component: {fileID: 1132761614}
   m_Layer: 0
   m_Name: STEAMMANAGER!!!
   m_TagString: Untagged
@@ -544,7 +545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4bffeda13d7a748973ff9204401c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SteamManager
-  DISABLE_STEAM_GASTER: 1
+  DISABLE_STEAM_GASTER: 0
 --- !u!4 &1132761609
 Transform:
   m_ObjectHideFlags: 0
@@ -575,7 +576,7 @@ MonoBehaviour:
   NetworkManagerExpanded: 0
   NetworkConfig:
     ProtocolVersion: 0
-    NetworkTransport: {fileID: 1132761613}
+    NetworkTransport: {fileID: 1132761614}
     PlayerPrefab: {fileID: 6626755631715315566, guid: 884ddbd9dddffb04380851f4881292f9, type: 3}
     Prefabs:
       NetworkPrefabsLists:
@@ -645,6 +646,20 @@ MonoBehaviour:
     PacketDelayMS: 0
     PacketJitterMS: 0
     PacketDropRate: 0
+--- !u!114 &1132761614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132761607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc4ccaff1920208429cca7c350560301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SteamNetworkingSockets Transport for Netcode for GameObjects::Netcode.Transports.SteamNetworkingSocketsTransport
+  ConnectToSteamID: 480
+  options: []
 --- !u!1 &1285052952
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,7 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetworkSceneLoader
   timeTillThanging: 1.67
-  sceneName: Avery_Runner_Building
+  sceneName: Josh_EnemyTest_NoNWK
   isGaster: 1
   forceClient: 0
 --- !u!4 &1285052954
