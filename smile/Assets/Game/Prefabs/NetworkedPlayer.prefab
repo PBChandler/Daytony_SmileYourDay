@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 3787579110435376841}
   m_Layer: 0
   m_Name: NetworkedPlayer
-  m_TagString: Untagged
+  m_TagString: Runner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
