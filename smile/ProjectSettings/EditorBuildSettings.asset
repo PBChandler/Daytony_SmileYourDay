@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Avery/Avery_Runner_Building.unity
     guid: 26bc0902accb2b24eb5d739ca562bd0c
+  - enabled: 1
+    path: Assets/TitleScreen.unity
+    guid: e9ffefedfc74bdd42a965c59c9043629
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
