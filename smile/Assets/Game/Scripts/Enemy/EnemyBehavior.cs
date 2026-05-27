@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -17,6 +18,13 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (suspicionLevel > 10)
+            stateMachine.ChangeState("Suspicious");
     }
+
+    public void AddSuspicion(int sussy)
+    {
+        suspicionLevel += sussy;
+    }
+
 }

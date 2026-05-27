@@ -29,7 +29,7 @@ public class EnemyStateMachine : MonoBehaviour
         currentState.OnEnterState();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         currentState.UpdateState();
     }

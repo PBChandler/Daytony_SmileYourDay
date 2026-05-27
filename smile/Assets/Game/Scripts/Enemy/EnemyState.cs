@@ -6,6 +6,8 @@ public abstract class EnemyState : MonoBehaviour
     public EnemyStateMachine machine;
     protected int stateTimer;
     protected NavMeshAgent agent;
+    protected GameObject runnerRef;
+
     private void Awake()
     {
         machine = GetComponent<EnemyStateMachine>();
