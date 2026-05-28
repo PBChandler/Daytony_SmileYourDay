@@ -23,7 +23,6 @@ public class Suspicious : EnemyState
     public override void UpdateState()
     {
         machine.transform.position += machine.transform.forward * .3f;
-        Debug.Log(Vector3.Distance(machine.transform.position, runnerRef.transform.position));
         if (Vector3.Distance(machine.transform.position, runnerRef.transform.position) < 3)
             machine.ChangeState("Idle");
     }

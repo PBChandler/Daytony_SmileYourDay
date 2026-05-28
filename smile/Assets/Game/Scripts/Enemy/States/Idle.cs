@@ -2,36 +2,66 @@ using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Idle : EnemyState
 {
-    Vector3 randomPos;
+    [SerializeField] bool stationary;
+    Vector3 origin;
+    [SerializeField] List<Vector3> destinations = new List<Vector3>();
+    int destinationIndex = 1;
     bool counting;
+    bool backwards;
 
     public override void OnEnterState()
     {
         Debug.Log("I am entering the Idle state");
-        int infinitePrevention = 0;
         stateTimer = Random.Range(60, 300);
-        randomPos = Random.insideUnitCircle.normalized;
-        transform.rotation = Quaternion.Euler(new Vector3(randomPos.x, transform.position.y, randomPos.y) * 360);
-        //do
-        //{
-        //    randomPos = Random.insideUnitCircle * stateTimer * .5f;
-        //    randomPos = new Vector3(randomPos.x, transform.position.y, randomPos.y);
-        //    infinitePrevention++;
-        //}
-        //while (!agent.CalculatePath(randomPos, agent.path) || infinitePrevention > 5);
+        if (!stationary)
+        {
+            try
+            {
+                agent.SetDestination(destinations[1]);
+            }
+            catch
+            {
+                Debug.LogError(name + " is missing its movement path and is not marked as stationary!");
+            }
+            backwards = false;
+            destinationIndex = 1;
+        }
     }
+
     public override void UpdateState()
     {
-        transform.position += transform.forward * .01f;
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            if (destinationIndex == 0)
+            {
+                machine.ChangeState("Idle");
+                return;
+            }
 
-        if (!counting)
-            StartCoroutine(Countdown());
+            if (destinations.Count == destinationIndex)
+                backwards = true;
 
-        if (stateTimer == 0)
-            machine.ChangeState("Idle");
+            if (backwards)
+            {
+                destinationIndex--;
+                agent.SetDestination(destinations[destinationIndex]);
+            }
+            else
+            {
+                agent.SetDestination(destinations[destinationIndex]);
+                destinationIndex++;
+            }
+        }
+
+        //if (!counting)
+        //    StartCoroutine(Countdown());
+
+        //if (stateTimer == 0)
+        //    machine.ChangeState("Idle");
     }
 
     IEnumerator Countdown()
