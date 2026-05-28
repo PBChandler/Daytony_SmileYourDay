@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 [RequireComponent(typeof(EnemyStateMachine))]
 public class EnemyBehavior : MonoBehaviour
@@ -7,6 +8,7 @@ public class EnemyBehavior : MonoBehaviour
     EnemyStateMachine stateMachine;
     int suspicionLevel;
     NavMeshAgent agent;
+    bool susCooldown;
 
     void Start()
     {
@@ -20,10 +22,19 @@ public class EnemyBehavior : MonoBehaviour
         if (suspicionLevel > 10)
             stateMachine.ChangeState("Suspicious");
     }
+    IEnumerator SuspicionTick()
+    {
+        susCooldown = true;
+        yield return new WaitForSeconds(1);
+        susCooldown = false;
+    }
 
     public void AddSuspicion(int sussy)
     {
+        if (susCooldown)
+            return;
         suspicionLevel += sussy;
+        StartCoroutine(SuspicionTick());
     }
 
 }
