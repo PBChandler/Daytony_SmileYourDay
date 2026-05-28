@@ -8,21 +8,44 @@ public class UI_SteamAccount : MonoBehaviour
 
     public TextMeshProUGUI ProfileName;
     public RawImage profilePicture;
-
+    public CSteamID meRightNow;
     public static int indexer = 0;
-
-    public void Start()
+    public Steamworks.LobbyCreated_t lobby_dg;
+    public Callback<Steamworks.LobbyCreated_t> OnLobbyCreatede;
+    public ulong LobbyID = 404404404404404404;
+    public bool permissionToInvite = false;
+    public void OnEnable()
     {
-        Invoke("Populate", 1f);
+       if (SteamManager.Initialized) {
+         OnLobbyCreatede = Callback<Steamworks.LobbyCreated_t>.Create(OnLobbyCreated);
+        }
     }
 
-    public void Populate()
+    public void Populate(CSteamID ID_FRIEND)
     {
-        CSteamID ID_FRIEND = SteamFriends.GetFriendByIndex(indexer++, EFriendFlags.k_EFriendFlagAll); //always at your humble service
-        
+        meRightNow = ID_FRIEND;
         profilePicture.texture = GetSmallAvatar(ID_FRIEND);
         ProfileName.text = SteamFriends.GetFriendPersonaName(ID_FRIEND)+"";
     }
+
+    public void OnLobbyCreated(Steamworks.LobbyCreated_t dougdoug)
+    {
+        if(!permissionToInvite) return;
+        LobbyID = dougdoug.m_ulSteamIDLobby;
+        Debug.Log("INVITE FAKE SENT TO " + SteamFriends.GetFriendPersonaName(meRightNow));
+        SteamMatchmaking.InviteUserToLobby((CSteamID)LobbyID, meRightNow);
+        permissionToInvite = false;
+    }
+    public async void INVITE_FRIEND()
+    {
+        permissionToInvite = true;
+        SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, 2);
+        if(LobbyID != 404404404404404404)
+        {
+            SteamMatchmaking.InviteUserToLobby((CSteamID)LobbyID, meRightNow); //yes, you can spam your friends.
+        }
+    }
+
 /// <summary>
 /// THANK YOU ZITZ ON REDDIT FROM GENUINELY 10 YEARS AGO
 /// </summary>
