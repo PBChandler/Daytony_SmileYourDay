@@ -526,6 +526,7 @@ GameObject:
   - component: {fileID: 1132761612}
   - component: {fileID: 1132761613}
   - component: {fileID: 1132761614}
+  - component: {fileID: 1132761615}
   m_Layer: 0
   m_Name: STEAMMANAGER!!!
   m_TagString: Untagged
@@ -660,6 +661,18 @@ MonoBehaviour:
     PacketDelayMS: 0
     PacketJitterMS: 0
     PacketDropRate: 0
+--- !u!114 &1132761615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132761607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 343adec04974a6b46bb7cedf9c9eaaae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1285052952
 GameObject:
   m_ObjectHideFlags: 0
