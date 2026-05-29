@@ -1,5 +1,6 @@
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NetworkSceneLoader : MonoBehaviour
 {
@@ -45,6 +46,11 @@ Invoke("DoYaThang", timeTillThanging);
     }
     public void DoYaThang()
     {
+        if(NetworkManager.Singleton == null)
+        {
+            SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+            return; //if playing in "DEFAULT"
+        }
         if(forceClient)
             NetworkManager.Singleton.StartClient();
         else
