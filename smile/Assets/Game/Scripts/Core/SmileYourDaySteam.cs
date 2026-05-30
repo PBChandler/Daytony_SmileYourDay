@@ -27,6 +27,7 @@ public class SmileYourDaySteam : MonoBehaviour
 
     public void OnLobbyMemberJoined(LobbyChatUpdate_t pCallback)
     {
+        Debug.Log("WE ARE KENDRICK LAMARRRRRRR");
         //if a FRIEND joins a LOBBY.
         if ((EChatMemberStateChange)pCallback.m_rgfChatMemberStateChange == EChatMemberStateChange.k_EChatMemberStateChangeEntered) {
             CSteamID memberId = (CSteamID)pCallback.m_ulSteamIDUserChanged;
