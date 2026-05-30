@@ -2,6 +2,7 @@ using UnityEngine;
 using Steamworks;
 using TMPro;
 using UnityEngine.UI;
+using Unity.Netcode;
 
 public class UI_SteamAccount : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class UI_SteamAccount : MonoBehaviour
     public static int indexer = 0;
     public Steamworks.LobbyCreated_t lobby_dg;
     public Callback<Steamworks.LobbyCreated_t> OnLobbyCreatede;
+    public Callback<Steamworks.GameLobbyJoinRequested_t> LetThemIn;
     public ulong LobbyID = 404404404404404404;
     public bool permissionToInvite = false;
     public void OnEnable()
@@ -21,6 +23,10 @@ public class UI_SteamAccount : MonoBehaviour
         }
     }
 
+    public void LetThemInReceiver(Steamworks.GameLobbyJoinRequested_t burger)
+    {
+        Debug.Log(burger.m_steamIDFriend + "is TRYING to break in");
+    }
     public void Populate(CSteamID ID_FRIEND)
     {
         meRightNow = ID_FRIEND;
