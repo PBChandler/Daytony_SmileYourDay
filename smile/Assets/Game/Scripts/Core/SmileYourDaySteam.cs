@@ -48,9 +48,5 @@ public class SmileYourDaySteam : MonoBehaviour
     }
 
     public void SYD_Missive_Dummy(string lol) { Debug.Log("lol" + " MISSIVE FIRED");}
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }
