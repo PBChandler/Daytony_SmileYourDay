@@ -6,6 +6,7 @@ public class SmileYourDaySteam : MonoBehaviour
     public delegate void SYD_Missive(string missiveContents);
     public static SYD_Missive PostToEveryone_dg;
     public Callback<Steamworks.LobbyChatUpdate_t> OnLobbyEntered;
+    
     void Start()
     {
         PostToEveryone_dg += SYD_Missive_Dummy;
@@ -23,6 +24,11 @@ public class SmileYourDaySteam : MonoBehaviour
     {
         
         
+    }
+
+    public void Update()
+    {
+        SteamAPI.RunCallbacks();
     }
 
     public void OnLobbyMemberJoined(LobbyChatUpdate_t pCallback)
