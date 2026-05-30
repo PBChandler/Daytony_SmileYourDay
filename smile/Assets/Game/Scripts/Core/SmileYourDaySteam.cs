@@ -1,3 +1,4 @@
+
 using Steamworks;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class SmileYourDaySteam : MonoBehaviour
     public delegate void SYD_Missive(string missiveContents);
     public static SYD_Missive PostToEveryone_dg;
     public Callback<Steamworks.LobbyChatUpdate_t> OnLobbyEntered;
-    public Callback<Steamworks.LobbyChatMsg_t> chat;
+    public Callback<Steamworks.GameOverlayActivated_t> chat;
     
     void Start()
     {
@@ -17,14 +18,14 @@ public class SmileYourDaySteam : MonoBehaviour
     public void Setup()
     {
         if(!SteamManager.Initialized) {Debug.LogError("STEAMMANAGER NOT INITLALIZED, MAKE SURE ENTRYNUMBER17 IS OPEN AND YOU HAVE STEAM OPEN ON YOUR PC."); return; }
-
+        Debug.Log("KENDRICK");
         OnLobbyEntered = Callback<LobbyChatUpdate_t>.Create(OnLobbyMemberJoined);
-        chat = Callback<LobbyChatMsg_t>.Create(Krist);
+        chat = Callback<Steamworks.GameOverlayActivated_t>.Create(Krist);
      }
 
-     public void Krist(LobbyChatMsg_t bergentruck)
+     public void Krist(Steamworks.GameOverlayActivated_t bergentruck)
     {
-        Debug.Log(bergentruck.m_ulSteamIDUser + "KENDRICK");
+        Debug.Log(bergentruck.m_bActive + "KENDRICK");
     }
 
      public void OTHER_OnLobbyEnteredSender(LobbyEnter_t chud)

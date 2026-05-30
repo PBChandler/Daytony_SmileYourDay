@@ -36,6 +36,12 @@ public class UI_SteamAccount : MonoBehaviour
         SteamMatchmaking.InviteUserToLobby((CSteamID)LobbyID, meRightNow);
         permissionToInvite = false;
     }
+
+    public void JOINFRIEND()
+    {
+    
+        SteamMatchmaking.JoinLobby(meRightNow);       
+    }
     public async void INVITE_FRIEND()
     {
         permissionToInvite = true;
