@@ -17,6 +17,8 @@ public class UI_SteamAccount : MonoBehaviour
     public Callback<Steamworks.LobbyMatchList_t>MatchListChanged;
     public Callback<Steamworks.LobbyEnter_t>LobbyingLikeCongress;
     public Callback<Steamworks.LobbyDataUpdate_t>DATAUPDATE;
+
+    public Callback<Steamworks.LobbyChatUpdate_t>CHAT;
     public ulong LobbyID = 404404404404404404;
     public bool permissionToInvite = false;
     public void OnEnable()
@@ -31,13 +33,18 @@ public class UI_SteamAccount : MonoBehaviour
          MatchListChanged = Callback<Steamworks.LobbyMatchList_t>.Create(MatchListChangedReceiver);
          LobbyingLikeCongress = Callback<Steamworks.LobbyEnter_t>.Create(LobbyingLikeCongressReceiver);
          DATAUPDATE = Callback<Steamworks.LobbyDataUpdate_t>.Create(DATAUPDATEReceiver);
-        
+         CHAT = Callback<Steamworks.LobbyChatUpdate_t>.Create(CHATReciever);
         }
     }
 
     public void DATAUPDATEReceiver(Steamworks.LobbyDataUpdate_t kerk)
     {
         Debug.Log("PLEASE GOD WILL SOMEONE WORK WILL ONE OF THESE WORK!!!!");
+    }
+
+    public void CHATReciever(Steamworks.LobbyChatUpdate_t carolknight)
+    {
+        Debug.Log("Carol"+carolknight.m_ulSteamIDLobby);
     }
     /// <summary>
     /// understanding
