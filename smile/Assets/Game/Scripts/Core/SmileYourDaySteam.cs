@@ -6,6 +6,7 @@ public class SmileYourDaySteam : MonoBehaviour
     public delegate void SYD_Missive(string missiveContents);
     public static SYD_Missive PostToEveryone_dg;
     public Callback<Steamworks.LobbyChatUpdate_t> OnLobbyEntered;
+    public Callback<Steamworks.LobbyChatMsg_t> chat;
     
     void Start()
     {
@@ -18,7 +19,13 @@ public class SmileYourDaySteam : MonoBehaviour
         if(!SteamManager.Initialized) {Debug.LogError("STEAMMANAGER NOT INITLALIZED, MAKE SURE ENTRYNUMBER17 IS OPEN AND YOU HAVE STEAM OPEN ON YOUR PC."); return; }
 
         OnLobbyEntered = Callback<LobbyChatUpdate_t>.Create(OnLobbyMemberJoined);
+        chat = Callback<LobbyChatMsg_t>.Create(Krist);
      }
+
+     public void Krist(LobbyChatMsg_t bergentruck)
+    {
+        Debug.Log(bergentruck.m_ulSteamIDUser + "KENDRICK");
+    }
 
      public void OTHER_OnLobbyEnteredSender(LobbyEnter_t chud)
     {
