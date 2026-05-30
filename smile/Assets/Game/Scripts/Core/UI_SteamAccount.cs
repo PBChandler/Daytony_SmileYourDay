@@ -24,6 +24,7 @@ public class UI_SteamAccount : MonoBehaviour
         }
        if (SteamManager.Initialized) {
          OnLobbyCreatede = Callback<Steamworks.LobbyCreated_t>.Create(OnLobbyCreated);
+         LetThemIn = Callback<Steamworks.GameLobbyJoinRequested_t>.Create(LetThemInReceiver);
         }
     }
 
