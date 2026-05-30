@@ -59,6 +59,12 @@ public class SmileYourDaySteam : MonoBehaviour
     public void DATAUPDATEReceiver(Steamworks.LobbyDataUpdate_t kerk)
     {
         Debug.Log("PLEASE GOD WILL SOMEONE WORK WILL ONE OF THESE WORK!!!!");
+        //  if ((EChatMemberStateChange)pCallback.m_rgfChatMemberStateChange == EChatMemberStateChange.k_EChatMemberStateChangeEntered) {
+        //     CSteamID memberId = (CSteamID)pCallback.m_ulSteamIDUserChanged;
+        //     Debug.Log($"Player {SteamFriends.GetFriendPersonaName(memberId)} joined the lobby.");
+        //     PostToEveryone_dg("OnLobbyEntered");
+        // }
+        Debug.Log(kerk.m_ulSteamIDMember);
     }
 
     public void CHATReciever(Steamworks.LobbyChatUpdate_t carolknight)
