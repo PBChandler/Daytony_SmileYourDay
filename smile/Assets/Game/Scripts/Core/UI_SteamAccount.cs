@@ -24,13 +24,16 @@ public class UI_SteamAccount : MonoBehaviour
         }
        if (SteamManager.Initialized) {
          OnLobbyCreatede = Callback<Steamworks.LobbyCreated_t>.Create(OnLobbyCreated);
-         LetThemIn = Callback<Steamworks.GameLobbyJoinRequested_t>.Create(LetThemInReceiver);
+         LetThemIn = Callback<Steamworks.GameLobbyJoinRequested_t>.Create(LetMeInReceiver);
         }
     }
-
-    public void LetThemInReceiver(Steamworks.GameLobbyJoinRequested_t burger)
+    /// <summary>
+    /// understanding
+    /// </summary>
+    /// <param name="burger"></param>
+    public void LetMeInReceiver(Steamworks.GameLobbyJoinRequested_t burger)
     {
-        Debug.Log(burger.m_steamIDFriend + "is TRYING to break in");
+        Debug.Log("I'm trying to break into" + SteamFriends.GetFriendPersonaName(burger.m_steamIDFriend) + "'s lobby");
     }
     public void Populate(CSteamID ID_FRIEND)
     {
