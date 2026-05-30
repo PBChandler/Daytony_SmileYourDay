@@ -13,7 +13,9 @@ public class UI_SteamAccount : MonoBehaviour
     public static int indexer = 0;
     public Steamworks.LobbyCreated_t lobby_dg;
     public Callback<Steamworks.LobbyCreated_t> OnLobbyCreatede;
-    public Callback<Steamworks.GameLobbyJoinRequested_t> LetThemIn;
+    public Callback<Steamworks.GameLobbyJoinRequested_t> LetMeIn;
+    public Callback<Steamworks.LobbyMatchList_t>MatchListChanged;
+    public Callback<Steamworks.LobbyEnter_t>LobbyingLikeCongress;
     public ulong LobbyID = 404404404404404404;
     public bool permissionToInvite = false;
     public void OnEnable()
@@ -24,7 +26,10 @@ public class UI_SteamAccount : MonoBehaviour
         }
        if (SteamManager.Initialized) {
          OnLobbyCreatede = Callback<Steamworks.LobbyCreated_t>.Create(OnLobbyCreated);
-         LetThemIn = Callback<Steamworks.GameLobbyJoinRequested_t>.Create(LetMeInReceiver);
+         LetMeIn = Callback<Steamworks.GameLobbyJoinRequested_t>.Create(LetMeInReceiver);
+         MatchListChanged = Callback<Steamworks.LobbyMatchList_t>.Create(MatchListChangedReceiver);
+         LobbyingLikeCongress = Callback<Steamworks.LobbyEnter_t>.Create(LobbyingLikeCongressReceiver);
+
         }
     }
     /// <summary>
@@ -34,6 +39,15 @@ public class UI_SteamAccount : MonoBehaviour
     public void LetMeInReceiver(Steamworks.GameLobbyJoinRequested_t burger)
     {
         Debug.Log("I'm trying to break into" + SteamFriends.GetFriendPersonaName(burger.m_steamIDFriend) + "'s lobby");
+    }
+
+    public void LobbyingLikeCongressReceiver(Steamworks.LobbyEnter_t benisherenow)
+    {
+        Debug.Log("HELLO? HIIII??? HELLO??? IS SOMEONE JOINING THE FUCKING LOBBY???" + benisherenow.m_EChatRoomEnterResponse);
+    }
+    public void MatchListChangedReceiver(Steamworks.LobbyMatchList_t benisherenow)
+    {
+        Debug.Log("matchlist updated smile" + benisherenow.m_nLobbiesMatching);
     }
     public void Populate(CSteamID ID_FRIEND)
     {
