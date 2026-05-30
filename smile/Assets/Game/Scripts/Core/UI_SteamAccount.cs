@@ -18,6 +18,10 @@ public class UI_SteamAccount : MonoBehaviour
     public bool permissionToInvite = false;
     public void OnEnable()
     {
+        if(NetworkManager.Singleton.IsHost)
+        {
+            Debug.Log("wait fuck is everyone the host?");
+        }
        if (SteamManager.Initialized) {
          OnLobbyCreatede = Callback<Steamworks.LobbyCreated_t>.Create(OnLobbyCreated);
         }
