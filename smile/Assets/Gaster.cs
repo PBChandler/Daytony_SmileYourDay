@@ -21,6 +21,7 @@ public class Gaster : MonoBehaviour
     public static void OnPlayModeEntered()
     {
         DEVICE_SCENE = SceneManager.GetActiveScene().name;
+        if(DEVICE_SCENE.ToLower().Contains("_nonwk")) return;
         #if UNITY_EDITOR
         SceneManager.LoadScene("EntryNumber17");
         #endif
