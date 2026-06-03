@@ -15,9 +15,11 @@ public class RunnerMicrophone : MonoBehaviour
     public static float micLoudness;
     Ray voiceCast;
     EnemyBehavior eBehavior;
+    FirstPersonController fpc;
 
     private void OnEnable()
     {
+        fpc = transform.parent.parent.GetComponent<FirstPersonController>();
         InitializeMic();
         isInitialized = true;
     }
@@ -29,7 +31,11 @@ public class RunnerMicrophone : MonoBehaviour
 
     private void Update()
     {
-        micLoudness = LevelMax();
+        if (Mathf.Sin(fpc.timer) <= -.9f)
+            micLoudness = Footstep() > LevelMax() ? Footstep() : LevelMax();
+        else
+            micLoudness = LevelMax();
+
         transform.localScale = Vector3.one * micLoudness * 5000;
     }
 
@@ -59,6 +65,15 @@ public class RunnerMicrophone : MonoBehaviour
         return levelMax;
     }
 
+    private float Footstep()
+    {
+        if (fpc.isSprinting)
+            return .008f;
+        if (fpc.isCrouched)
+            return 0;
+        return .004f;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Enemy")
@@ -72,14 +87,12 @@ public class RunnerMicrophone : MonoBehaviour
         if (Physics.Raycast(voiceCast, out RaycastHit extraHit, transform.localScale.x / 2, justenemies))
         {
             if (extraHit.collider.tag == "Enemy")
-                eBehavior.AddSuspicion(5);
+                eBehavior.AddSuspicion(5, 1);
         }
         else if (Physics.Raycast(voiceCast, out RaycastHit hit, transform.localScale.x, enemiesnwalls))
         {
             if (hit.collider.tag == "Enemy")
-                eBehavior.AddSuspicion(5);
+                eBehavior.AddSuspicion(5, 1);
         }
-
     }
-
 }

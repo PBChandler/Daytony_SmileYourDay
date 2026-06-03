@@ -22,19 +22,19 @@ public class EnemyBehavior : MonoBehaviour
         if (suspicionLevel > 10)
             stateMachine.ChangeState("Suspicious");
     }
-    IEnumerator SuspicionTick()
+    IEnumerator SuspicionTick(float sec)
     {
         susCooldown = true;
         yield return new WaitForSeconds(1);
         susCooldown = false;
     }
 
-    public void AddSuspicion(int sussy)
+    public void AddSuspicion(int sussy, float cooldownTime)
     {
         if (susCooldown)
             return;
         suspicionLevel += sussy;
-        StartCoroutine(SuspicionTick());
+        StartCoroutine(SuspicionTick(cooldownTime));
     }
 
 }

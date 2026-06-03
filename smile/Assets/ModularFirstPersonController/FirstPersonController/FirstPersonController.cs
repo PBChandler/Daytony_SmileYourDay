@@ -85,7 +85,7 @@ public class FirstPersonController : NetworkBehaviour
 
     // Internal Variables
     private CanvasGroup sprintBarCG;
-    private bool isSprinting = false;
+    public bool isSprinting = false;
     private float sprintRemaining;
     private float sprintBarWidth;
     private float sprintBarHeight;
@@ -114,7 +114,7 @@ public class FirstPersonController : NetworkBehaviour
     public float speedReduction = .5f;
 
     // Internal Variables
-    private bool isCrouched = false;
+    public bool isCrouched = false;
     private Vector3 originalScale;
 
     #endregion
@@ -129,7 +129,7 @@ public class FirstPersonController : NetworkBehaviour
 
     // Internal Variables
     private Vector3 jointOriginalPos;
-    private float timer = 0;
+    public float timer = 0;
 
     #endregion
 

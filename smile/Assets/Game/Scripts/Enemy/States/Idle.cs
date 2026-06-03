@@ -1,14 +1,14 @@
-using Unity.AI.Navigation;
 using UnityEngine;
-using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class Idle : EnemyState
 {
     [SerializeField] bool stationary;
     Vector3 origin;
     [SerializeField] List<Vector3> destinations = new List<Vector3>();
+    Vector3 gizmoSize = new Vector3(.5f, .5f, .5f);
     int destinationIndex = 1;
     bool counting;
     bool backwards;
@@ -75,5 +75,16 @@ public class Idle : EnemyState
     public override void OnExitState()
     {
         Debug.Log("I am exiting the Idle state");
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        for (int i = 0; i < destinations.Count; i++)
+        {
+            Gizmos.DrawCube(destinations[i], gizmoSize);
+            if (i > 0)
+                Gizmos.DrawLine(destinations[i], destinations[i - 1]);
+        }
+
     }
 }
