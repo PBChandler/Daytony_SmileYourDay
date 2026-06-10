@@ -2,7 +2,6 @@ using UnityEngine;
 using Steamworks;
 using TMPro;
 using UnityEngine.UI;
-using Unity.Netcode;
 
 public class UI_SteamAccount : MonoBehaviour
 {
@@ -23,10 +22,10 @@ public class UI_SteamAccount : MonoBehaviour
     public bool permissionToInvite = false;
     public void OnEnable()
     {
-        if(NetworkManager.Singleton.IsHost)
-        {
-            Debug.Log("wait fuck is everyone the host?");
-        }
+        // if(NetworkManager.Singleton.IsHost)
+        // {
+        //     Debug.Log("wait fuck is everyone the host?");
+        // }
        if (SteamManager.Initialized) {
          OnLobbyCreatede = Callback<Steamworks.LobbyCreated_t>.Create(OnLobbyCreated);
          LetMeIn = Callback<Steamworks.GameLobbyJoinRequested_t>.Create(LetMeInReceiver);

@@ -8,7 +8,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Unity.Netcode;
 
 
 #if UNITY_EDITOR
@@ -16,7 +15,7 @@ using UnityEditor;
     using System.Net;
 #endif
 
-public class FirstPersonController : NetworkBehaviour
+public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
 
@@ -153,16 +152,16 @@ public class FirstPersonController : NetworkBehaviour
 
     void Start()
     {
-        
+        OnNetworkSpawn();
     }
 
-    public override void OnNetworkSpawn()
+    public void OnNetworkSpawn()
     {
-        base.OnNetworkSpawn();
-        if(!IsOwner)
-        {
-            playerCamera.depth = -75820;
-        }
+        //base.OnNetworkSpawn();
+        // if(!IsOwner)
+        // {
+        //     playerCamera.depth = -75820;
+        // }
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -213,8 +212,8 @@ public class FirstPersonController : NetworkBehaviour
 
     private void Update()
     {
-        if(!IsOwner)
-        return;
+        // if(!IsOwner)
+        // return;
         #region Camera
 
         // Control camera movement
@@ -379,8 +378,8 @@ public class FirstPersonController : NetworkBehaviour
 
     void FixedUpdate()
     {
-        if(!IsOwner)
-        return;
+        // if(!IsOwner)
+        // return;
         #region Movement
 
         if (playerCanMove)
