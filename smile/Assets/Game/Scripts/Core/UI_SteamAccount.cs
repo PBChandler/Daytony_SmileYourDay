@@ -98,7 +98,7 @@ public class UI_SteamAccount : MonoBehaviour
         permissionToInvite = true;
         NetworkManager.singleton.networkAddress = SteamUser.GetSteamID()+"";
         NetworkManager.singleton.StartHost();
-        
+        (NetworkManager.singleton.transport as FizzySteamworks).ServerStart();
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, 2);
         if(LobbyID != 404404404404404404)
         {
