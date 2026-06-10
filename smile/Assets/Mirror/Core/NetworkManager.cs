@@ -539,7 +539,7 @@ namespace Mirror
             // call OnStartHost AFTER SetupServer. this way we can use
             // NetworkServer.Spawn etc. in there too. just like OnStartServer
             // is called after the server is actually properly started.
-            OnStartHost();
+            OnStartHost();//
 
             // server scene was loaded. now spawn all the objects
             NetworkServer.SpawnObjects();

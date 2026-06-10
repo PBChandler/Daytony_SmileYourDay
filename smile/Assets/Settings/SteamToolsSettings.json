@@ -1,0 +1,201 @@
+{
+    "LastGenerated": "2026-06-10 14:41:22",
+    "activeAppIndex": -1,
+    "mainAppSettings": {
+        "editorName": "Main",
+        "applicationId": 480,
+        "leaderboards": [
+            {
+                "name": "Feet Traveled",
+                "sortMethod": 1,
+                "displayType": 1,
+                "createIfNotFound": false
+            }
+        ],
+        "stats": [
+            {
+                "id": "AverageSpeed"
+            },
+            {
+                "id": "FeetTraveled"
+            },
+            {
+                "id": "MaxFeetTraveled"
+            },
+            {
+                "id": "NumGames"
+            },
+            {
+                "id": "NumLosses"
+            },
+            {
+                "id": "NumWins"
+            },
+            {
+                "id": "Unused2"
+            }
+        ],
+        "achievements": [
+            {
+                "id": "ACH_TRAVEL_FAR_ACCUM"
+            },
+            {
+                "id": "ACH_TRAVEL_FAR_SINGLE"
+            },
+            {
+                "id": "ACH_WIN_100_GAMES"
+            },
+            {
+                "id": "ACH_WIN_ONE_GAME"
+            },
+            {
+                "id": "NEW_ACHIEVEMENT_0_4"
+            }
+        ],
+        "actionSets": [
+            "menu_controls",
+            "ship_controls"
+        ],
+        "actionSetLayers": [
+            "thrust_action_layer"
+        ],
+        "actions": [
+            {
+                "type": 0,
+                "name": "analog_controls"
+            },
+            {
+                "type": 1,
+                "name": "backward_thrust"
+            },
+            {
+                "type": 1,
+                "name": "fire_lasers"
+            },
+            {
+                "type": 1,
+                "name": "forward_thrust"
+            },
+            {
+                "type": 1,
+                "name": "menu_cancel"
+            },
+            {
+                "type": 1,
+                "name": "menu_down"
+            },
+            {
+                "type": 1,
+                "name": "menu_left"
+            },
+            {
+                "type": 1,
+                "name": "menu_right"
+            },
+            {
+                "type": 1,
+                "name": "menu_select"
+            },
+            {
+                "type": 1,
+                "name": "menu_up"
+            },
+            {
+                "type": 1,
+                "name": "pause_menu"
+            },
+            {
+                "type": 1,
+                "name": "turn_left"
+            },
+            {
+                "type": 1,
+                "name": "turn_right"
+            }
+        ]
+    },
+    "demoAppSettings": {
+        "editorName": "",
+        "applicationId": 0,
+        "leaderboards": [],
+        "stats": [],
+        "achievements": [],
+        "actionSets": [],
+        "actionSetLayers": [],
+        "actions": []
+    },
+    "dlcNames": [],
+    "dlc": [],
+    "defaultServerSettings": {
+        "autoInitialise": false,
+        "autoLogon": false,
+        "ip": 0,
+        "gamePort": 0,
+        "queryPort": 0,
+        "spectatorPort": 0,
+        "serverVersion": "",
+        "usingGameServerAuthApi": false,
+        "enableHeartbeats": false,
+        "supportSpectators": false,
+        "spectatorServerName": "",
+        "anonymousServerLogin": false,
+        "gameServerToken": "",
+        "isPasswordProtected": false,
+        "serverName": "",
+        "gameDescription": "",
+        "gameDirectory": "",
+        "isDedicated": false,
+        "maxPlayerCount": 0,
+        "botPlayerCount": 0,
+        "mapName": "",
+        "gameData": "",
+        "rulePairs": []
+    },
+    "playtestSettings": [],
+    "inventoryItems": [],
+    "appIds": [
+        480
+    ],
+    "leaderboards": [
+        "Feet Traveled"
+    ],
+    "stats": [
+        "AverageSpeed",
+        "FeetTraveled",
+        "MaxFeetTraveled",
+        "NumGames",
+        "NumLosses",
+        "NumWins",
+        "Unused2"
+    ],
+    "achievements": [
+        "ACH_TRAVEL_FAR_ACCUM",
+        "ACH_TRAVEL_FAR_SINGLE",
+        "ACH_WIN_100_GAMES",
+        "ACH_WIN_ONE_GAME",
+        "NEW_ACHIEVEMENT_0_4"
+    ],
+    "inputSets": [
+        "menu_controls",
+        "ship_controls"
+    ],
+    "inputLayers": [
+        "thrust_action_layer"
+    ],
+    "inputActions": [
+        "analog_controls",
+        "backward_thrust",
+        "fire_lasers",
+        "forward_thrust",
+        "menu_cancel",
+        "menu_down",
+        "menu_left",
+        "menu_right",
+        "menu_select",
+        "menu_up",
+        "pause_menu",
+        "turn_left",
+        "turn_right"
+    ],
+    "items": []
+}

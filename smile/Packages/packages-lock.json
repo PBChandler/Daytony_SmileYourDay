@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "f5d80002708c530ad5b95b66f4c20751e0925123"
     },
+    "com.heathen.steamworksfoundation": {
+      "version": "https://github.com/heathen-engineering/Unity-Foundation-for-Steamworks.git?path=/com.heathen.steamworksfoundation",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b3376e9b3528249891b2bbbcf10c9bc7dff8dd76"
+    },
     "com.mirror.steamworks.net": {
       "version": "https://github.com/Chykary/FizzySteamworks.git?path=/com.mirror.steamworks.net",
       "depth": 0,
