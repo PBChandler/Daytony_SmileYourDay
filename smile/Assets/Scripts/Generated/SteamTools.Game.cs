@@ -15,7 +15,7 @@ namespace SteamTools
 #if APP480
         public const uint AppId = 480;
 #else
-        public const uint AppId = 0;
+        public const uint AppId = 480;
 #endif
 
         public static class Achievements
