@@ -38,7 +38,7 @@ public class UI_SteamAccount : MonoBehaviour
 
     public void DATAUPDATEReceiver(Steamworks.LobbyDataUpdate_t kerk)
     {
-        Debug.Log("PLEASE GOD WILL SOMEONE WORK WILL ONE OF THESE WORK!!!!");
+        Debug.Log(kerk.m_ulSteamIDLobby + " ? " + kerk.m_ulSteamIDMember + " unsure what this is");
         
     }
 
