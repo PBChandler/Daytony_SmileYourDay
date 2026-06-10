@@ -5,13 +5,19 @@ using UnityEngine;
 public class NetworkButtonPress : NetworkBehaviour
 {
     public Image be;
-    [ClientRpc]
+    [Command(requiresAuthority = false)]
     public void ClickButton()
+    {
+        allowbuttonpress();
+    }
+
+    [Server]
+    public void allowbuttonpress()
     {
         UpdateButton();
     }
 
-    [TargetRpc]
+    [ClientRpc]
     public void UpdateButton()
     {
         if(be.color == Color.green)
