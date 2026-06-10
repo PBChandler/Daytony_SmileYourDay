@@ -83,6 +83,7 @@ namespace SteamLobbyTutorial
 
         void OnLobbyEntered(LobbyEnter_t callback)
         {
+            
             if (NetworkServer.active)
             {
                 Debug.Log("Already in a lobby as a host. Ignorning join request");
@@ -93,11 +94,13 @@ namespace SteamLobbyTutorial
             networkManager.networkAddress = _hostAddress;
             Debug.Log("Entered lobby: " + callback.m_ulSteamIDLobby);
             networkManager.StartClient();
+            
             panelSwapper.SwapPanel("LobbyPanel");
         }
 
         void OnLobbyChatUpdate(LobbyChatUpdate_t callback)
         {
+               networkManager.StartClient();
             if (callback.m_ulSteamIDLobby != lobbyID) return;
 
             EChatMemberStateChange stateChange = (EChatMemberStateChange)callback.m_rgfChatMemberStateChange;
