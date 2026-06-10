@@ -97,7 +97,7 @@ namespace SteamLobbyTutorial
             networkManager.networkAddress = _hostAddress;
             Debug.Log("Entered lobby: " + callback.m_ulSteamIDLobby);
             networkManager.StartClient();
-            
+            NetworkClient.Ready();
             panelSwapper.SwapPanel("LobbyPanel");
         }
 
