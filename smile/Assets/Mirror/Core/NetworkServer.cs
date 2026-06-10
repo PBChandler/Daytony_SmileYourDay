@@ -1125,7 +1125,7 @@ namespace Mirror
 
             // set ready if not set yet
             SetClientReady(conn);
-
+            Debug.Log("A NEW CLIENT JOINS THE BATTLE");
             // Debug.Log($"Adding new playerGameObject object netId: {identity.netId} asset ID: {identity.assetId}");
 
             Respawn(identity);

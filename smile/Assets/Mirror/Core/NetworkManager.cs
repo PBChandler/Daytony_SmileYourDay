@@ -1335,7 +1335,7 @@ namespace Mirror
             {
                 // this is now allowed (was not for a while)
                 Debug.Log("Ready with no player object");
-                 NetworkServer.SetClientReady(conn);
+                 
             }
             Debug.Log("READYING CLIENTS!!!");
             NetworkServer.SetClientReady(conn);
