@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 241555811}
   - component: {fileID: 241555810}
   - component: {fileID: 241555809}
+  - component: {fileID: 241555812}
   m_Layer: 0
   m_Name: MIRROR_NETWORKING
   m_TagString: Untagged
@@ -178,7 +179,7 @@ MonoBehaviour:
   maxConnections: 100
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
-  authenticator: {fileID: 0}
+  authenticator: {fileID: 241555812}
   playerPrefab: {fileID: 6626755631715315566, guid: 884ddbd9dddffb04380851f4881292f9, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
@@ -213,6 +214,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &241555812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241555808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28496b776660156428f00cf78289c1ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Mirror.Authenticators::Mirror.Authenticators.BasicAuthenticator
+  OnServerAuthenticated:
+    m_PersistentCalls:
+      m_Calls: []
+  OnClientAuthenticated:
+    m_PersistentCalls:
+      m_Calls: []
+  serverUsername: 
+  serverPassword: 
+  username: 
+  password: 
 --- !u!1 &729387238
 GameObject:
   m_ObjectHideFlags: 0
