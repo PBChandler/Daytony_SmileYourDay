@@ -1,5 +1,5 @@
 {
-    "LastGenerated": "2026-06-10 14:41:22",
+    "LastGenerated": "2026-06-10 16:04:15",
     "activeAppIndex": -1,
     "mainAppSettings": {
         "editorName": "Main",
@@ -116,7 +116,7 @@
     },
     "demoAppSettings": {
         "editorName": "",
-        "applicationId": 0,
+        "applicationId": 480,
         "leaderboards": [],
         "stats": [],
         "achievements": [],
