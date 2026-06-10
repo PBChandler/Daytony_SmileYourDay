@@ -3,6 +3,7 @@ using Steamworks;
 using TMPro;
 using UnityEngine.UI;
 using Mirror;
+using Mirror.FizzySteam;
 
 public class UI_SteamAccount : MonoBehaviour
 {
@@ -56,6 +57,8 @@ public class UI_SteamAccount : MonoBehaviour
         Debug.Log("I'm trying to break into" + SteamFriends.GetFriendPersonaName(burger.m_steamIDFriend) + "'s lobby");
         NetworkManager.singleton.networkAddress = burger.m_steamIDFriend+"";
         NetworkManager.singleton.StartClient();
+        FizzySteamworks s = NetworkManager.singleton.transport as FizzySteamworks;
+        s.ClientConnect(NetworkManager.singleton.networkAddress);
     }
 
     public void LobbyingLikeCongressReceiver(Steamworks.LobbyEnter_t benisherenow)
@@ -95,6 +98,7 @@ public class UI_SteamAccount : MonoBehaviour
         permissionToInvite = true;
         NetworkManager.singleton.networkAddress = SteamUser.GetSteamID()+"";
         NetworkManager.singleton.StartHost();
+        
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, 2);
         if(LobbyID != 404404404404404404)
         {
