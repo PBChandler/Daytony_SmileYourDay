@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class eReadme : ScriptableObject
+public class Readme : ScriptableObject
 {
     public Texture2D icon;
     public string title;
