@@ -1804,7 +1804,7 @@ MonoBehaviour:
   editorAutoStart: 0
   sendRate: 60
   offlineScene: 
-  onlineScene: Assets/EntryNumber17.unity
+  onlineScene: Assets/Scenes 1/SampleScene_NoNWK.unity
   offlineSceneLoadDelay: 0
   transport: {fileID: 1695253524}
   networkAddress: localhost
