@@ -80,7 +80,10 @@ namespace SteamLobbyTutorial
             }
             SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
         }
-
+/// <summary>
+/// this actually fires
+/// </summary>
+/// <param name="callback"></param>
         void OnLobbyEntered(LobbyEnter_t callback)
         {
             

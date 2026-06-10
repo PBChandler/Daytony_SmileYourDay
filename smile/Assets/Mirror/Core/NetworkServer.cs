@@ -1270,7 +1270,7 @@ namespace Mirror
         // is probably fine, so this call wont be needed.
         public static void SetClientReady(NetworkConnectionToClient conn)
         {
-            // Debug.Log($"SetClientReadyInternal for conn:{conn}");
+            Debug.Log($"SetClientReadyInternal for conn:{conn}");
 
             // set ready
             conn.isReady = true;
