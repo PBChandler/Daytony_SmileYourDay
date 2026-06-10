@@ -98,9 +98,11 @@ namespace SteamLobbyTutorial
             panelSwapper.SwapPanel("LobbyPanel");
         }
 
+       
+
         void OnLobbyChatUpdate(LobbyChatUpdate_t callback)
         {
-               networkManager.StartClient();
+             
             if (callback.m_ulSteamIDLobby != lobbyID) return;
 
             EChatMemberStateChange stateChange = (EChatMemberStateChange)callback.m_rgfChatMemberStateChange;

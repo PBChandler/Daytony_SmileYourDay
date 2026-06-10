@@ -157,6 +157,7 @@ public class CustomNetworkManager : NetworkManager
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
         base.OnServerAddPlayer(conn);
+        NetworkServer.SetClientReady(conn);
     }
 
     /// <summary>
