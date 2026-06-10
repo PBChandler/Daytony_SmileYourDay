@@ -93,6 +93,7 @@ public class UI_SteamAccount : MonoBehaviour
     public async void INVITE_FRIEND()
     {
         permissionToInvite = true;
+        NetworkManager.singleton.networkAddress = SteamUser.GetSteamID()+"";
         NetworkManager.singleton.StartHost();
         SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, 2);
         if(LobbyID != 404404404404404404)
