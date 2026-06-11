@@ -96,7 +96,7 @@ namespace SteamLobbyTutorial
             }
             lobbyID = callback.m_ulSteamIDLobby;
             string _hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
-            networkManager.networkAddress = _hostAddress;
+            networkManager.networkAddress = callback.m_ulSteamIDLobby+"";
             Debug.Log("Entered lobby: " + callback.m_ulSteamIDLobby);
             networkManager.StartClient();
             
