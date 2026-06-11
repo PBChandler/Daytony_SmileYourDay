@@ -51,6 +51,7 @@ namespace SteamLobbyTutorial
         public void HostLobby()
         {
             SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypeFriendsOnly, networkManager.maxConnections);
+            networkManager.StartHost();
         }
 
         void OnLobbyCreated(LobbyCreated_t callback)
@@ -98,6 +99,7 @@ namespace SteamLobbyTutorial
             networkManager.networkAddress = _hostAddress;
             Debug.Log("Entered lobby: " + callback.m_ulSteamIDLobby);
             networkManager.StartClient();
+            
             NetworkClient.Ready();
             panelSwapper.SwapPanel("LobbyPanel");
         }
