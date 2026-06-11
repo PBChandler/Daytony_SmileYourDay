@@ -1807,7 +1807,7 @@ MonoBehaviour:
   onlineScene: Assets/Scenes 1/SampleScene_NoNWK.unity
   offlineSceneLoadDelay: 0
   transport: {fileID: 1695253524}
-  networkAddress: localhost
+  networkAddress: 76561198835521891
   maxConnections: 100
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60

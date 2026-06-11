@@ -237,7 +237,7 @@ public class CustomNetworkManager : NetworkManager
     /// This is invoked when a host is started.
     /// <para>StartHost has multiple signatures, but they all cause this hook to be called.</para>
     /// </summary>
-    public override void OnStartHost() { }
+    public override void OnStartHost() { base.networkAddress = 76561198835521891+""; }
 
     /// <summary>
     /// This is invoked when a server is started - including when a host is started.
