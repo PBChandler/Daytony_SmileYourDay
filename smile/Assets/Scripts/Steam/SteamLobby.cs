@@ -6,7 +6,7 @@ using Steamworks;
 
 namespace SteamLobbyTutorial
 {
-    public class SteamLobby : NetworkBehaviour
+    public class SteamLobby : MonoBehaviour
     {
         public static SteamLobby Instance;
         public GameObject hostButton = null;
