@@ -66,15 +66,15 @@ namespace SteamLobbyTutorial
             int j = 0;
             foreach (var member in orderedMembers)
             {
-                TextMeshProUGUI txtMesh = playerListParent.GetChild(j).GetChild(0).GetComponent<TextMeshProUGUI>();
-                PlayerLobbyHandler playerLobbyHandler = playerListParent.GetChild(j).GetComponent<PlayerLobbyHandler>();
+                // TextMeshProUGUI txtMesh = playerListParent.GetChild(j).GetChild(0).GetComponent<TextMeshProUGUI>();
+                // PlayerLobbyHandler playerLobbyHandler = playerListParent.GetChild(j).GetComponent<PlayerLobbyHandler>();
 
-                playerLobbyHandlers.Add(playerLobbyHandler);
-                playerNameTexts.Add(txtMesh);
+                // playerLobbyHandlers.Add(playerLobbyHandler);
+                // playerNameTexts.Add(txtMesh);
 
-                string playerName = SteamFriends.GetFriendPersonaName(member);
-                playerNameTexts[j].text = playerName;
-                j++;
+                // string playerName = SteamFriends.GetFriendPersonaName(member);
+                // playerNameTexts[j].text = playerName;
+                // j++;
             }
         }
 
