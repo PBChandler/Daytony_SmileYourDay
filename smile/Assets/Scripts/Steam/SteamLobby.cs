@@ -66,6 +66,7 @@ namespace SteamLobbyTutorial
 
             SteamMatchmaking.SetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey, SteamUser.GetSteamID().ToString());
             lobbyID = callback.m_ulSteamIDLobby;
+            networkManager.networkAddress = lobbyID+"";
         }
 
         void OnGameLobbyJoinRequested(GameLobbyJoinRequested_t callback)
