@@ -61,7 +61,7 @@ public class SteamManager : MonoBehaviour
                 activeRankedLobbies = new List<Lobby>();
                 connectedToSteam = true;
                 Debug.Log("Steam initialized: " + PlayerName);
-                NetworkManager.Singleton.StartClient();
+                
             }
             catch (Exception e)
             {
@@ -266,6 +266,7 @@ public class SteamManager : MonoBehaviour
             //probably important to fix
             //lobby.GetData(isFriendLobby);
             //SceneManager.LoadScene("SceneToLoad");
+            NetworkManager.Singleton.StartClient();
         }
     }
 
