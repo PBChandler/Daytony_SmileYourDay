@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -46,7 +47,7 @@ public class SteamManager : MonoBehaviour
             {
                 // Create client
                 SteamClient.Init(gameAppId, true);
-
+                
                 if (!SteamClient.IsValid)
                 {
                     Debug.Log("Steam client not valid");
@@ -60,6 +61,7 @@ public class SteamManager : MonoBehaviour
                 activeRankedLobbies = new List<Lobby>();
                 connectedToSteam = true;
                 Debug.Log("Steam initialized: " + PlayerName);
+                NetworkManager.Singleton.StartClient();
             }
             catch (Exception e)
             {
