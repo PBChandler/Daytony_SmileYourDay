@@ -293,6 +293,7 @@ GameObject:
   - component: {fileID: 5809757674408120721}
   - component: {fileID: 3787579110435376841}
   - component: {fileID: 6065175001982829638}
+  - component: {fileID: 4952132786978212130}
   m_Layer: 0
   m_Name: NetworkedPlayer
   m_TagString: Untagged
@@ -329,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1185173071
+  GlobalObjectIdHash: 3868523893
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -367,6 +368,18 @@ MonoBehaviour:
     m_InternalValue: 0
   Runner: {fileID: 7968232003469477321}
   Hacker: {fileID: 4853125958408559409}
+--- !u!114 &4952132786978212130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626755631715315566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc969201f8a731d4a916afc52c70b0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
 --- !u!1001 &8375073773113494089
 PrefabInstance:
   m_ObjectHideFlags: 0
