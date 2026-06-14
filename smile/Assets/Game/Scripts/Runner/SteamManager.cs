@@ -218,7 +218,7 @@ public class SteamManager : MonoBehaviour
     void OnLobbyGameCreatedCallback(Lobby lobby, uint ip, ushort port, SteamId steamId)
     {
         AcceptP2P(OpponentSteamId);
-        SceneManager.LoadScene("SceneToLoad");
+        SceneManager.LoadScene("Avery_Runner_Building");
     }
 
     private void AcceptP2P(SteamId opponentId)
