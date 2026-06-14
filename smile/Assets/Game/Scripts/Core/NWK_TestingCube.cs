@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class NWK_TestingCube : MonoBehaviour
+public class NWK_TestingCube : NetworkBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
