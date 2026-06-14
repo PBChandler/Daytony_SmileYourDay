@@ -51,10 +51,10 @@ Invoke("DoYaThang", timeTillThanging);
             SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
             return; //if playing in "DEFAULT"
         }
-        if(forceClient)
-            NetworkManager.Singleton.StartClient();
-        else
-            NetworkManager.Singleton.StartHost();
+        // if(forceClient)
+        //     NetworkManager.Singleton.StartClient();
+        // else
+        //     NetworkManager.Singleton.StartHost();
         NetworkManager.Singleton.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 }
