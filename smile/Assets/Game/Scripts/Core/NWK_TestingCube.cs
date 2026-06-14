@@ -21,4 +21,10 @@ public class NWK_TestingCube : NetworkBehaviour
             transform.position += new Vector3(-10, 0, 0);
         }
     }
+
+    [Rpc(SendTo.Everyone, RequireOwnership = false)]
+    public void tellServerToMoveCube_Rpc()
+    {
+        
+    }
 }
