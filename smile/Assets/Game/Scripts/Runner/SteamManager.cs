@@ -266,6 +266,7 @@ public class SteamManager : MonoBehaviour
             //probably important to fix
             //lobby.GetData(isFriendLobby);
             //SceneManager.LoadScene("SceneToLoad");
+            //we are charles white
             NetworkManager.Singleton.StartClient();
         }
     }
