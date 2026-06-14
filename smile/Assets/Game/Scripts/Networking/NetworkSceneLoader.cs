@@ -55,6 +55,14 @@ Invoke("DoYaThang", timeTillThanging);
         //     NetworkManager.Singleton.StartClient();
         // else
         //     NetworkManager.Singleton.StartHost();
-        NetworkManager.Singleton.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        try
+        {
+            NetworkManager.Singleton.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        }
+        catch
+        {
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        }
+        
     }
 }
