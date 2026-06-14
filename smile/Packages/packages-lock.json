@@ -1,18 +1,20 @@
 {
   "dependencies": {
+    "com.community.netcode.transport.facepunch": {
+      "version": "https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.facepunch",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.netcode.gameobjects": "1.0.0-pre.4"
+      },
+      "hash": "f5d80002708c530ad5b95b66f4c20751e0925123"
+    },
     "com.community.netcode.transport.steamnetworkingsockets": {
       "version": "https://github.com/Unity-Technologies/multiplayer-community-contributions.git?path=/Transports/com.community.netcode.transport.steamnetworkingsockets",
       "depth": 0,
       "source": "git",
       "dependencies": {},
       "hash": "f5d80002708c530ad5b95b66f4c20751e0925123"
-    },
-    "com.rlabrecque.steamworks.net": {
-      "version": "https://github.com/rlabrecque/Steamworks.NET.git?path=/com.rlabrecque.steamworks.net",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "cde64110bff012829b59cc16fe2c4fc3a0371e8d"
     },
     "com.unity.2d.animation": {
       "version": "13.0.5",

@@ -10,7 +10,7 @@ public class NWK_LobbyTracker : MonoBehaviour
 
     public void FixedUpdate()
     {
-        SteamFriends.GetFriendByIndex(0, EFriendFlags.k_EFriendFlagAll);
+        //SteamFriends.GetFriendByIndex(0, EFriendFlags.k_EFriendFlagAll);
         for(int i = 0; i < garfield.Count; i++)
         {
             
