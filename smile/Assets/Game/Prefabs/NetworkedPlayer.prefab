@@ -500,7 +500,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5509141608466574168}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 344234284734834116}
+        m_TargetAssemblyTypeName: FirstPersonController, Assembly-CSharp
+        m_MethodName: OptionSelect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7956065786968106951}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5988834434518358344
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +633,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2782585810396693185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 344234284734834116}
+        m_TargetAssemblyTypeName: FirstPersonController, Assembly-CSharp
+        m_MethodName: OptionSelect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3546684383694636320}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6101536752585537463
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,7 +714,7 @@ MonoBehaviour:
   m_text: This is placeholder text. If you see this, then something is wrong.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -805,7 +829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3868523893
+  GlobalObjectIdHash: 1185173071
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -1075,7 +1099,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6705892216775299134}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 344234284734834116}
+        m_TargetAssemblyTypeName: FirstPersonController, Assembly-CSharp
+        m_MethodName: OptionSelect
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8498936248957385149}
+          m_ObjectArgumentAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9089515901499809090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,6 +1515,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1533839952490184974}
   m_SourcePrefab: {fileID: 100100000, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+--- !u!114 &344234284734834116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8141604856734396301, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+  m_PrefabInstance: {fileID: 8375073773113494089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344234284734834126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &344234284734834126 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8141604856734396295, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}

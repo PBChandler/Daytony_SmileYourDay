@@ -10,6 +10,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
 using TMPro;
+using System.Threading.Tasks;
+
+
 
 
 
@@ -25,6 +28,7 @@ public class FirstPersonController : NetworkBehaviour
     private RectTransform dialogDisplay;
     private TextMeshProUGUI enemyDialog;
     private List<TextMeshProUGUI> dialogOptions = new List<TextMeshProUGUI>();
+    EncounterDialog currentDialog;
 
 
     #region Camera Movement Variables
@@ -585,15 +589,59 @@ public class FirstPersonController : NetworkBehaviour
     public void DisplayDialog(EncounterDialog dial)
     {
         Cursor.lockState = CursorLockMode.None;
+
         caught = true;
         dialogDisplay.gameObject.SetActive(true);
         enemyDialog.text = dial.dialog;
+
+        foreach (TextMeshProUGUI t in dialogOptions)
+            t.transform.parent.gameObject.SetActive(true);
 
         dialogOptions = MixupOptions(dialogOptions);
 
         dialogOptions[0].text = dial.correctAnswer;
         dialogOptions[1].text = dial.okAnswer;
         dialogOptions[2].text = dial.badAnswer;
+
+        currentDialog = dial;
+    }
+
+    public void OptionSelect(TextMeshProUGUI tmp)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            if (dialogOptions[i].text == tmp.text)
+            {
+                switch (i)
+                {
+                    case 0:
+                        enemyDialog.text = currentDialog.correctDialog;
+                        break;
+                    case 1:
+                        enemyDialog.text = currentDialog.okDialog;
+                        break;
+                    case 2:
+                        enemyDialog.text = currentDialog.badDialog;
+                        break;
+                    default:
+                        Debug.LogError("how tf lmao");
+                        return;
+                }
+            }
+            dialogOptions[i].transform.parent.gameObject.SetActive(false);
+        }
+        WaitForClick();
+    }
+
+    async void WaitForClick()
+    {
+        while (!Input.GetMouseButtonDown(0))
+        {
+            await Task.Delay(1);
+        }
+        dialogDisplay.gameObject.SetActive(false);
+        caught = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
 
