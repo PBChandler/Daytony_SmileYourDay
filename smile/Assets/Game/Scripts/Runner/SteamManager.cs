@@ -315,6 +315,7 @@ public class SteamManager : MonoBehaviour
             }
             currentLobby = joinedLobby;
             OpponentSteamId = id;
+            NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
             LobbyPartnerDisconnected = false;
             AcceptP2P(OpponentSteamId);
             SceneManager.LoadScene("Scene to load");
