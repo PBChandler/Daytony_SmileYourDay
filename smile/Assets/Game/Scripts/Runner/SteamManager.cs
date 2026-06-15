@@ -139,17 +139,8 @@ public class SteamManager : MonoBehaviour
         SteamClient.RunCallbacks();
     }
 
-    public void FixedUpdate()
-    {
-        HeartbeatRpc();   
-    }
-
-    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
-    public void HeartbeatRpc()
-    {
-        Debug.Log("Bah-Bump");
-    }
-
+    
+//
     void OnDisable()
     {
         if (daRealOne)
