@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -222,6 +223,16 @@ public class SteamManager : MonoBehaviour
         AcceptP2P(OpponentSteamId);
         if(SceneManager.GetActiveScene().name != "Avery_Runner_Building")
         SceneManager.LoadScene("Avery_Runner_Building", LoadSceneMode.Additive);
+        if(I_AM_HOST)
+        {
+            NetworkManager.Singleton.StartHost();
+        }
+        else
+        {
+            
+            NetworkManager.Singleton.StartClient();
+        }
+        
     }
 
     private void AcceptP2P(SteamId opponentId)
@@ -252,6 +263,7 @@ public class SteamManager : MonoBehaviour
         }
     }
 
+    public bool I_AM_HOST = false;
     // Called whenever you first enter lobby
     void OnLobbyEnteredCallback(Lobby lobby)
     {
@@ -271,6 +283,7 @@ public class SteamManager : MonoBehaviour
         }
         else
         {
+            I_AM_HOST = true;
             //NetworkManager.Singleton.StartHost();
         }
         Debug.Log("A goober has entered the lobby");
