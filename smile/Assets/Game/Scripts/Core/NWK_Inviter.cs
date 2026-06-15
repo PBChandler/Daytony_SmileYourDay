@@ -19,7 +19,7 @@ public class NWK_Inviter : NetworkBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void HeartbeatRpc()
     {
-        if(!IsOwner && !IsServer)
-            Debug.Log("Bah-Bump");
+        // if(!IsOwner && !IsServer)
+        //     Debug.Log("Bah-Bump");
     }
 }
