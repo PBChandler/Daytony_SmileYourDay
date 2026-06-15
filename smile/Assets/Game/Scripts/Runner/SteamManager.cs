@@ -1,3 +1,4 @@
+using Netcode.Transports.Facepunch;
 using Steamworks;
 using Steamworks.Data;
 using System;
@@ -223,6 +224,7 @@ public class SteamManager : MonoBehaviour
     void OnLobbyGameCreatedCallback(Lobby lobby, uint ip, ushort port, SteamId steamId)
     {
         AcceptP2P(OpponentSteamId);
+        NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
         if(SceneManager.GetActiveScene().name != "Avery_Runner_Building")
         SceneManager.LoadScene("Avery_Runner_Building", LoadSceneMode.Additive);
         if(I_AM_HOST)
