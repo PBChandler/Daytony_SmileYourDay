@@ -269,6 +269,11 @@ public class SteamManager : MonoBehaviour
             //we are charles white
             NetworkManager.Singleton.StartClient();
         }
+        else
+        {
+            NetworkManager.Singleton.StartHost();
+        }
+        Debug.Log("A goober has entered the lobby");
     }
 
     // Accepted Steam Game Invite

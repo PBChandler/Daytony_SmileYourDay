@@ -6,7 +6,7 @@ public class NWK_Inviter : NetworkBehaviour
 {
     public void HostLobby()
     {
-        NetworkManager.Singleton.StartHost();
+        //NetworkManager.Singleton.StartHost();
        // SteamMatchmaking.CreateLobbyAsync(100);
         SteamManager.Instance.CreateLobby(22);
     }

@@ -14,14 +14,14 @@ public class UI_NetworkButtons : MonoBehaviour
     private void Start()
     {
         hostButton.onClick.AddListener(HostButtonOnClick);
-        //clientButton.onClick.AddListener(ClientButtonOnClick);
+        //sclientButton.onClick.AddListener(ClientButtonOnClick);
 
     }
 
     public void HostButtonOnClick()
     {
         //
-        NetworkManager.Singleton.StartHost();
+        //NetworkManager.Singleton.StartHost();
 
        // SteamMatchmaking.CreateLobby(ELobbyType.k_ELobbyTypePublic, 2);
         SteamFriends.SetRichPresence("steam_display", "#Status_AtMainMenu");
