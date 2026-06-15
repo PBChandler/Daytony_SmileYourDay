@@ -8,6 +8,7 @@ public class Idle : EnemyState
     [SerializeField] bool stationary;
     Vector3 origin;
     [SerializeField] List<Vector3> destinations = new List<Vector3>();
+    [SerializeField] float idleSpeed;
     Vector3 gizmoSize = new Vector3(.5f, .5f, .5f);
     int destinationIndex = 1;
     bool counting;
@@ -30,10 +31,14 @@ public class Idle : EnemyState
             backwards = false;
             destinationIndex = 1;
         }
+        agent.speed = idleSpeed;
     }
 
     public override void UpdateState()
     {
+        if (stationary)
+            return;
+
         if (agent.remainingDistance <= agent.stoppingDistance)
         {
             if (destinationIndex == 0)
@@ -85,6 +90,5 @@ public class Idle : EnemyState
             if (i > 0)
                 Gizmos.DrawLine(destinations[i], destinations[i - 1]);
         }
-
     }
 }

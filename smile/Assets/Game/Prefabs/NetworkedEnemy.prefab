@@ -390,6 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e495bb6abb616bc49b294806e2bc4efd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStateMachine
+  currentState: {fileID: 0}
   behavior: {fileID: 0}
 --- !u!114 &5316784919126005575
 MonoBehaviour:
@@ -406,6 +407,7 @@ MonoBehaviour:
   machine: {fileID: 0}
   stationary: 0
   destinations: []
+  idleSpeed: 3.5
 --- !u!114 &1336523019799043403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +421,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Suspicious
   machine: {fileID: 0}
+  chaseSpeed: 4
+  possibleDialogs: []
 --- !u!195 &6987658393324032894
 NavMeshAgent:
   m_ObjectHideFlags: 0

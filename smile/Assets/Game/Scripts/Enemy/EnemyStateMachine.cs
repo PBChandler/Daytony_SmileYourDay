@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyStateMachine : MonoBehaviour
 {
     Dictionary<string, EnemyState> stateDictionary = new Dictionary<string, EnemyState>();
-    EnemyState currentState;
+    public EnemyState currentState;
     [HideInInspector] public EnemyBehavior behavior;
 
     void Start()
@@ -27,6 +27,15 @@ public class EnemyStateMachine : MonoBehaviour
         currentState = stateDictionary[stateName];
         currentState.machine = this;
         currentState.OnEnterState();
+    }
+
+    public EnemyState GetStateFromName(string stateName)
+    {
+        if (stateDictionary.ContainsKey(stateName))
+            return stateDictionary[stateName];
+
+        Debug.LogError("State does not exist!");
+        return null;
     }
 
     void FixedUpdate()

@@ -9,6 +9,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
+using TMPro;
+
+
 
 
 #if UNITY_EDITOR
@@ -19,6 +22,10 @@ using UnityEditor;
 public class FirstPersonController : NetworkBehaviour
 {
     private Rigidbody rb;
+    private RectTransform dialogDisplay;
+    private TextMeshProUGUI enemyDialog;
+    private List<TextMeshProUGUI> dialogOptions = new List<TextMeshProUGUI>();
+
 
     #region Camera Movement Variables
 
@@ -63,6 +70,7 @@ public class FirstPersonController : NetworkBehaviour
 
     // Internal Variables
     private bool isWalking = false;
+    private bool caught = false;
 
     #region Sprint
 
@@ -149,6 +157,21 @@ public class FirstPersonController : NetworkBehaviour
             sprintRemaining = sprintDuration;
             sprintCooldownReset = sprintCooldown;
         }
+
+        foreach (RectTransform r in GetComponentsInChildren<RectTransform>())
+        {
+            if (r.tag == "DialogDisplay")
+            {
+                dialogDisplay = r;
+                dialogDisplay.gameObject.SetActive(false);
+                enemyDialog = dialogDisplay.GetChild(0).GetComponent<TextMeshProUGUI>();
+                for (int i = 1; i < dialogDisplay.childCount; i++)
+                {
+                    dialogOptions.Add(dialogDisplay.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>());
+                }
+                break;
+            }
+        }
     }
 
     void Start()
@@ -214,11 +237,13 @@ public class FirstPersonController : NetworkBehaviour
     private void Update()
     {
         if(!IsOwner)
-        return;
+            return;
+        if (caught)
+            return;
         #region Camera
 
         // Control camera movement
-        if(cameraCanMove)
+        if (cameraCanMove)
         {
             yaw = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * mouseSensitivity;
 
@@ -381,6 +406,8 @@ public class FirstPersonController : NetworkBehaviour
     {
         if(!IsOwner)
         return;
+        if (caught)
+            return;
         #region Movement
 
         if (playerCanMove)
@@ -540,6 +567,33 @@ public class FirstPersonController : NetworkBehaviour
             timer = 0;
             joint.localPosition = new Vector3(Mathf.Lerp(joint.localPosition.x, jointOriginalPos.x, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.y, jointOriginalPos.y, Time.deltaTime * bobSpeed), Mathf.Lerp(joint.localPosition.z, jointOriginalPos.z, Time.deltaTime * bobSpeed));
         }
+    }
+
+    List<TextMeshProUGUI> MixupOptions(List<TextMeshProUGUI> options)
+    {
+        List<TextMeshProUGUI> temp = new List<TextMeshProUGUI>();
+
+        for (int i = Random.Range(0, options.Count); options.Count != 0; i = Random.Range(0, options.Count))
+        {
+            temp.Add(options[i]);
+            options.RemoveAt(i);
+        }
+
+        return temp;
+    }
+
+    public void DisplayDialog(EncounterDialog dial)
+    {
+        Cursor.lockState = CursorLockMode.None;
+        caught = true;
+        dialogDisplay.gameObject.SetActive(true);
+        enemyDialog.text = dial.dialog;
+
+        dialogOptions = MixupOptions(dialogOptions);
+
+        dialogOptions[0].text = dial.correctAnswer;
+        dialogOptions[1].text = dial.okAnswer;
+        dialogOptions[2].text = dial.badAnswer;
     }
 }
 

@@ -19,7 +19,7 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (suspicionLevel > 10)
+        if (suspicionLevel > 10 && stateMachine.currentState != stateMachine.GetStateFromName("Suspicious"))
             stateMachine.ChangeState("Suspicious");
     }
     IEnumerator SuspicionTick(float sec)
