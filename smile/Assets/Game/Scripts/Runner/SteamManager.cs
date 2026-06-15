@@ -267,11 +267,11 @@ public class SteamManager : MonoBehaviour
             //lobby.GetData(isFriendLobby);
             //SceneManager.LoadScene("SceneToLoad");
             //we are charles white
-            NetworkManager.Singleton.StartClient();
+            //NetworkManager.Singleton.StartClient();
         }
         else
         {
-            NetworkManager.Singleton.StartHost();
+            //NetworkManager.Singleton.StartHost();
         }
         Debug.Log("A goober has entered the lobby");
     }
@@ -429,8 +429,8 @@ public class SteamManager : MonoBehaviour
 
     public async Task<bool> CreateLobby(int lobbyParameters)
     {
-        try
-        {
+        //try
+        //{
             var createLobbyOutput = await SteamMatchmaking.CreateLobbyAsync(2);
             if (!createLobbyOutput.HasValue)
             {
@@ -447,13 +447,13 @@ public class SteamManager : MonoBehaviour
             currentLobby = hostedMultiplayerLobby;
 
             return true;
-        }
-        catch (Exception exception)
-        {
-            Debug.Log("Failed to create multiplayer lobby");
-            Debug.Log(exception.ToString());
-            return false;
-        }
+        //}
+        //catch (Exception exception)
+        //{
+        //    Debug.Log("Failed to create multiplayer lobby");
+        //    Debug.Log(exception.ToString());
+        //    return false;
+        //}
     }
 
     // Allows you to open friends list where game invites will have lobby id
