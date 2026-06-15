@@ -22,7 +22,7 @@ public class NWK_TestingCube : NetworkBehaviour
         }
     }
 
-    [Rpc(SendTo.Everyone, RequireOwnership = false)]
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void tellServerToMoveCube_Rpc()
     {
         
