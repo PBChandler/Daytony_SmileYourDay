@@ -731,6 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f89d83176a33f8429f921a6ce33982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SteamManager
+  I_AM_HOST: 0
   isRankedDataString: 
   TRUE: true
   playerEloDataString: wood 1

@@ -12,6 +12,7 @@ public class NWK_Inviter : NetworkBehaviour
     }
     public void FixedUpdate()
     {
+        
         HeartbeatRpc();   
     }
 
