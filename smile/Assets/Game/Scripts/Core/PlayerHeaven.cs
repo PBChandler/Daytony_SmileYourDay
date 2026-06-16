@@ -6,8 +6,13 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
 {
     public PLAYERTYPE playerType;
     public GameObject PlayerScreen, HackerScreen;
-
+    public SmileYourDayManager manager; //statics crash everything, frown;
     public Camera localRunnersEyes;
+
+    public void OnEnable()
+    {
+        manager = GameObject.Find("[SmileYourDayManager]").GetComponent<SmileYourDayManager>();
+    }
     public void Update()
     {
         if(!IsOwner) return;

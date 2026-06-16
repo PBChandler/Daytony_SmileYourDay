@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SmileYourDayManager : NetworkBehaviour
 {
-    public  SmileYourDayManager instance;
+    public SmileYourDayManager instance;
 
-    //public  NetworkVariable<PlayerHeaven> Runner, Hacker;
+    public  NetworkVariable<PlayerHeaven> Runner, Hacker;
 
     public Camera rendertextureCamera;
     public void Start()
@@ -25,6 +25,6 @@ public class SmileYourDayManager : NetworkBehaviour
     }
     public void InitilaizeGame()
     {
-        //rendertextureCamera.transform.parent = Runner.Value.gameObject.transform.Find("EYES");
+        rendertextureCamera.transform.parent = Runner.Value.gameObject.transform.Find("EYES");
     }
 }
