@@ -793,6 +793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5809757674408120721}
   - component: {fileID: 3787579110435376841}
+  - component: {fileID: 7228866408459289430}
   m_Layer: 0
   m_Name: NetworkedPlayer
   m_TagString: Untagged
@@ -842,6 +843,22 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 1
+--- !u!114 &7228866408459289430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626755631715315566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc7cf9af5e2e8c4f99abea1e6ed2c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ShowTopMostFoldoutHeaderGroup: 1
+  playerType: 0
+  PlayerScreen: {fileID: 7968232003469477321}
+  HackerScreen: {fileID: 4853125958408559409}
 --- !u!1 &7084237676138666997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,5 +1619,10 @@ Transform:
 --- !u!4 &5648085218801649718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4204174770508415615, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+  m_PrefabInstance: {fileID: 8375073773113494089}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7968232003469477321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1922726923187539840, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
   m_PrefabInstance: {fileID: 8375073773113494089}
   m_PrefabAsset: {fileID: 0}
