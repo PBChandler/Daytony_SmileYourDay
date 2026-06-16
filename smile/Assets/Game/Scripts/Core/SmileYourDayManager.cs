@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SmileYourDayManager : NetworkBehaviour
 {
-    public static SmileYourDayManager instance;
+    public  SmileYourDayManager instance;
 
-    public static NetworkVariable<PlayerHeaven> Runner, Hacker;
+    public  NetworkVariable<PlayerHeaven> Runner, Hacker;
 
     public Camera rendertextureCamera;
     public void Start()
     {
-        if(SmileYourDayManager.instance != null && SmileYourDayManager.instance != this)
-        Destroy(this);
+        //if(SmileYourDayManager.instance != null && SmileYourDayManager.instance != this)
+       // Destroy(this);
         
     }
 
