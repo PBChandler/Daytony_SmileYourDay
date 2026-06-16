@@ -747,6 +747,7 @@ MonoBehaviour:
   playerType: 0
   PlayerScreen: {fileID: 7968232003469477321}
   HackerScreen: {fileID: 4853125958408559409}
+  localRunnersEyes: {fileID: 0}
 --- !u!1 &7084237676138666997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,6 +1497,10 @@ PrefabInstance:
     - target: {fileID: 8141604857994945944, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141604858023019793, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+      propertyPath: m_Name
+      value: EYES
       objectReference: {fileID: 0}
     - target: {fileID: 8141604858023019793, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       propertyPath: m_Layer
