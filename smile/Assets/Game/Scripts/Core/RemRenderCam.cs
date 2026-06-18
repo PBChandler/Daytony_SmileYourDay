@@ -10,7 +10,7 @@ public class RemRenderCam : MonoBehaviour
         {
             try
             {
-                deadlock = GameObject.Find("EYES").transform;
+                //deadlock = GameObject.Find("EYES").transform;
             }
             catch
             {
