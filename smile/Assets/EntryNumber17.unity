@@ -515,8 +515,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1639019453}
   - component: {fileID: 1639019452}
-  - component: {fileID: 1639019451}
   - component: {fileID: 1639019450}
+  - component: {fileID: 1639019454}
   m_Layer: 0
   m_Name: RENDER_TEXTURE_CAMERA
   m_TagString: Untagged
@@ -568,14 +568,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!81 &1639019451
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1639019449}
-  m_Enabled: 1
 --- !u!20 &1639019452
 Camera:
   m_ObjectHideFlags: 0
@@ -635,13 +627,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639019449}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.014562163, y: 0.95259666, z: 0.04633714, w: -0.30033386}
-  m_LocalPosition: {x: 310.93497, y: -52.50399, z: 444.09085}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639019454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639019449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1785f4324ead5ce4699845318979902b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  deadlock: {fileID: 0}
 --- !u!1 &1727616700
 GameObject:
   m_ObjectHideFlags: 0

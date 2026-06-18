@@ -25,6 +25,6 @@ public class SmileYourDayManager : NetworkBehaviour
     }
     public void InitilaizeGame()
     {
-        rendertextureCamera.transform.parent = Runner.Value.gameObject.transform.Find("EYES");
+        //rendertextureCamera.transform.parent = Runner.Value.gameObject.transform.Find("EYES");
     }
 }
