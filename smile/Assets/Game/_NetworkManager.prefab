@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4091272010525057507}
   - component: {fileID: 828109652386031331}
   - component: {fileID: 7006539182717323454}
-  - component: {fileID: 5329828808251818348}
   m_Layer: 0
   m_Name: _NetworkManager
   m_TagString: Untagged
@@ -107,17 +106,3 @@ MonoBehaviour:
     PacketDelayMS: 0
     PacketJitterMS: 0
     PacketDropRate: 0
---- !u!114 &5329828808251818348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4545492575198214267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5a2055cc3d47954189b79634fdda65c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SteamP2PRelayTransport
-  serverId: 0
-  debug: 0
