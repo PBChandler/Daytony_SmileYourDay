@@ -6,7 +6,7 @@ public class SmileYourDayManager : NetworkBehaviour
 {
     public SmileYourDayManager instance;
 
-    public  NetworkVariable<PlayerHeaven> Runner, Hacker;
+   // public  NetworkVariable<PlayerHeaven> Runner, Hacker;
 
     public Camera rendertextureCamera;
     public void Start()
