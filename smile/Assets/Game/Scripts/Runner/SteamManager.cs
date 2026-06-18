@@ -138,6 +138,23 @@ public class SteamManager : MonoBehaviour
     void Update()
     {
         SteamClient.RunCallbacks();
+
+        #if UNITY_EDITOR
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            NetworkManager.Singleton.StartHost();
+            SpawnFakePlayer();
+        }
+        #endif
+    }
+
+    public void SpawnFakePlayer()
+    {
+        Lobby deadLobby = new Lobby();
+        uint ip = 24601;
+        ushort port = 7777;
+        SteamId id = 666;
+        OnLobbyGameCreatedCallback(deadLobby, ip, port, id);
     }
 
     
