@@ -2454,7 +2454,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 4655d0917280f1942a1bd936f98209a9, type: 2}
+  m_Texture: {fileID: 8400000, guid: c95ab77944fbf4645835363b829d581f, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2581,7 +2581,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3930291091142674003}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6877728923960379979}
+        m_TargetAssemblyTypeName: HackerCamera, Assembly-CSharp
+        m_MethodName: SetCameraFromButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6682443361279192789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,7 +2863,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1121841691654160967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6877728923960379979}
+        m_TargetAssemblyTypeName: HackerCamera, Assembly-CSharp
+        m_MethodName: SetCameraFromButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7422100808976900834
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,7 +3405,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1680934555465593190}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6877728923960379979}
+        m_TargetAssemblyTypeName: HackerCamera, Assembly-CSharp
+        m_MethodName: SetCameraFromButton
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &870895807174942143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3852,13 +3888,34 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 745484731075949396, guid: 4ea5b7db151b578478f1dd153c68051e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5424241545316370826}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4381439143720937392, guid: 4ea5b7db151b578478f1dd153c68051e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6877728923960379979}
   m_SourcePrefab: {fileID: 100100000, guid: 4ea5b7db151b578478f1dd153c68051e, type: 3}
 --- !u!1 &619704468485582113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4381439143720937392, guid: 4ea5b7db151b578478f1dd153c68051e, type: 3}
   m_PrefabInstance: {fileID: 3770742424296770193}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6877728923960379979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619704468485582113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b72527b0039f024baed14f75f6fc225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HackerCamera
+  hacker:
+  - {fileID: 11400000, guid: 474d16e3fa2d3fb448c1e32cf7c9c61e, type: 2}
+  - {fileID: 11400000, guid: 0ee64a109cbfd18478ffcd66dc5c2279, type: 2}
+  - {fileID: 11400000, guid: 8d12d873f1d8b6544b9f71a085c02826, type: 2}
+  cam: {fileID: 0}
+  index: 0
 --- !u!224 &4470983888238688709 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 745484731075949396, guid: 4ea5b7db151b578478f1dd153c68051e, type: 3}
