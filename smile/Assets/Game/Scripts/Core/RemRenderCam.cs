@@ -6,7 +6,7 @@ public class RemRenderCam : MonoBehaviour
     public Transform deadlock;
     public void Update()
     {
-        if(deadlock == null)
+        if(deadlock == null || !deadlock.gameObject.activeSelf)
         {
             try
             {
