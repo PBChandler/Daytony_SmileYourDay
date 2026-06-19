@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0482817e66c80344eb64ad6368182bbb, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -338,6 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f89d83176a33f8429f921a6ce33982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SteamManager
+  cheatScene: NetworkTesting_VFacepunch
   I_AM_HOST: 0
   isRankedDataString: 
   TRUE: true
@@ -446,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetworkSceneLoader
   timeTillThanging: 1.67
-  sceneName: Avery_Runner_Building
+  sceneName: NetworkTesting_VFacepunch
   isGaster: 1
   forceClient: 0
 --- !u!4 &1285052954
