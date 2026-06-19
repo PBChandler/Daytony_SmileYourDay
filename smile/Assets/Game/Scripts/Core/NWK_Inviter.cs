@@ -13,7 +13,7 @@ public class NWK_Inviter : NetworkBehaviour
     public void FixedUpdate()
     {
         
-        HeartbeatRpc();   
+       // HeartbeatRpc();   
     }
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]

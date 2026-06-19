@@ -1,10 +1,18 @@
+using System;
 using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerHeaven : NetworkBehaviour
+public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
 {
     public PLAYERTYPE playerType;
     public GameObject PlayerScreen, HackerScreen;
+    public SmileYourDayManager manager; //statics crash everything, frown;
+    public Camera localRunnersEyes;
+
+    public void OnEnable()
+    {
+        manager = GameObject.Find("[SmileYourDayManager]").GetComponent<SmileYourDayManager>();
+    }
     public void Update()
     {
         if(!IsOwner) return;
@@ -15,6 +23,7 @@ public class PlayerHeaven : NetworkBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             SetPlayerState(PLAYERTYPE.Runner);
+            
         }
     }
 
@@ -33,6 +42,13 @@ public class PlayerHeaven : NetworkBehaviour
                 PlayerScreen.gameObject.SetActive(true);
             break;
         }
+    }
+
+    public bool Equals(PlayerHeaven other)
+    {
+        if(other.playerType == playerType)
+        return true;
+        return false;
     }
 }
 

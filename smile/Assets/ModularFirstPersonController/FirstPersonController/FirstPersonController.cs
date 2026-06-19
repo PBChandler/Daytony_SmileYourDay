@@ -433,6 +433,7 @@ public class FirstPersonController : NetworkBehaviour
             // All movement calculations shile sprint is active
             if (enableSprint && Input.GetKey(sprintKey) && sprintRemaining > 0f && !isSprintCooldown)
             {
+                if(isCrouched) return;
                 targetVelocity = transform.TransformDirection(targetVelocity) * sprintSpeed;
 
                 // Apply a force that attempts to reach our target velocity

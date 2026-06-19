@@ -12,7 +12,7 @@ public class DontDestroyOnLoad : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("TitleScreen", UnityEngine.SceneManagement.LoadSceneMode.Additive);
+            //SceneManager.LoadScene("TitleScreen", UnityEngine.SceneManagement.LoadSceneMode.Additive);
         }
     }
 }

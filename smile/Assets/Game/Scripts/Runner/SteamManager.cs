@@ -15,7 +15,7 @@ public class SteamManager : MonoBehaviour
 {
     public static SteamManager Instance;
     private static uint gameAppId = 480;
-
+    public string cheatScene = "Playground";
     public string PlayerName { get; set; }
     public SteamId PlayerSteamId { get; set; }
     private string playerSteamIdString;
@@ -138,6 +138,23 @@ public class SteamManager : MonoBehaviour
     void Update()
     {
         SteamClient.RunCallbacks();
+
+        #if UNITY_EDITOR
+        if(Input.GetKeyDown(KeyCode.Y))
+        {
+            NetworkManager.Singleton.StartHost();
+            SpawnFakePlayer();
+        }
+        #endif
+    }
+
+    public void SpawnFakePlayer()
+    {
+        Lobby deadLobby = new Lobby();
+        uint ip = 24601;
+        ushort port = 7777;
+        SteamId id = 666;
+        OnLobbyGameCreatedCallback(deadLobby, ip, port, id);
     }
 
     
@@ -225,8 +242,8 @@ public class SteamManager : MonoBehaviour
     {
         AcceptP2P(OpponentSteamId);
         NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
-        if(SceneManager.GetActiveScene().name != "Avery_Runner_Building")
-        SceneManager.LoadScene("Avery_Runner_Building", LoadSceneMode.Additive);
+        if(SceneManager.GetActiveScene().name != cheatScene)
+        SceneManager.LoadScene(cheatScene, LoadSceneMode.Additive);
         if(I_AM_HOST)
         {
             NetworkManager.Singleton.StartHost();

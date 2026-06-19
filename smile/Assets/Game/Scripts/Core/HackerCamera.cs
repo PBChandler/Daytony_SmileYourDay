@@ -26,4 +26,10 @@ public class HackerCamera : MonoBehaviour
         cam.transform.rotation = Quaternion.Euler(hacker[index].rotationEulers);
     }
 
+    public void SetCameraFromButton(int id)
+    {
+        index = id;
+        cam.transform.position = hacker[id].position;
+        cam.transform.rotation = Quaternion.Euler(hacker[id].rotationEulers);
+    }
 }
