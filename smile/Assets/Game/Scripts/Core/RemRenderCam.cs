@@ -11,6 +11,7 @@ public class RemRenderCam : MonoBehaviour
             try
             {
                 deadlock = GameObject.Find("EYES").transform;
+                deadlock.transform.localPosition = Vector3.zero;
             }
             catch
             {
