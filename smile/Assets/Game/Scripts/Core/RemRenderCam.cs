@@ -22,6 +22,7 @@ public class RemRenderCam : MonoBehaviour
         {
             transform.parent = deadlock;
             deadlock.transform.localPosition = Vector3.zero;
+            transform.rotation.Set(0,0,0,0);
         }
     }
 }
