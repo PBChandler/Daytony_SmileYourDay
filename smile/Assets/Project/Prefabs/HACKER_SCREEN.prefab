@@ -3861,6 +3861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1_PAGE
       objectReference: {fileID: 0}
+    - target: {fileID: 4381439143720937392, guid: 4ea5b7db151b578478f1dd153c68051e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7608359369832862833, guid: 4ea5b7db151b578478f1dd153c68051e, type: 3}
       propertyPath: m_Color.b
       value: 0
