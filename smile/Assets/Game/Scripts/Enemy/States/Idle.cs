@@ -61,20 +61,6 @@ public class Idle : EnemyState
                 destinationIndex++;
             }
         }
-
-        //if (!counting)
-        //    StartCoroutine(Countdown());
-
-        //if (stateTimer == 0)
-        //    machine.ChangeState("Idle");
-    }
-
-    IEnumerator Countdown()
-    {
-        counting = true;
-        stateTimer--;
-        yield return new WaitForEndOfFrame();
-        counting = false;
     }
 
     public override void OnExitState()

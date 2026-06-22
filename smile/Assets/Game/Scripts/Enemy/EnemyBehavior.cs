@@ -6,7 +6,7 @@ using System.Collections;
 public class EnemyBehavior : MonoBehaviour
 {
     EnemyStateMachine stateMachine;
-    int suspicionLevel;
+    public int suspicionLevel;
     NavMeshAgent agent;
     bool susCooldown;
 
@@ -19,22 +19,30 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (suspicionLevel > 10 && stateMachine.currentState != stateMachine.GetStateFromName("Suspicious"))
+        //Debug.Log("Current Suspicion is " + suspicionLevel);
+        if (suspicionLevel > 10 && stateMachine.currentState == stateMachine.GetStateFromName("Idle"))
             stateMachine.ChangeState("Suspicious");
     }
     IEnumerator SuspicionTick(float sec)
     {
         susCooldown = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(sec);
         susCooldown = false;
     }
 
-    public void AddSuspicion(int sussy, float cooldownTime)
+    public void AddSuspicion(int setting, float cooldownTime)
     {
         if (susCooldown)
             return;
-        suspicionLevel += sussy;
+        suspicionLevel += setting;
         StartCoroutine(SuspicionTick(cooldownTime));
     }
-
+    
+    public void SetSuspicion(int setting, float cooldownTime)
+    {
+        if (susCooldown)
+            return;
+        suspicionLevel = setting;
+        StartCoroutine(SuspicionTick(cooldownTime));
+    }
 }

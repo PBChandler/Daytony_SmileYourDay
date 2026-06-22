@@ -29,6 +29,9 @@ public class FirstPersonController : NetworkBehaviour
     private TextMeshProUGUI enemyDialog;
     private List<TextMeshProUGUI> dialogOptions = new List<TextMeshProUGUI>();
     EncounterDialog currentDialog;
+    public delegate void DialogResponse(int answer);
+    public event DialogResponse currentResponse;
+    public bool caught = false;
 
 
     #region Camera Movement Variables
@@ -74,7 +77,7 @@ public class FirstPersonController : NetworkBehaviour
 
     // Internal Variables
     private bool isWalking = false;
-    private bool caught = false;
+    private int resNum;
 
     #region Sprint
 
@@ -176,6 +179,7 @@ public class FirstPersonController : NetworkBehaviour
                 break;
             }
         }
+        currentResponse += dummy;
     }
 
     void Start()
@@ -574,6 +578,11 @@ public class FirstPersonController : NetworkBehaviour
         }
     }
 
+    void dummy(int t)
+    {
+
+    }
+
     List<TextMeshProUGUI> MixupOptions(List<TextMeshProUGUI> options)
     {
         List<TextMeshProUGUI> temp = new List<TextMeshProUGUI>();
@@ -587,9 +596,11 @@ public class FirstPersonController : NetworkBehaviour
         return temp;
     }
 
-    public void DisplayDialog(EncounterDialog dial)
+    public void DisplayDialog(EncounterDialog dial, Suspicious s)
     {
         Cursor.lockState = CursorLockMode.None;
+
+        //currentResponse += s.HandleResponse;
 
         caught = true;
         dialogDisplay.gameObject.SetActive(true);
@@ -628,6 +639,7 @@ public class FirstPersonController : NetworkBehaviour
                         Debug.LogError("how tf lmao");
                         return;
                 }
+                resNum = i;
             }
             dialogOptions[i].transform.parent.gameObject.SetActive(false);
         }
@@ -643,6 +655,7 @@ public class FirstPersonController : NetworkBehaviour
         dialogDisplay.gameObject.SetActive(false);
         caught = false;
         Cursor.lockState = CursorLockMode.Locked;
+        currentResponse.Invoke(resNum);
     }
 }
 
