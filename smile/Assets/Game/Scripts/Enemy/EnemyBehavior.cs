@@ -38,9 +38,9 @@ public class EnemyBehavior : MonoBehaviour
         StartCoroutine(SuspicionTick(cooldownTime));
     }
     
-    public void SetSuspicion(int setting, float cooldownTime)
+    public void SetSuspicion(int setting, float cooldownTime, bool bypassCooldown)
     {
-        if (susCooldown)
+        if (bypassCooldown ? false : susCooldown)
             return;
         suspicionLevel = setting;
         StartCoroutine(SuspicionTick(cooldownTime));
