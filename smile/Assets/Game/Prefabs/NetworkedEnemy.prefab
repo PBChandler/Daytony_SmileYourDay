@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 5316784919126005575}
   - component: {fileID: 1336523019799043403}
   - component: {fileID: 660391108042134472}
+  - component: {fileID: 2435487230790868102}
   - component: {fileID: 6987658393324032894}
   - component: {fileID: 5033727951161424030}
   m_Layer: 7
@@ -401,11 +402,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8508136699541135168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 919db313bd8723f469d89c9654c27146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Idle
+  isCurrentState: 0
   machine: {fileID: 0}
   stationary: 0
   destinations: []
@@ -417,11 +419,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8508136699541135168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ea482137eebc20459b569a89850d98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Suspicious
+  isCurrentState: 0
   machine: {fileID: 0}
   chaseSpeed: 4
   possibleDialogs: []
@@ -432,13 +435,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8508136699541135168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea61e36985bc7c74995b587275066cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Alarmed
+  isCurrentState: 0
   machine: {fileID: 0}
   alarmedSpd: 6
+--- !u!114 &2435487230790868102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508136699541135168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a025dab0ca56e2468b69d1fd02600ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Searching
+  isCurrentState: 0
+  machine: {fileID: 0}
 --- !u!195 &6987658393324032894
 NavMeshAgent:
   m_ObjectHideFlags: 0

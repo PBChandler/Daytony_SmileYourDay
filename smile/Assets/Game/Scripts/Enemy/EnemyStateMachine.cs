@@ -14,6 +14,7 @@ public class EnemyStateMachine : MonoBehaviour
         foreach (var state in GetComponents<EnemyState>())
         {
             stateDictionary.Add(state.GetType().ToString(), state);
+            state.enabled = false;
         }
 
         behavior = GetComponent<EnemyBehavior>();
@@ -24,7 +25,11 @@ public class EnemyStateMachine : MonoBehaviour
     public void ChangeState(string stateName)
     {
         currentState.OnExitState();
+        currentState.enabled = false;
+        currentState.isCurrentState = false;
         currentState = stateDictionary[stateName];
+        currentState.enabled = true;
+        currentState.isCurrentState = true;
         currentState.machine = this;
         currentState.OnEnterState();
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class RunnerMicrophone : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class RunnerMicrophone : MonoBehaviour
     Ray voiceCast;
     EnemyBehavior eBehavior;
     FirstPersonController fpc;
+    EnemyStateMachine esm;
 
     private void OnEnable()
     {
@@ -80,6 +82,7 @@ public class RunnerMicrophone : MonoBehaviour
             return;
 
         eBehavior = other.GetComponent<EnemyBehavior>();
+        esm = other.GetComponent<EnemyStateMachine>();
 
         voiceCast.origin = transform.position;
         voiceCast.direction = (other.transform.position - voiceCast.origin).normalized;
@@ -87,12 +90,25 @@ public class RunnerMicrophone : MonoBehaviour
         if (Physics.Raycast(voiceCast, out RaycastHit extraHit, transform.localScale.x / 2, justenemies))
         {
             if (extraHit.collider.tag == "Enemy")
+            {
                 eBehavior.AddSuspicion(5, 1);
+                if (esm.currentState == esm.GetStateFromName("Alarmed"))
+                {
+                    other.GetComponent<NavMeshAgent>().SetDestination(transform.position);
+                }
+            }
         }
         else if (Physics.Raycast(voiceCast, out RaycastHit hit, transform.localScale.x, enemiesnwalls))
         {
             if (hit.collider.tag == "Enemy")
+            {
                 eBehavior.AddSuspicion(5, 1);
+                if (esm.currentState == esm.GetStateFromName("Alarmed"))
+                {
+                    other.GetComponent<NavMeshAgent>().SetDestination(transform.position);
+                }
+
+            }
         }
     }
 }

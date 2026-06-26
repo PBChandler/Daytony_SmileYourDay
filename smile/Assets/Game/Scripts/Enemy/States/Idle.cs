@@ -32,6 +32,7 @@ public class Idle : EnemyState
             destinationIndex = 1;
         }
         agent.speed = idleSpeed;
+        Debug.Log("current SuspicionLevel is " + suspicionLevel);
     }
 
     public override void UpdateState()
