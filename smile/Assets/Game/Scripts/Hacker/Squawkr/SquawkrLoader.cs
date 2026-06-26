@@ -17,7 +17,7 @@ public class SquawkrLoader : MonoBehaviour
         DisplayName.text = profile.DisplayName;
         Handle.text = profile.Handle;
         SquawkContent.text = post.TweetText;
-        Date.text = post.Date + " " + post.Time + "  Sent From: " + post.SentFrom;
+        Date.text = post.Date + " " + post.Time + "" + post.SentFrom;
         
         Likes.text = "Likes:" + post.likeCount+"";
         Parrots.text = "Parrots:" + post.retweetCount;

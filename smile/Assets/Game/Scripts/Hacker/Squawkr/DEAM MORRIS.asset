@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cba248151d19c744af7baf9e76cb45a, type: 3}
   m_Name: DEAM MORRIS
   m_EditorClassIdentifier: Assembly-CSharp::SquawkrProfileScriptableObject
-  profilePicture: {fileID: 21300000, guid: 5e2a2d735658ed040b7615c4d82b777c, type: 3}
+  profilePicture: {fileID: 21300000, guid: 8233259de840d964d8bb6e74e048ac70, type: 3}
   DisplayName: Deam Morris
   Handle: '@hankshredder42'
   bio: I was in Bad Breaking
@@ -20,7 +20,7 @@ MonoBehaviour:
   - TweetText: Hex Gifs
     Date: 5/23/2014
     Time: 2:45 PM
-    SentFrom: Squawkr Web App
+    SentFrom: 
     likeCount: 42
     retweetCount: 1
     replies: []
