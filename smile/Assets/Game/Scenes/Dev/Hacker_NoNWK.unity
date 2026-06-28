@@ -620,6 +620,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134201619}
   m_CullTransparentMesh: 1
+--- !u!114 &177213918 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5560704031347000953, guid: bb8b9949320a70742b64203aa6ddd0f6, type: 3}
+  m_PrefabInstance: {fileID: 214282249}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525589a98808c6b479efbbce31d4c60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquawkrLoader
 --- !u!1001 &214282249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1050,6 +1061,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &546495977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5560704031347000953, guid: bb8b9949320a70742b64203aa6ddd0f6, type: 3}
+  m_PrefabInstance: {fileID: 1800318301}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525589a98808c6b479efbbce31d4c60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquawkrLoader
 --- !u!1 &551581238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,7 +1084,7 @@ GameObject:
   - component: {fileID: 551581241}
   - component: {fileID: 551581240}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: squawkr-displayname
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2665,7 +2687,7 @@ GameObject:
   - component: {fileID: 1024839135}
   - component: {fileID: 1024839134}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: squawkr-likeCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3076,7 +3098,7 @@ GameObject:
   - component: {fileID: 1226854782}
   - component: {fileID: 1226854781}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: squawkr-followervalue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3350,7 +3372,7 @@ GameObject:
   - component: {fileID: 1263670306}
   - component: {fileID: 1263670305}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: squawkr-handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3475,6 +3497,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263670303}
   m_CullTransparentMesh: 1
+--- !u!114 &1267607436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5560704031347000953, guid: bb8b9949320a70742b64203aa6ddd0f6, type: 3}
+  m_PrefabInstance: {fileID: 73441316}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525589a98808c6b479efbbce31d4c60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquawkrLoader
 --- !u!224 &1330032117 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4470983888238688709, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
@@ -3629,7 +3662,7 @@ GameObject:
   - component: {fileID: 1441967369}
   - component: {fileID: 1441967368}
   m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Name: squawkr-bio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4430,7 +4463,7 @@ GameObject:
   - component: {fileID: 1785178765}
   - component: {fileID: 1785178764}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: squawkr-retweetvalue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5277,6 +5310,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871929311}
   m_CullTransparentMesh: 1
+--- !u!114 &1872796962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5560704031347000953, guid: bb8b9949320a70742b64203aa6ddd0f6, type: 3}
+  m_PrefabInstance: {fileID: 1781069131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525589a98808c6b479efbbce31d4c60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquawkrLoader
 --- !u!1 &1883539964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5426,7 +5470,7 @@ GameObject:
   - component: {fileID: 1922541885}
   - component: {fileID: 1922541884}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: squawkr-pfp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6025,6 +6069,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121295486}
   m_CullTransparentMesh: 1
+--- !u!114 &2136903763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5560704031347000953, guid: bb8b9949320a70742b64203aa6ddd0f6, type: 3}
+  m_PrefabInstance: {fileID: 787446133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525589a98808c6b479efbbce31d4c60d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquawkrLoader
 --- !u!1 &2141250428
 GameObject:
   m_ObjectHideFlags: 0
@@ -6080,19 +6135,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141250428}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b630f95c6970be42bd6fb75f1f3ad06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Squawkr_ProfileReader
-  profileName: {fileID: 0}
-  handle: {fileID: 0}
-  biography: {fileID: 0}
-  followerCount: {fileID: 0}
-  retweetCount: {fileID: 0}
-  likeCount: {fileID: 0}
-  profile: {fileID: 0}
-  loader: []
+  profileName: {fileID: 551581240}
+  handle: {fileID: 1263670305}
+  biography: {fileID: 1441967368}
+  followerCount: {fileID: 1226854781}
+  retweetCount: {fileID: 1785178764}
+  likeCount: {fileID: 1024839134}
+  pfpDisplay: {fileID: 1922541884}
+  profile: {fileID: 11400000, guid: ccdd0662636e1bc4082dec0018c88ef4, type: 2}
+  loader:
+  - {fileID: 1267607436}
+  - {fileID: 1872796962}
+  - {fileID: 177213918}
+  - {fileID: 546495977}
+  - {fileID: 2136903763}
 --- !u!1001 &7634443392564363648
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Squawkr_ProfileReader : MonoBehaviour
 {
     public TextMeshProUGUI profileName, handle, biography, followerCount, retweetCount, likeCount;
-    public Image pfpDisplay;
+    public UnityEngine.UI.Image pfpDisplay;
 
     public SquawkrProfileScriptableObject profile;
 
@@ -27,5 +27,6 @@ public class Squawkr_ProfileReader : MonoBehaviour
         {
             loader[i].LoadSquawk(profile.Posts[i]);
         }
+        pfpDisplay.sprite = profile.profilePicture;
     }
 }
