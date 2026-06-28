@@ -10,7 +10,11 @@ public class SquawkrLoader : MonoBehaviour
 
     public void Start()
     {
-        LoadSquawk(profile.Posts[0]);
+        try
+        {
+            LoadSquawk(profile.Posts[0]);
+        }catch{}
+        
     }
     public void LoadSquawk(SquawkrPost post)
     {

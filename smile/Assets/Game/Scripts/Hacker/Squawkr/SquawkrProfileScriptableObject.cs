@@ -6,6 +6,7 @@ public class SquawkrProfileScriptableObject : ScriptableObject
     public Sprite profilePicture;
     public string DisplayName, Handle;
     public string bio;
+    public int followerCount, likeCount, retweetCount;
     public List<SquawkrPost> Posts;
 }
 
