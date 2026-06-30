@@ -12,12 +12,13 @@ public class SquawkrLoader : MonoBehaviour
     {
         try
         {
-            LoadSquawk(profile.Posts[0]);
+            LoadSquawk(profile, profile.Posts[0]);
         }catch{}
         
     }
-    public void LoadSquawk(SquawkrPost post)
+    public void LoadSquawk(SquawkrProfileScriptableObject profiley, SquawkrPost post)
     {
+        profile = profiley;
         DisplayName.text = profile.DisplayName;
         Handle.text = profile.Handle;
         SquawkContent.text = post.TweetText;

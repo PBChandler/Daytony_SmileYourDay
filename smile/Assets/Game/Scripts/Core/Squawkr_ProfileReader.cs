@@ -25,7 +25,7 @@ public class Squawkr_ProfileReader : MonoBehaviour
 
         for(int i = 0; i < profile.Posts.Count; i++)
         {
-            loader[i].LoadSquawk(profile.Posts[i]);
+            loader[i].LoadSquawk(profile, profile.Posts[i]);
         }
         pfpDisplay.sprite = profile.profilePicture;
     }

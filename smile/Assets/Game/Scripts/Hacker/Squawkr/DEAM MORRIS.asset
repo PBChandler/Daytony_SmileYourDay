@@ -16,6 +16,9 @@ MonoBehaviour:
   DisplayName: Deam Morris
   Handle: '@hankshredder42'
   bio: I was in Bad Breaking
+  followerCount: 0
+  likeCount: 34
+  retweetCount: 0
   Posts:
   - TweetText: Hex Gifs
     Date: 5/23/2014
