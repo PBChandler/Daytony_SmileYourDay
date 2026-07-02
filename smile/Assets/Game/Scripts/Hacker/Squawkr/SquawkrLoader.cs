@@ -15,6 +15,8 @@ public class SquawkrLoader : MonoBehaviour
     {
          basePos = transform.parent.localPosition;
     }
+
+    
     public void Start()
     {
        

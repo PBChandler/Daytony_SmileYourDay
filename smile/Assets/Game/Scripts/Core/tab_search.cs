@@ -5,6 +5,8 @@ using UnityEditor;
 using System;
 using UnityEditor.Search;
 using JetBrains.Annotations;
+using TMPro;
+using UnityEngine.UI;
 public class tab_search : MonoBehaviour
 {
     public List<SquawkrProfileScriptableObject> scriptableObjects = new List<SquawkrProfileScriptableObject>();
@@ -19,6 +21,7 @@ public class tab_search : MonoBehaviour
         {
             searchTable.Add(new Tuple<string, SquawkrProfileScriptableObject>(scriptableObjects[i].DisplayName.ToLower(), scriptableObjects[i]));
         }
+        
     }
 
     // Update is called once per frame

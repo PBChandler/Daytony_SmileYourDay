@@ -18,7 +18,7 @@ public class squawkr_profilepreview : MonoBehaviour
         PerfectCell.sprite = yank.profilePicture;
         crank = yank;
     }
-
+    [ContextMenu("set empty")]
     public void SetCellEmpty()
     {
         NamekName.text = "";
