@@ -32,6 +32,7 @@ public class FirstPersonController : NetworkBehaviour
     public delegate void DialogResponse(int answer);
     public event DialogResponse currentResponse;
     public bool caught = false;
+    public InteractInterface interactable;
 
 
     #region Camera Movement Variables
@@ -147,6 +148,8 @@ public class FirstPersonController : NetworkBehaviour
     public float timer = 0;
 
     #endregion
+
+    public KeyCode interactKey = KeyCode.E;
 
     private void Awake()
     {
@@ -378,6 +381,11 @@ public class FirstPersonController : NetworkBehaviour
         }
 
         #endregion
+
+        if (interactable != null && Input.GetKeyDown(interactKey))
+        {
+            interactable.OnInteract();
+        }
 
         #region Crouch
 
@@ -859,13 +867,18 @@ public class FirstPersonController : NetworkBehaviour
 
         #endregion
 
+        GUILayout.Label("Miscellaneous", new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleLeft, fontStyle = FontStyle.Bold, fontSize = 13 }, GUILayout.ExpandWidth(true));
+
+        fpc.interactKey = (KeyCode)EditorGUILayout.EnumPopup(new GUIContent("Interact Key", "Determines what key is used to interact with the environment."), fpc.interactKey);
+
         //Sets any changes from the prefab
-        if(GUI.changed)
+        if (GUI.changed)
         {
             EditorUtility.SetDirty(fpc);
             Undo.RecordObject(fpc, "FPC Change");
             SerFPC.ApplyModifiedProperties();
         }
+
     }
 
 }

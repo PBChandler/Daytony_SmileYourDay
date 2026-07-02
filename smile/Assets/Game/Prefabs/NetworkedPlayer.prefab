@@ -1612,6 +1612,10 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8141604856734396301, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+      propertyPath: crouchKey
+      value: 306
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141604856734396301, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       propertyPath: enableJump
       value: 0
       objectReference: {fileID: 0}
