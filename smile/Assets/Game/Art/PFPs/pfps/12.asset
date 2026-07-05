@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cba248151d19c744af7baf9e76cb45a, type: 3}
+  m_Name: 12
+  m_EditorClassIdentifier: Assembly-CSharp::SquawkrProfileScriptableObject
+  profilePicture: {fileID: 21300000, guid: 6b387bb9fe889764e99d93b785270a8a, type: 3}
+  DisplayName: Father Redman
+  Handle: '@redman2'
+  bio: Check me out in Tennessee Church of the Holy Epic Hand!
+  followerCount: 8
+  likeCount: 8
+  retweetCount: 8
+  Posts:
+  - TweetText: Happy Holidays everyone!
+    Date: 12/25/2013
+    Time: 7:29 AM
+    SentFrom: Tennessee
+    likeCount: 8
+    retweetCount: 44
+    replies: []
+  - TweetText: Matthew 19:24 y'all. #occupywallstreet #OWS
+    Date: 9/17/2011
+    Time: 10:00 AM
+    SentFrom: Tennessee
+    likeCount: 4
+    retweetCount: 4
+    replies: []

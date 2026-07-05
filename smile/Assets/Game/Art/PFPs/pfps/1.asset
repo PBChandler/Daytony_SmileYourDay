@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cba248151d19c744af7baf9e76cb45a, type: 3}
-  m_Name: FRANKEN LANTERN
+  m_Name: 1
   m_EditorClassIdentifier: Assembly-CSharp::SquawkrProfileScriptableObject
   profilePicture: {fileID: 21300000, guid: 53a2a1d11c5670d4a83a96b30976822b, type: 3}
   DisplayName: Franken Lantern

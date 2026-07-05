@@ -1353,6 +1353,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1952106711203539989, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 788594d03b8d5fe42a4c3dfc7e3f98ae, type: 2}
     - target: {fileID: 2189627998198149523, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1400,6 +1404,10 @@ PrefabInstance:
     - target: {fileID: 2274130337488755098, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2737478400147724190, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: m_Name
+      value: SEARCH SYSTEM
       objectReference: {fileID: 0}
     - target: {fileID: 2776059482516083458, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1517,6 +1525,58 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: scriptableObjects.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 788594d03b8d5fe42a4c3dfc7e3f98ae, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b20a2dd8b7106d14b9ced0a7dd263694, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8cfa2f3bea2bbcb4e87eedc2fb814998, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ce92d46ac4621144ae2077b3086519e, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4d25d23c63d45fd4c81133db3f90f322, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 01744c052e6d8ab43a792b348cce4734, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d89252d741217a40afc6fc91da61979, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e8f5860a915dde247ba2ffe405f62765, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9f3eee3344a7ded4e9d673db5e7fe140, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[9]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 578149a16348a6043a9b531c3ec26ac7, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[10]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 043797355315cf248a8a6c95e49d7ec4, type: 2}
+    - target: {fileID: 8645598275618680346, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
+      propertyPath: 'scriptableObjects.Array.data[11]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e4379c54166a8334dbfa2c8d42837eaf, type: 2}
     - target: {fileID: 8667107156124605168, guid: e1da15b606396c241a55d8053cfb8f6c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cba248151d19c744af7baf9e76cb45a, type: 3}
-  m_Name: DEAM MORRIS
+  m_Name: 6
   m_EditorClassIdentifier: Assembly-CSharp::SquawkrProfileScriptableObject
   profilePicture: {fileID: 21300000, guid: 8233259de840d964d8bb6e74e048ac70, type: 3}
-  DisplayName: Deam Morris
-  Handle: '@hankshredder42'
-  bio: I was in Bad Breaking
+  DisplayName: Tiny Tony
+  Handle: '@tinytony99'
+  bio: in 2019 there will be a pandemic, prepare.
   followerCount: 0
-  likeCount: 34
+  likeCount: 0
   retweetCount: 0
   Posts:
-  - TweetText: Hex Gifs
-    Date: 5/23/2014
-    Time: 2:45 PM
-    SentFrom: 
-    likeCount: 42
-    retweetCount: 1
+  - TweetText: hey this game's called Smile Your Day aint that cool :) hi :)
+    Date: right/now/lmao
+    Time: ?:??
+    SentFrom: ???
+    likeCount: 0
+    retweetCount: 0
     replies: []
