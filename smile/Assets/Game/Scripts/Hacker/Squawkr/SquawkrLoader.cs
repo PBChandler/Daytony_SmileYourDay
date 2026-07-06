@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class SquawkrLoader : MonoBehaviour
 {
     public Image profilePicture;
-    public TextMeshProUGUI DisplayName, Handle, SquawkContent, Date, Time, Likes, Parrots, ReplyCount;
+    public TextMeshProUGUI DisplayName, Handle, SquawkContent, Date, Time, Likes, Parrots, ReplyCount, LocationData;
 
     public SquawkrProfileScriptableObject profile;
 
@@ -43,6 +43,7 @@ public class SquawkrLoader : MonoBehaviour
         Likes.text = post.likeCount+"";
         Parrots.text = post.retweetCount+"";
         profilePicture.sprite = profile.profilePicture;
+        LocationData.text = post.SentFrom+"";
     }
 
     public void HideSquawk()
