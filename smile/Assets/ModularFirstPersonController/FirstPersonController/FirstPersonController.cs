@@ -34,6 +34,8 @@ public class FirstPersonController : NetworkBehaviour
     public bool caught = false;
     public InteractInterface interactable;
 
+    public bool hasKeycard;
+    public bool hasTanktop;
 
     #region Camera Movement Variables
 

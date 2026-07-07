@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Door : Interactable, InteractInterface
 {
+    [SerializeField] bool requiresKeycard;
     bool isOpen = false;
     MeshRenderer rend;
     BoxCollider bocks;
@@ -14,13 +15,21 @@ public class Door : Interactable, InteractInterface
 
     public void OnInteract()
     {
+        if (requiresKeycard)
+        {
+            if (fpc.hasKeycard)
+                OpenDoor();
+        }
+        else
+            OpenDoor();
+    }
+
+    void OpenDoor()
+    {
         rend.enabled = isOpen;
         bocks.enabled = isOpen;
 
         isOpen = !isOpen;
-
-        Debug.Log("bye bye");
-        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)

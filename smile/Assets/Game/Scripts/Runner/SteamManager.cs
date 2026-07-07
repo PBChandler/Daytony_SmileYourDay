@@ -243,7 +243,7 @@ public class SteamManager : MonoBehaviour
         AcceptP2P(OpponentSteamId);
         NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
         if(SceneManager.GetActiveScene().name != cheatScene)
-        SceneManager.LoadScene(cheatScene, LoadSceneMode.Additive);
+        //SceneManager.LoadScene(cheatScene, LoadSceneMode.Additive);
         if(I_AM_HOST)
         {
             NetworkManager.Singleton.StartHost();
@@ -335,7 +335,7 @@ public class SteamManager : MonoBehaviour
             NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
             LobbyPartnerDisconnected = false;
             AcceptP2P(OpponentSteamId);
-            SceneManager.LoadScene("Scene to load");
+            //SceneManager.LoadScene("Scene to load");
         }
     }
 
