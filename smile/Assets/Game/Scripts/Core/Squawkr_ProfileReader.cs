@@ -61,7 +61,7 @@ public class Squawkr_ProfileReader : MonoBehaviour
     IEnumerator bigshotLoader(int ludwig)
     {
         yield return new WaitForSeconds(0.05f);
-        loader[ludwig].HideSquawk();
+       // loader[ludwig].HideSquawk();
     }
 }
 

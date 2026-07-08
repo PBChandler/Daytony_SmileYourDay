@@ -17,7 +17,15 @@ public class SquawkHubManager : MonoBehaviour
         for(int i = 0; i <homepagetweets.Count; i++)
         {
             SquawkrProfileScriptableObject sauce = profiles[i];
-            homepagetweets[i].LoadSquawk(sauce, sauce.Posts[(int)Random.Range(0, sauce.Posts.Count)]);
+            try
+            {
+                homepagetweets[i].LoadSquawk(sauce, sauce.Posts[(int)Random.Range(0, sauce.Posts.Count)]);
+            }
+            catch
+            {
+                
+            }
+            
         }
         
     }

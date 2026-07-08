@@ -34,6 +34,7 @@ public class SquawkrLoader : MonoBehaviour
     public void LoadSquawk(SquawkrProfileScriptableObject profiley, SquawkrPost post)
     {
 //         transform.GetChild(0).gameObject.SetActive(true);
+transform.parent.localPosition = basePos;
         profile = profiley;
         DisplayName.text = profile.DisplayName;
         Handle.text = profile.Handle;
