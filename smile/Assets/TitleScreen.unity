@@ -4889,6 +4889,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293397655}
   m_CullTransparentMesh: 1
+--- !u!114 &1318112141 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4784014811200765010, guid: 5fb4da54e5d40634ab8130e8dfe88fb2, type: 3}
+  m_PrefabInstance: {fileID: 79979593}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4795ada46802c28408a143e0bd7cfd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1344822860
 GameObject:
   m_ObjectHideFlags: 0
@@ -5101,6 +5112,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394688693}
   m_CullTransparentMesh: 1
+--- !u!114 &1408908585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4784014811200765010, guid: 5fb4da54e5d40634ab8130e8dfe88fb2, type: 3}
+  m_PrefabInstance: {fileID: 363105014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4795ada46802c28408a143e0bd7cfd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &1426353147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5876,9 +5898,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SteamLobbyLobby, Assembly-CSharp
-        m_MethodName: LoadLastPage
+      - m_Target: {fileID: 1794251463}
+        m_TargetAssemblyTypeName: SteamAccountsManager, Assembly-CSharp
+        m_MethodName: RegressPage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6617,6 +6639,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5133716008533109149, guid: 5fb4da54e5d40634ab8130e8dfe88fb2, type: 3}
   m_PrefabInstance: {fileID: 1675590556}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1675590558 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4784014811200765010, guid: 5fb4da54e5d40634ab8130e8dfe88fb2, type: 3}
+  m_PrefabInstance: {fileID: 1675590556}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4795ada46802c28408a143e0bd7cfd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1686379094
 GameObject:
   m_ObjectHideFlags: 0
@@ -7529,7 +7562,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f95d4ef0bdbed43be2f8f9ddcf2f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  toriels: []
+  toriels:
+  - {fileID: 1927908507}
+  - {fileID: 1318112141}
+  - {fileID: 1408908585}
+  - {fileID: 1675590558}
+  - {fileID: 2004393005}
+  basic: 0
 --- !u!1 &1812656093
 GameObject:
   m_ObjectHideFlags: 0
@@ -8103,6 +8142,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5133716008533109149, guid: 5fb4da54e5d40634ab8130e8dfe88fb2, type: 3}
   m_PrefabInstance: {fileID: 1927908505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1927908507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4784014811200765010, guid: 5fb4da54e5d40634ab8130e8dfe88fb2, type: 3}
+  m_PrefabInstance: {fileID: 1927908505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4795ada46802c28408a143e0bd7cfd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1942171726
 GameObject:
   m_ObjectHideFlags: 0
@@ -8319,6 +8369,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969043350}
   m_CullTransparentMesh: 1
+--- !u!114 &2004393005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4784014811200765010, guid: 5fb4da54e5d40634ab8130e8dfe88fb2, type: 3}
+  m_PrefabInstance: {fileID: 1426353147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4795ada46802c28408a143e0bd7cfd82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &2007912232
 GameObject:
   m_ObjectHideFlags: 0
@@ -8643,9 +8704,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SteamLobbyLobby, Assembly-CSharp
-        m_MethodName: LoadNextPage
+      - m_Target: {fileID: 1794251463}
+        m_TargetAssemblyTypeName: SteamAccountsManager, Assembly-CSharp
+        m_MethodName: ProgressPage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
