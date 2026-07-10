@@ -24,7 +24,7 @@ public class talkToTaskList : MonoBehaviour
 
     public void burgerSummoner()
     {
-        SmileYourDayTaskList.instance.dg_Heaven += checkString;
+        //SmileYourDayTaskList.instance.dg_Heaven += checkString;
         burger(type);
     }
 

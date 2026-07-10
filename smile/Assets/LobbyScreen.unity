@@ -3066,9 +3066,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 0
+  mess: 
   lockedIn: 0
 --- !u!1 &1259541127
 GameObject:
@@ -3314,9 +3314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
-  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 0
+  mess: 
   lockedIn: 0
 --- !u!114 &1356844849
 MonoBehaviour:
@@ -3372,6 +3372,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: p_runnerConnected
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1931753241}
+        m_TargetAssemblyTypeName: NetworkedLobbyUIManager, Assembly-CSharp
+        m_MethodName: washiRpc
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1356844850
@@ -4511,9 +4523,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
-  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 0
+  mess: 
   lockedIn: 0
 --- !u!114 &1575881861
 MonoBehaviour:
@@ -6169,6 +6181,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1904753468}
   m_CullTransparentMesh: 1
+--- !u!1 &1931753239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931753242}
+  - component: {fileID: 1931753240}
+  - component: {fileID: 1931753241}
+  m_Layer: 0
+  m_Name: NetworkedLobbyUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1931753240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931753239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
+  GlobalObjectIdHash: 101960674
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  DeferredDespawnTick: 0
+  Ownership: 1
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 0
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+  SyncOwnerTransformWhenParented: 1
+  AllowOwnerToParent: 0
+--- !u!114 &1931753241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931753239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2897c13e4197604fa2f077ee9c49162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ShowTopMostFoldoutHeaderGroup: 1
+  hostList: {fileID: 2018878527}
+  clientList: {fileID: 1356844848}
+--- !u!4 &1931753242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931753239}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942171726
 GameObject:
   m_ObjectHideFlags: 0
@@ -6339,9 +6424,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
-  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 1
+  mess: 
   lockedIn: 0
 --- !u!114 &2018878528
 MonoBehaviour:
@@ -6397,6 +6482,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: p_hackerConnected
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1931753241}
+        m_TargetAssemblyTypeName: NetworkedLobbyUIManager, Assembly-CSharp
+        m_MethodName: washiRpc
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2018878529
@@ -6533,9 +6630,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
-  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 2052882244}
   type: 1
+  mess: 
   lockedIn: 0
 --- !u!1 &2055096349
 GameObject:
@@ -7353,9 +7450,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
-  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 4784014811492888779}
   type: 0
+  mess: 
   lockedIn: 0
 --- !u!114 &5182563841483302030
 MonoBehaviour:
@@ -7834,9 +7931,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
-  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 0
+  mess: 
   lockedIn: 0
 --- !u!1 &9207342159261086692
 GameObject:
@@ -7865,3 +7962,4 @@ SceneRoots:
   - {fileID: 2055096353}
   - {fileID: 1942171729}
   - {fileID: 71273142}
+  - {fileID: 1931753242}
