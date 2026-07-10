@@ -4723,6 +4723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1718253198}
+  - component: {fileID: 1718253199}
   m_Layer: 5
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -4751,6 +4752,20 @@ RectTransform:
   m_AnchoredPosition: {x: -4.830353, y: -492}
   m_SizeDelta: {x: 708.2593, y: 243.1144}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1718253199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718253197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
+  possiblyMe: {fileID: 4784014811492888779}
+  type: 1
 --- !u!1 &1737545710
 GameObject:
   m_ObjectHideFlags: 0
@@ -6587,7 +6602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
-  possiblyMe: {fileID: 0}
+  possiblyMe: {fileID: 4784014811492888779}
   type: 0
 --- !u!114 &5182563841483302030
 MonoBehaviour:
