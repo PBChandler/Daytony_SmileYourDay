@@ -1,11 +1,16 @@
 using System.Threading.Tasks;
 using Steamworks;
+using TMPro;
+using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class talkToTaskList : MonoBehaviour
 {
     public UI_SteamAccount possiblyMe;
     public int type = 0; //0 = runner 1 = hacker
+
+    public bool lockedIn = false;
     void Start()
     {
         if (possiblyMe != null)
@@ -33,6 +38,8 @@ public class talkToTaskList : MonoBehaviour
             case 1:
                 await possiblyMe.Populate(SmileYourDayTaskList.instance.host);
                 break;
+            case 2:
+                break;
         }
 
     }
@@ -45,6 +52,15 @@ public class talkToTaskList : MonoBehaviour
 
     public void UpdateTaskList(string message)
     {
+        if(lockedIn) return;
+        CommunicateToServerRpc();
         SmileYourDayTaskList.instance.UpdateGameTask(message, 1);
     }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void CommunicateToServerRpc()
+    {
+        lockedIn = true;
+        GetComponent<Image>().color = Color.black;
+    }
+    
 }
