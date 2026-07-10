@@ -3066,6 +3066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 0
   lockedIn: 0
@@ -3313,6 +3314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
+  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 0
   lockedIn: 0
@@ -4509,6 +4511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
+  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 0
   lockedIn: 0
@@ -6256,9 +6259,9 @@ GameObject:
   - component: {fileID: 2018878524}
   - component: {fileID: 2018878526}
   - component: {fileID: 2018878525}
+  - component: {fileID: 2018878529}
   - component: {fileID: 2018878527}
   - component: {fileID: 2018878528}
-  - component: {fileID: 2018878529}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -6336,6 +6339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
+  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 1
   lockedIn: 0
@@ -6529,6 +6533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
+  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 2052882244}
   type: 1
   lockedIn: 0
@@ -7348,6 +7353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
+  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 4784014811492888779}
   type: 0
   lockedIn: 0
@@ -7828,6 +7834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
+  ShowTopMostFoldoutHeaderGroup: 1
   possiblyMe: {fileID: 0}
   type: 0
   lockedIn: 0
