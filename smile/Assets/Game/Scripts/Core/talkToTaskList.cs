@@ -31,7 +31,7 @@ public class talkToTaskList : MonoBehaviour
     public void checkString(string apple)
     {
         if(apple == mess)
-            CommunicateToServerRpc();
+            CommunicateToServer();
     }
     public async void burger(int a)
     {
@@ -66,8 +66,8 @@ public class talkToTaskList : MonoBehaviour
         mess = message;
         SmileYourDayTaskList.instance.UpdateGameTask(message, 1);
     }
-    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
-    public void CommunicateToServerRpc()
+   
+    public void CommunicateToServer()
     {
         Debug.Log("does the client print this?");
         lockedIn = true;
