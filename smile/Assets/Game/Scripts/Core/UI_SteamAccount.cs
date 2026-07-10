@@ -49,11 +49,12 @@ public class UI_SteamAccount : MonoBehaviour
 
     public async Task Populate(Steamworks.SteamId ID)
     {
-      //  meRightNow = ID;
+         Steamworks.Friend friend = new Friend(ID);
+         meRightNow = friend;
         Steamworks.Data.Image? im = await SteamFriends.GetSmallAvatarAsync(ID);
          profilePicture.texture = Convert(im.Value);
-         
-       ProfileName.text = meRightNow.Name;
+        
+       ProfileName.text = friend.Name;
     }
     public Texture2D Convert(Steamworks.Data.Image image )
     {

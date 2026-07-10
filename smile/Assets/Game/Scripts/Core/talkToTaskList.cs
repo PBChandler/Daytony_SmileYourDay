@@ -10,10 +10,14 @@ public class talkToTaskList : MonoBehaviour
     {
         if (possiblyMe != null)
         {
-            Invoke("burger", 0.5f);
+            Invoke("burgerSummoner", 0.5f);
         }
     }
 
+    public void burgerSummoner()
+    {
+        burger(type);
+    }
     public async void burger(int a)
     {
         a = type;
@@ -24,10 +28,10 @@ public class talkToTaskList : MonoBehaviour
         switch (mode)
         {
             case 0:
-                await possiblyMe.Populate(SmileYourDayTaskList.instance.client.AccountId);
+                await possiblyMe.Populate(SmileYourDayTaskList.instance.client);
                 break;
             case 1:
-                await possiblyMe.Populate(SmileYourDayTaskList.instance.host.AccountId);
+                await possiblyMe.Populate(SmileYourDayTaskList.instance.host);
                 break;
         }
 

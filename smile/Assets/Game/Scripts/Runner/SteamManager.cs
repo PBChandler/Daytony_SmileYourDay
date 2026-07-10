@@ -155,7 +155,7 @@ public class SteamManager : MonoBehaviour
         Lobby deadLobby = new Lobby();
         uint ip = 24601;
         ushort port = 7777;
-        SteamId id = 666;
+        SteamId id = SteamClient.SteamId;
         OnLobbyGameCreatedCallback(deadLobby, ip, port, id);
     }
 
@@ -336,6 +336,7 @@ public class SteamManager : MonoBehaviour
             }
             currentLobby = joinedLobby;
             OpponentSteamId = id;
+              SmileYourDayTaskList.instance.client = OpponentSteamId;
             NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
             LobbyPartnerDisconnected = false;
             AcceptP2P(OpponentSteamId);
