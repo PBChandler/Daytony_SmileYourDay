@@ -19,11 +19,12 @@ public class talkToTaskList : MonoBehaviour
         {
             Invoke("burgerSummoner", 0.5f);
         }
-        SmileYourDayTaskList.instance.dg_Heaven += checkString;
+        
     }
 
     public void burgerSummoner()
     {
+        SmileYourDayTaskList.instance.dg_Heaven += checkString;
         burger(type);
     }
 
