@@ -29,10 +29,10 @@ public class SmileYourDayTaskList : NetworkBehaviour
     
     public void UpdateGameTask(string id, int value)
     {
-        RpcUpdateGameTask(id, value);
+        UpdateGameTaskRpc(id, value);
     }
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
-    public void RpcUpdateGameTask(string id, int value)
+    public void UpdateGameTaskRpc(string id, int value)
     {
         
         display.text = "Core Gameplay Tests\n";
