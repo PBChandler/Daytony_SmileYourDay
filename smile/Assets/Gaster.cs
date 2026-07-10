@@ -14,6 +14,7 @@ public class Gaster : MonoBehaviour
         return;
         instance = this;
         Debug.Log("Hi! I'm Wing Gaster!");
+      
     }
     public string regularMode;
     public static string DEVICE_SCENE;
@@ -24,6 +25,7 @@ public class Gaster : MonoBehaviour
         if(DEVICE_SCENE.ToLower().Contains("_nonwk")) return;
         #if UNITY_EDITOR
         SceneManager.LoadScene("EntryNumber17");
+        
         #endif
     }
 

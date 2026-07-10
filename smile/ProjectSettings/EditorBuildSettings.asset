@@ -29,6 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Josh/Josh_EnemyTest_NoNWK.unity
     guid: f6a52bf98c1593e479b77524481011f1
+  - enabled: 1
+    path: Assets/LobbyScreen.unity
+    guid: 0c4312b7603300f44882f8837bd0e3e5
+  - enabled: 1
+    path: Assets/Game/Scenes/Playground/MVP_Playground.unity
+    guid: d19593780b175114dbed493ec60dc510
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
