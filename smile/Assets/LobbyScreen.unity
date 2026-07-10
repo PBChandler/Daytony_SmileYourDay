@@ -3369,7 +3369,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 0
+          m_StringArgument: p_runnerConnected
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1356844850
@@ -6337,7 +6337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
   possiblyMe: {fileID: 0}
-  type: 0
+  type: 1
   lockedIn: 0
 --- !u!114 &2018878528
 MonoBehaviour:
@@ -6392,7 +6392,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 1
+          m_StringArgument: p_hackerConnected
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2018878529
