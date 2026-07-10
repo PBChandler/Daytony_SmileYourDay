@@ -5,7 +5,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class talkToTaskList : MonoBehaviour
+public class talkToTaskList : NetworkBehaviour
 {
     public UI_SteamAccount possiblyMe;
     public int type = 0; //0 = runner 1 = hacker
