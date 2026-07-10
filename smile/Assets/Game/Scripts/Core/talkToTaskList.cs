@@ -59,6 +59,7 @@ public class talkToTaskList : MonoBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void CommunicateToServerRpc()
     {
+        Debug.Log("does the client print this?");
         lockedIn = true;
         GetComponent<Image>().color = Color.black;
     }
