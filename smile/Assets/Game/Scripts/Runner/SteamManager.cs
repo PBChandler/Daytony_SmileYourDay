@@ -297,7 +297,8 @@ public class SteamManager : MonoBehaviour
         {
             // You will need to have gotten OpponentSteamId from various methods before (lobby data, joined invite, etc)
             AcceptP2P(OpponentSteamId);
-
+            SmileYourDayTaskList.instance.client = SteamClient.SteamId;
+            SmileYourDayTaskList.instance.host = OpponentSteamId;
             // Examples of things to do
             lobby.SendChatString("incoming player info");
             //probably important to fix
@@ -336,7 +337,7 @@ public class SteamManager : MonoBehaviour
             }
             currentLobby = joinedLobby;
             OpponentSteamId = id;
-              SmileYourDayTaskList.instance.client = OpponentSteamId;
+              
             NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
             LobbyPartnerDisconnected = false;
             AcceptP2P(OpponentSteamId);
@@ -361,6 +362,7 @@ public class SteamManager : MonoBehaviour
         Debug.Log("someone else joined lobby");
         if (friend.Id != PlayerSteamId)
         {
+            SmileYourDayTaskList.instance.client = OpponentSteamId;
             LobbyPartner = friend;
             OpponentSteamId = friend.Id;
             AcceptP2P(OpponentSteamId);
