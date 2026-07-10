@@ -2930,6 +2930,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  possiblyMe: {fileID: 0}
+  type: 0
 --- !u!1 &1259541127
 GameObject:
   m_ObjectHideFlags: 0
@@ -6349,6 +6351,7 @@ GameObject:
   - component: {fileID: 4339115116677213904}
   - component: {fileID: 4650654065464582895}
   - component: {fileID: 4784014811492888779}
+  - component: {fileID: 5133716009847596293}
   m_Layer: 5
   m_Name: SteamAccount
   m_TagString: Untagged
@@ -6572,6 +6575,20 @@ RectTransform:
   m_AnchoredPosition: {x: 358.96002, y: -178.76599}
   m_SizeDelta: {x: 717.6301, y: 132.2028}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5133716009847596293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806196101213448311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
+  possiblyMe: {fileID: 0}
+  type: 0
 --- !u!114 &5182563841483302030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7049,6 +7066,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124709444ec4824408333989316665d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
+  possiblyMe: {fileID: 0}
+  type: 0
 --- !u!1 &9207342159261086692
 GameObject:
   m_ObjectHideFlags: 0
