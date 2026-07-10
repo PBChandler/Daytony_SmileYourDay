@@ -26,8 +26,15 @@ public class SmileYourDayTaskList : NetworkBehaviour
         instance = this;
         UpdateGameTask("show", 0);
     }
+    
     public void UpdateGameTask(string id, int value)
     {
+        RpcUpdateGameTask(id, value);
+    }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void RpcUpdateGameTask(string id, int value)
+    {
+        
         display.text = "Core Gameplay Tests\n";
         foreach(GameTask t in tasks.Value)
         {
