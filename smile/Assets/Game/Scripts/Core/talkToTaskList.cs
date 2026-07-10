@@ -30,7 +30,7 @@ public class talkToTaskList : MonoBehaviour
 
     public void checkString(string apple)
     {
-        if(apple == mess)
+        //if(apple == mess)
             CommunicateToServer();
     }
     public async void burger(int a)
