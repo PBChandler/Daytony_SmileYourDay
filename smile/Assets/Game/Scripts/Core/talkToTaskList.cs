@@ -10,12 +10,13 @@ public class talkToTaskList : MonoBehaviour
     {
         if (possiblyMe != null)
         {
-            burger(type);
+            Invoke("burger", 0.5f);
         }
     }
 
     public async void burger(int a)
     {
+        a = type;
         await setPortrait(a);
     }
     public async Task setPortrait(int mode)
