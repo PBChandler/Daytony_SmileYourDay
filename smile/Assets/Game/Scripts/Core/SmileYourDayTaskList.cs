@@ -11,7 +11,9 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public static SmileYourDayTaskList instance;
 
     public SteamId host, client;
-//
+//  
+    public delegate void HeavensCall(string input);
+    public HeavensCall dg_Heaven;
     public TextMeshProUGUI display;
     public NetworkVariable<List<GameTask>> tasks;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
@@ -25,7 +27,10 @@ public class SmileYourDayTaskList : NetworkBehaviour
         }
         instance = this;
         UpdateGameTask("show", 0);
+        dg_Heaven += dummy;
     }
+
+    public void dummy(string s){}
     
     public void UpdateGameTask(string id, int value)
     {
@@ -57,6 +62,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
             }
             display.text += t.value ? "<color=green>" + t.ID + "\t[X] </color>\n" : "<color=red>" + t.ID + "\t[ ]</color>\n";
         }
+        dg_Heaven(id);
     }
 }
 
