@@ -27,8 +27,8 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/Playground.unity
     guid: 4d95d8ff8c47ed84191673801bb65ec0
   - enabled: 1
-    path: Assets/Game/Scenes/Avery/Avery_Runner_Building_nobake.unity
-    guid: 97191d9825435d448afe27a7fea1adb4
+    path: Assets/Game/Scenes/Josh/Josh_EnemyTest_NoNWK.unity
+    guid: f6a52bf98c1593e479b77524481011f1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
