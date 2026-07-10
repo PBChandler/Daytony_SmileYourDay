@@ -3068,6 +3068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   possiblyMe: {fileID: 0}
   type: 0
+  lockedIn: 0
 --- !u!1 &1259541127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3233,6 +3234,7 @@ GameObject:
   - component: {fileID: 1356844847}
   - component: {fileID: 1356844846}
   - component: {fileID: 1356844848}
+  - component: {fileID: 1356844849}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -3312,6 +3314,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
   possiblyMe: {fileID: 0}
   type: 0
+  lockedIn: 0
+--- !u!114 &1356844849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356844844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2018878525}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1356844848}
+        m_TargetAssemblyTypeName: talkToTaskList, Assembly-CSharp
+        m_MethodName: UpdateTaskList
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1439270925
 GameObject:
   m_ObjectHideFlags: 0
@@ -4425,6 +4484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
   possiblyMe: {fileID: 0}
   type: 0
+  lockedIn: 0
 --- !u!1 &1579795475
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,6 +6205,7 @@ GameObject:
   - component: {fileID: 2018878526}
   - component: {fileID: 2018878525}
   - component: {fileID: 2018878527}
+  - component: {fileID: 2018878528}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -6224,6 +6285,63 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
   possiblyMe: {fileID: 0}
   type: 0
+  lockedIn: 0
+--- !u!114 &2018878528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018878523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2018878525}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2018878527}
+        m_TargetAssemblyTypeName: talkToTaskList, Assembly-CSharp
+        m_MethodName: UpdateTaskList
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2052882242
 GameObject:
   m_ObjectHideFlags: 0
@@ -6335,6 +6453,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
   possiblyMe: {fileID: 2052882244}
   type: 1
+  lockedIn: 0
 --- !u!1 &2055096349
 GameObject:
   m_ObjectHideFlags: 0
@@ -7153,6 +7272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
   possiblyMe: {fileID: 4784014811492888779}
   type: 0
+  lockedIn: 0
 --- !u!114 &5182563841483302030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7632,6 +7752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::talkToTaskList
   possiblyMe: {fileID: 0}
   type: 0
+  lockedIn: 0
 --- !u!1 &9207342159261086692
 GameObject:
   m_ObjectHideFlags: 0
