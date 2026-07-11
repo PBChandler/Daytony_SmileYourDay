@@ -8,8 +8,15 @@ public class NetworkedLobbyUIManager : MonoBehaviour
 
     public void Start()
     {
-        SmileYourDayTaskList.instance.dg_Heaven += hostClicked;
+        Invoke("explosion", 0.1f);
     }
+
+    public void explosion()
+    {
+        SmileYourDayTaskList.instance.dg_Heaven += hostClicked;
+        SmileYourDayTaskList.instance.dg_Heaven += clientClicked;
+    }
+    
     public void SetHostButtonClicked()
     {
         hostList.CommunicateToServer();
