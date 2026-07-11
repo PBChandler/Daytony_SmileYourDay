@@ -3376,7 +3376,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1931753241}
         m_TargetAssemblyTypeName: NetworkedLobbyUIManager, Assembly-CSharp
-        m_MethodName: washiRpc
+        m_MethodName: washi
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6486,7 +6486,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1931753241}
         m_TargetAssemblyTypeName: NetworkedLobbyUIManager, Assembly-CSharp
-        m_MethodName: washiRpc
+        m_MethodName: washi
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
