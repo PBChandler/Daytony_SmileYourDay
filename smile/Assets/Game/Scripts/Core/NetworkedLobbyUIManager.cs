@@ -2,17 +2,27 @@ using Microsoft.Unity.VisualStudio.Editor;
 using Unity.Netcode;
 using UnityEngine;
 
-public class NetworkedLobbyUIManager : NetworkBehaviour
+public class NetworkedLobbyUIManager : MonoBehaviour
 {
     public talkToTaskList hostList, clientList;
 
     public void Start()
     {
-        
+        SmileYourDayTaskList.instance.dg_Heaven += hostClicked;
     }
     public void SetHostButtonClicked()
     {
         hostList.CommunicateToServer();
+    }
+
+    public void hostClicked(string burger)
+    {
+        SetHostButtonClicked();
+    }
+
+    public void clientClicked(string burger)
+    {
+        SetClientButtonClicked();
     }
 
     public void SetClientButtonClicked()

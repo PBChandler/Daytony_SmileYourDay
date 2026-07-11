@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  instance: {fileID: 0}
+  instance: {fileID: 1273353231}
   rendertextureCamera: {fileID: 1639019452}
 --- !u!4 &1273353232
 Transform:
