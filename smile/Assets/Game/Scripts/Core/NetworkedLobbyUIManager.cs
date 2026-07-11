@@ -24,11 +24,13 @@ public class NetworkedLobbyUIManager : MonoBehaviour
 
     public void hostClicked(string burger)
     {
+        if(burger.Contains("hacker"))
         SetHostButtonClicked();
     }
 
     public void clientClicked(string burger)
     {
+        if(burger.Contains("runner"))
         SetClientButtonClicked();
     }
 
