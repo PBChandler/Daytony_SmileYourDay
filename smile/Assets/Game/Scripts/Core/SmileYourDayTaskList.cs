@@ -64,8 +64,15 @@ public class SmileYourDayTaskList : NetworkBehaviour
         }
         dg_Heaven(id);
     }
+
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void LoadNextSceneRpc(string sceneName)
+    {
+        NetworkManager.SceneManager.LoadScene("Playground", UnityEngine.SceneManagement.LoadSceneMode.Single);
+    }
 }
 
+ 
 [System.Serializable]
 public class GameTask : INetworkSerializable, IEquatable<GameTask>
 {

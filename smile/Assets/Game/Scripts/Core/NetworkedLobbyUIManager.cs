@@ -5,7 +5,7 @@ using UnityEngine;
 public class NetworkedLobbyUIManager : MonoBehaviour
 {
     public talkToTaskList hostList, clientList;
-
+    public int baroness;
     public void Start()
     {
         Invoke("explosion", 0.1f);
@@ -24,12 +24,14 @@ public class NetworkedLobbyUIManager : MonoBehaviour
 
     public void hostClicked(string burger)
     {
+        baroness++;
         if(burger.Contains("hacker"))
         SetHostButtonClicked();
     }
 
     public void clientClicked(string burger)
     {
+        baroness++;
         if(burger.Contains("runner"))
         SetClientButtonClicked();
     }
@@ -37,6 +39,11 @@ public class NetworkedLobbyUIManager : MonoBehaviour
     public void SetClientButtonClicked()
     {
         clientList.CommunicateToServer();
+    }
+
+    public void Update()
+    {
+        
     }
 
     public void washi(int washiwashi)
