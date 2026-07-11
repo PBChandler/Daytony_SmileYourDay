@@ -43,7 +43,10 @@ public class NetworkedLobbyUIManager : MonoBehaviour
 
     public void Update()
     {
-        
+        if(baroness >2)
+        {
+            SmileYourDayTaskList.instance.LoadNextSceneRpc("");
+        }
     }
 
     public void washi(int washiwashi)
