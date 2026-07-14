@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f89d83176a33f8429f921a6ce33982d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SteamManager
-  cheatScene: Avery_Runner_Building_nobake
+  cheatScene: LobbyScreen
   I_AM_HOST: 0
   isRankedDataString: 
   TRUE: true
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   ShowTopMostFoldoutHeaderGroup: 1
-  instance: {fileID: 0}
+  instance: {fileID: 1273353231}
   rendertextureCamera: {fileID: 1639019452}
 --- !u!4 &1273353232
 Transform:
@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetworkSceneLoader
   timeTillThanging: 1.67
-  sceneName: Avery_Runner_Building_Nobake
+  sceneName: LobbyScreen
   isGaster: 1
   forceClient: 0
 --- !u!4 &1285052954

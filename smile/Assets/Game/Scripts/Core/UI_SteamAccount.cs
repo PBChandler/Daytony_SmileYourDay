@@ -46,6 +46,16 @@ public class UI_SteamAccount : MonoBehaviour
          
        ProfileName.text = meRightNow.Name;
     }
+
+    public async Task Populate(Steamworks.SteamId ID)
+    {
+         Steamworks.Friend friend = new Friend(ID);
+         meRightNow = friend;
+        Steamworks.Data.Image? im = await SteamFriends.GetSmallAvatarAsync(ID);
+         profilePicture.texture = Convert(im.Value);
+        
+       ProfileName.text = friend.Name;
+    }
     public Texture2D Convert(Steamworks.Data.Image image )
     {
         // Create a new Texture2D

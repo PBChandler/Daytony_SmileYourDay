@@ -46,6 +46,7 @@ Invoke("DoYaThang", timeTillThanging);
     }
     public void DoYaThang()
     {
+          SceneManager.LoadScene("MVP_Playground", LoadSceneMode.Additive);
         if(NetworkManager.Singleton == null)
         {
             SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
