@@ -12,7 +12,7 @@ LightingSettings:
   m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 1
   m_BounceScale: 1
-  m_AlbedoBoost: 1
+  m_AlbedoBoost: 2
   m_IndirectOutputScale: 1
   m_UsingShadowmask: 1
   m_BakeBackend: 2
@@ -53,7 +53,7 @@ LightingSettings:
   m_PVRBounces: 2
   m_PVRMinBounces: 2
   m_PVREnvironmentImportanceSampling: 1
-  m_PVRFilteringMode: 1
+  m_PVRFilteringMode: 2
   m_PVRDenoiserTypeDirect: 1
   m_PVRDenoiserTypeIndirect: 1
   m_PVRDenoiserTypeAO: 1
