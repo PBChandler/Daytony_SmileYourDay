@@ -68,7 +68,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void LoadNextSceneRpc(string sceneName)
     {
-        NetworkManager.SceneManager.LoadScene("Playground", UnityEngine.SceneManagement.LoadSceneMode.Single);
+        NetworkManager.SceneManager.LoadScene("Avery_Runner_Building", UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
 }
 
