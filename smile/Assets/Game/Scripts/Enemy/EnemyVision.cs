@@ -54,7 +54,7 @@ public class EnemyVision : MonoBehaviour
         {
             if (hit.collider.tag == "Player")
             {
-                if (machine.currentState == machine.GetStateFromName("Idle"))
+                if (machine.currentState == machine.GetStateFromName("Idle") || machine.currentState == machine.GetStateFromName("Distracted"))
                 {
                     if (!fpc.isCrouched) behavior.AddSuspicion(10 - Mathf.FloorToInt(hit.distance), .5f);
 

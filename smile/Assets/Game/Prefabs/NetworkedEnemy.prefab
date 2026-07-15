@@ -237,6 +237,7 @@ GameObject:
   - component: {fileID: 1336523019799043403}
   - component: {fileID: 660391108042134472}
   - component: {fileID: 2435487230790868102}
+  - component: {fileID: 8833694796879815849}
   - component: {fileID: 6987658393324032894}
   - component: {fileID: 5033727951161424030}
   m_Layer: 7
@@ -355,7 +356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 2968089137
+  GlobalObjectIdHash: 1671187410
   InScenePlacedSourceGlobalObjectIdHash: 1671187410
   DeferredDespawnTick: 0
   Ownership: 1
@@ -455,6 +456,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a025dab0ca56e2468b69d1fd02600ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Searching
+  isCurrentState: 0
+  machine: {fileID: 0}
+--- !u!114 &8833694796879815849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508136699541135168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bd9ab3293a4b142bc35b81ebbaab2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Distracted
   isCurrentState: 0
   machine: {fileID: 0}
 --- !u!195 &6987658393324032894

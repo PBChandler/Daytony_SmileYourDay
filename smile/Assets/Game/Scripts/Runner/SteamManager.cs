@@ -144,6 +144,7 @@ public class SteamManager : MonoBehaviour
         {
             NetworkManager.Singleton.StartHost();
             SpawnFakePlayer();
+            GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>().SetPlayer();
         }
         #endif
     }

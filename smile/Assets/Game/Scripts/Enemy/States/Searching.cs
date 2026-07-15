@@ -14,6 +14,7 @@ public class Searching : EnemyState
     public override void OnEnterState()
     {
         Debug.Log("Now entering. Searching State. Doors will open on the left.");
+        sight.SetSight(true);
 
         rotationValues.Add(new Vector3(transform.rotation.x, 35, transform.rotation.z));
         rotationValues.Add(new Vector3(transform.rotation.x, -35, transform.rotation.z));
