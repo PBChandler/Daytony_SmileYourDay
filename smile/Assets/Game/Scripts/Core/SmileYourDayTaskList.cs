@@ -16,6 +16,10 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public HeavensCall dg_Heaven;
     public TextMeshProUGUI display;
     public NetworkVariable<List<GameTask>> tasks;
+
+    public NetworkVariable<int> funValue;
+    public delegate void onFunValueChanged(int newValue);
+    public onFunValueChanged dg_onFunValueChanged;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
     private void Awake()
     {
@@ -25,13 +29,23 @@ public class SmileYourDayTaskList : NetworkBehaviour
             Destroy(gameObject);
             return;
         }
+        int funnerValue = UnityEngine.Random.Range(0, 10);
+        if(funnerValue < 1)
+        {
+            funValue.Value = Mathf.Clamp(DateTime.UtcNow.Hour + DateTime.UtcNow.Day + SteamClient.Name[0],0,100);
+        }
+        else
+        {
+            funValue.Value = UnityEngine.Random.Range(0, 100);
+        }
         instance = this;
         UpdateGameTask("show", 0);
+        dg_onFunValueChanged += dummy;
         dg_Heaven += dummy;
     }
 
     public void dummy(string s){}
-    
+    public void dummy(int s){ Debug.Log("FUN VALUE:" + s);}
     public void UpdateGameTask(string id, int value)
     {
         UpdateGameTaskRpc(id, value);
