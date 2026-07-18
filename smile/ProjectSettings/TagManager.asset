@@ -8,6 +8,7 @@ TagManager:
   - Hacker
   - Enemy
   - DialogDisplay
+  - EnemyManager
   layers:
   - Default
   - TransparentFX

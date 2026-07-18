@@ -1,6 +1,5 @@
-using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class EnemyStateMachine : MonoBehaviour
@@ -20,6 +19,12 @@ public class EnemyStateMachine : MonoBehaviour
         behavior = GetComponent<EnemyBehavior>();
         currentState = stateDictionary["Idle"];
         currentState.OnEnterState();
+    }
+
+    public void SetPlayer(GameObject player)
+    {
+        foreach (EnemyState s in stateDictionary.Values)
+            s._runnerRef = player;
     }
 
     public void ChangeState(string stateName)
@@ -47,4 +52,5 @@ public class EnemyStateMachine : MonoBehaviour
     {
         currentState.UpdateState();
     }
+
 }

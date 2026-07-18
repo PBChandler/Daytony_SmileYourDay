@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void SetPlayer()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (EnemyStateMachine m in GetComponentsInChildren<EnemyStateMachine>())
+            m.SetPlayer(GameObject.FindGameObjectWithTag("Player"));
     }
 }

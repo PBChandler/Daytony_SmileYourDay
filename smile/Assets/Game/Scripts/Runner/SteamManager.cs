@@ -146,6 +146,7 @@ public class SteamManager : MonoBehaviour
             SmileYourDayTaskList.instance.client = SteamClient.SteamId;
             NetworkManager.Singleton.StartHost();
             SpawnFakePlayer();
+            GameObject.FindGameObjectWithTag("EnemyManager").GetComponent<EnemyManager>().SetPlayer();
         }
         #endif
     }
