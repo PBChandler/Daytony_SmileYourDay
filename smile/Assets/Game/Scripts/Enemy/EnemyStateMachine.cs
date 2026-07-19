@@ -8,6 +8,9 @@ public class EnemyStateMachine : MonoBehaviour
     public EnemyState currentState;
     [HideInInspector] public EnemyBehavior behavior;
 
+    public delegate void OnStateChanged();
+    public OnStateChanged dg_OnStateChanged;
+
     void Start()
     {
         foreach (var state in GetComponents<EnemyState>())
@@ -37,6 +40,7 @@ public class EnemyStateMachine : MonoBehaviour
         currentState.isCurrentState = true;
         currentState.machine = this;
         currentState.OnEnterState();
+        dg_OnStateChanged?.Invoke();
     }
 
     public EnemyState GetStateFromName(string stateName)
