@@ -32,8 +32,6 @@ public class Alarmed : EnemyState
         talk.enabled = true;
     }
 
-    public void DecreaseStateTime() => stateTimer--;
-
     public override void OnExitState()
     {
 

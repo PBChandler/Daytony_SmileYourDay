@@ -9,6 +9,7 @@ public abstract class EnemyState : MonoBehaviour
     protected NavMeshAgent agent;
     protected GameObject runnerRef;
     public GameObject _runnerRef { get { return runnerRef; } set { runnerRef = value; } }
+    public EnemyState prevState;
     protected SphereCollider talk;
     protected EnemyVision sight;
 
@@ -42,6 +43,8 @@ public abstract class EnemyState : MonoBehaviour
     public abstract void UpdateState();
 
     public abstract void OnExitState();
+
+    public void DecreaseStateTime() => stateTimer--;
 
     public virtual void PassInfo<T>(T[] args) // probably impractical but whatever
     {

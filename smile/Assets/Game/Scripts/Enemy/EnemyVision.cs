@@ -7,19 +7,17 @@ public class EnemyVision : MonoBehaviour
     [SerializeField] LayerMask sightMask;
     EnemyBehavior behavior;
     EnemyStateMachine machine;
-    Alarmed alr;
     FirstPersonController fpc;
     NavMeshAgent agent;
     Ray sightCast;
     RaycastHit hit;
-    bool canSee = false;
+    bool canSee = true;
     bool playerInView = false;
 
     public void Awake()
     {
         behavior = transform.parent.GetComponent<EnemyBehavior>();
         machine = transform.parent.GetComponent<EnemyStateMachine>();
-        alr = transform.parent.GetComponent<Alarmed>();
         agent = transform.parent.GetComponent<NavMeshAgent>();
     }
 
@@ -35,8 +33,8 @@ public class EnemyVision : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!playerInView && machine.currentState == machine.GetStateFromName("Alarmed"))
-            alr.DecreaseStateTime();
+        if (!playerInView && machine.currentState == machine.GetStateFromName("Alarmed") || machine.currentState == machine.GetStateFromName("Suspicious"))
+            machine.currentState.DecreaseStateTime();
     }
 
     private void OnTriggerStay(Collider other)
@@ -60,7 +58,7 @@ public class EnemyVision : MonoBehaviour
 
                     else if (hit.distance < 4) behavior.AddSuspicion(8 - Mathf.FloorToInt(hit.distance), 1);
                 }
-                else if (machine.currentState == machine.GetStateFromName("Alarmed"))
+                else if (machine.currentState == machine.GetStateFromName("Alarmed") || machine.currentState == machine.GetStateFromName("Suspicious"))
                 {
                     Debug.Log("got eyes");
                     playerInView = true;
@@ -69,11 +67,11 @@ public class EnemyVision : MonoBehaviour
                 else if (machine.currentState == machine.GetStateFromName("Searching"))
                 {
                     Debug.Log("YOU !!!!");
-                    machine.ChangeState("Alarmed");
+                    machine.ChangeState(machine.currentState.prevState.GetType().ToString());
                 }
             }
         }
-        else if (machine.currentState == machine.GetStateFromName("Alarmed"))
+        else if (machine.currentState == machine.GetStateFromName("Alarmed") || machine.currentState == machine.GetStateFromName("Suspicious"))
             playerInView = false;
     }
 
