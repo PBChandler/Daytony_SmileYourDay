@@ -20,13 +20,16 @@ public class Suspicious : EnemyState
         agent.SetDestination(runnerRef.transform.position);
         caught = false;
         agent.isStopped = false;
+        stateTimer = 180;
     }
 
     public override void UpdateState()
     {
         // should probably do something abt this
-        if (!caught)
-            agent.SetDestination(runnerRef.transform.position);
+        //if (!caught)
+        //    agent.SetDestination(runnerRef.transform.position);
+        if (stateTimer <= 0)
+            machine.ChangeState("Searching");
     }
 
     public override void OnExitState()
