@@ -4,7 +4,7 @@ using System.Collections;
 
 public class Searching : EnemyState
 {
-    List<Vector3> rotationValues = new List<Vector3>();
+    Vector3[] rotationValues = new Vector3[3];
 
     Vector3 origin;
     int rotationIndex;
@@ -16,9 +16,9 @@ public class Searching : EnemyState
         Debug.Log("Now entering. Searching State. Doors will open on the left.");
         sight.SetSight(true);
 
-        rotationValues.Add(new Vector3(transform.rotation.x, 35, transform.rotation.z));
-        rotationValues.Add(new Vector3(transform.rotation.x, -35, transform.rotation.z));
-        rotationValues.Add(new Vector3(transform.rotation.x, 180, transform.rotation.z));
+        rotationValues[0] = new Vector3(transform.rotation.x, 35, transform.rotation.z);
+        rotationValues[1] = new Vector3(transform.rotation.x, -35, transform.rotation.z);
+        rotationValues[2] = new Vector3(transform.rotation.x, 180, transform.rotation.z);
         origin = transform.rotation.eulerAngles;
 
         rotationIndex = 0;

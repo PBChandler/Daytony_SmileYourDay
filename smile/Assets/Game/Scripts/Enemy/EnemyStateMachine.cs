@@ -35,6 +35,7 @@ public class EnemyStateMachine : MonoBehaviour
         currentState.OnExitState();
         currentState.enabled = false;
         currentState.isCurrentState = false;
+        stateDictionary[stateName].prevState = currentState;
         currentState = stateDictionary[stateName];
         currentState.enabled = true;
         currentState.isCurrentState = true;
