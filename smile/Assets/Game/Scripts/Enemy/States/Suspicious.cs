@@ -28,7 +28,7 @@ public class Suspicious : EnemyState
         // should probably do something abt this
         //if (!caught)
         //    agent.SetDestination(runnerRef.transform.position);
-        if (stateTimer <= 0)
+        if (stateTimer <= 0 && !caught)
             machine.ChangeState("Searching");
     }
 
