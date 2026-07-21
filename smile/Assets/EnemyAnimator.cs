@@ -8,8 +8,12 @@ public class EnemyAnimator : MonoBehaviour
     public AnimationClip idle, walking, talking;
     public NetworkAnimator anim;
     public NavMeshAgent agn;
+
+    public Suspicious lash;
+    public bool LockedIn;
     public void Start()
     {
+        lash = GetComponent<Suspicious>();
          //esm.dg_OnStateChanged += CheckState;
     }
 
@@ -27,5 +31,18 @@ public class EnemyAnimator : MonoBehaviour
     public void Update()
     {
        anim.Animator.SetFloat("speed", agn.velocity.magnitude);
+       bool talking = lash.fpc.caught;
+       if(talking && !LockedIn)
+       {
+        LockedIn = true;
+            anim.Animator.SetBool("isTalking", true);
+            anim.Animator.SetFloat("suspiciousmeter", Random.Range(0, 1f));
+        }
+        else if(!talking)
+        {
+            LockedIn = false;
+             anim.Animator.SetBool("isTalking", false);
+        }
+
     }
 }

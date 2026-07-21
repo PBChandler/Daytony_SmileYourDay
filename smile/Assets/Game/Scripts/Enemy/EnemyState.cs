@@ -14,7 +14,7 @@ public abstract class EnemyState : MonoBehaviour
     protected EnemyVision sight;
 
     protected EnemyBehavior enemyB;
-    protected int suspicionLevel => enemyB.suspicionLevel;
+    public int suspicionLevel => enemyB.suspicionLevel;
 
     private void Awake()
     {

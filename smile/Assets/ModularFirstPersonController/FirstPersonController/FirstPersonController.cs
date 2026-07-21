@@ -26,8 +26,8 @@ public class FirstPersonController : NetworkBehaviour
 {
     private Rigidbody rb;
     private RectTransform dialogDisplay;
-    private TextMeshProUGUI enemyDialog;
-    private List<TextMeshProUGUI> dialogOptions = new List<TextMeshProUGUI>();
+    public TextMeshProUGUI enemyDialog;
+    public List<TextMeshProUGUI> dialogOptions = new List<TextMeshProUGUI>();
     EncounterDialog currentDialog;
     public delegate void DialogResponse(int answer);
     public event DialogResponse currentResponse;
@@ -176,8 +176,8 @@ public class FirstPersonController : NetworkBehaviour
             {
                 dialogDisplay = r;
                 dialogDisplay.gameObject.SetActive(false);
-                enemyDialog = dialogDisplay.GetChild(0).GetComponent<TextMeshProUGUI>();
-                for (int i = 1; i < dialogDisplay.childCount; i++)
+                enemyDialog = dialogDisplay.GetChild(1).GetComponent<TextMeshProUGUI>();
+                for (int i = 2; i < dialogDisplay.childCount; i++)
                 {
                     dialogOptions.Add(dialogDisplay.GetChild(i).GetChild(0).GetComponent<TextMeshProUGUI>());
                 }

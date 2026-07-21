@@ -739,6 +739,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8141604858023019795, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 8141604858111457551, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       propertyPath: m_Layer
       value: 0

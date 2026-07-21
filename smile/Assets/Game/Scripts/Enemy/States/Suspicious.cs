@@ -7,8 +7,8 @@ public class Suspicious : EnemyState
 {
     [SerializeField] float chaseSpeed;
     [SerializeField] List<EncounterDialog> possibleDialogs = new List<EncounterDialog>();
-    FirstPersonController fpc;
-    bool caught = false;
+    public FirstPersonController fpc;
+    public bool caught = false;
 
     public override void OnEnterState()
     {
