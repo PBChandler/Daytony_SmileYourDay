@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/EntryNumber17.unity
     guid: 34a82ca9880750745b0346aa008c3923
   - enabled: 1
+    path: Assets/Game/Scenes/tv-bootup.unity
+    guid: 279ac32eba9833f45aed4d1688fbc489
+  - enabled: 1
+    path: Assets/news_NoNWK.unity
+    guid: 8257f98280d96a64dbec192dec0d9279
+  - enabled: 1
+    path: Assets/Game/Scenes/NewTitleScreen.unity
+    guid: 1a04c1dc07e7b4243821e7c71192c914
+  - enabled: 1
     path: Assets/Game/Scenes/EntryNumber18.unity
     guid: 9b9d1864be57b8249a2059b75b220a55
   - enabled: 1

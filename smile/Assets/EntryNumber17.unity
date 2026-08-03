@@ -156,6 +156,7 @@ MonoBehaviour:
   portal: {fileID: 0}
   justRotation: 1
   basepos: {fileID: 801981139}
+  deadWeight: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &194244185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2441e876d83fd6741a5cafac9d558bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetworkSceneLoader
-  timeTillThanging: 1.67
+  timeTillThanging: 0
   sceneName: LobbyScreen
   isGaster: 1
   forceClient: 0
@@ -994,6 +995,7 @@ MonoBehaviour:
   portal: {fileID: 0}
   justRotation: 0
   basepos: {fileID: 0}
+  deadWeight: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1727616700
 GameObject:
   m_ObjectHideFlags: 0

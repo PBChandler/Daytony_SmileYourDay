@@ -298,6 +298,11 @@ MonoBehaviour:
     - ID: p_f2_completed
       value: 0
       throwError: 
+  funValue:
+    UpdateTraits:
+      MinSecondsBetweenUpdates: 0
+      MaxSecondsBetweenUpdates: 0
+    m_InternalValue: 0
 --- !u!114 &29986759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,35 +372,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Core Gameplay Tests:
-
-    [ ] player0
-
-    [ ] Runner Connected
-
-    [
-    ] Hacker Connected
-
-    [ ] Cultist Dialog Succeeded
-
-    [ ] Cultist Dialog
-    Failed
-
-    [ ] Keycard Collected
-
-    [ ] Holy Relic Equipped
-
-    [ ] First
-    Floor Completed
-
-    [ ] Assayer Convinced
-
-    [ ] Second Keycard Collected
-
-    [
-    ] Second Floor Completed
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 148e6865ac9f31c4797c2e14e16016e0, type: 2}
   m_sharedMaterial: {fileID: -766746393710458681, guid: 148e6865ac9f31c4797c2e14e16016e0, type: 2}
@@ -405,7 +382,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 1, g: 0, b: 0, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
