@@ -1,6 +1,6 @@
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
-
 public class SkipCutsceneLogic : MonoBehaviour
 {
     public bool keyHeld;
@@ -9,6 +9,8 @@ public class SkipCutsceneLogic : MonoBehaviour
     public float timeRequired = 1f;
     public GameObject container;
     public bool buttonPressedAtAll;
+    public PlayableDirector direct;
+    public float jumpToTime;
     void Start()
     {
         
@@ -22,6 +24,10 @@ public class SkipCutsceneLogic : MonoBehaviour
         {
             progression += Time.deltaTime;
             buttonPressedAtAll = true;
+            if(progression >= timeRequired)
+            {
+                direct.time = jumpToTime;
+            }
         }
         else
         {

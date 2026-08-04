@@ -10,15 +10,15 @@ public class HackerCameraPairer : MonoBehaviour
     [ContextMenu("Create Object from this Location")]
     public void CreateScriptableObject()
     {
-        SO_HackerCameraOBJ obj = new SO_HackerCameraOBJ();
-        obj.position = transform.position;
-        obj.rotationEulers = transform.rotation.eulerAngles;
-        obj.floor = 0;
+        //SO_HackerCameraOBJ obj = new SO_HackerCameraOBJ();
+        //obj.position = transform.position;
+        //obj.rotationEulers = transform.rotation.eulerAngles;
+        //obj.floor = 0;
 
-        AssetDatabase.CreateAsset (obj, "Assets/Resources/"+id+".asset");
-        AssetDatabase.SaveAssets ();
-        EditorUtility.FocusProjectWindow ();
-        Selection.activeObject = obj;
+        //AssetDatabase.CreateAsset (obj, "Assets/Resources/"+id+".asset");
+        //AssetDatabase.SaveAssets ();
+        //EditorUtility.FocusProjectWindow ();
+        //Selection.activeObject = obj;
     }
 
 }
