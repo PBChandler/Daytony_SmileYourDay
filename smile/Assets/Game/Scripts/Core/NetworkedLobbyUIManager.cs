@@ -23,6 +23,7 @@ public class NetworkedLobbyUIManager : MonoBehaviour
 
     public void hostClicked(string burger)
     {
+        if (burger != "p_hackerConnected") return;
         baroness++;
         if(burger.Contains("hacker"))
         SetHostButtonClicked();
@@ -30,6 +31,7 @@ public class NetworkedLobbyUIManager : MonoBehaviour
 
     public void clientClicked(string burger)
     {
+        if (burger != "p_runnerConnected") return;
         baroness++;
         if(burger.Contains("runner"))
         SetClientButtonClicked();
