@@ -90,7 +90,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
         dg_Heaven(message);
     }
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
-    public void SetHostIsRunner(bool state)
+    public void SetHostIsRunnerRpc(bool state)
     {
         hostIsRunner.Value = state;
     }
