@@ -13,41 +13,40 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public void OnEnable()
     {
         manager = GameObject.Find("[SmileYourDayManager]").GetComponent<SmileYourDayManager>();
-        SmileYourDayTaskList.instance.dg_Heaven += CheckAssignment;
+        
     }
 
-    public void CheckAssignment(string input)
+
+    public void CheckAssignment()
     {
-        if (!IsOwner) return;
-        if (IsHost)
+        //this should not be running every frame but PLEASE let it work.
+        //also this will have to only run once the playable scene is actually loaded, because we fake one player in the world by warping the other to HELL.
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == true && id == 0)
         {
-            if (input == "p1_hacker")
-            {
-                SetPlayerState(PLAYERTYPE.Hacker);
-                transform.position = new Vector3(-999, -999, -999);
-            }
-            else if (input == "p1_runner")
-            {
-                SetPlayerState(PLAYERTYPE.Runner);
-            }
+            SetPlayerState(PLAYERTYPE.Runner);
         }
-        else
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == false && id == 0)
         {
-            if (input == "p2_hacker")
-            {
-                SetPlayerState(PLAYERTYPE.Hacker);
-                transform.position = new Vector3(-999, -999, -999);
-            }
-            else if (input == "p2_runner")
-            {
-                SetPlayerState(PLAYERTYPE.Runner);
-            }
+            SetPlayerState(PLAYERTYPE.Hacker);
+           // transform.position = new Vector3(-999, 999, 999);
+            Cursor.lockState = CursorLockMode.None;
+        }
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == false && id == 1)
+        {
+            SetPlayerState(PLAYERTYPE.Runner);
+        }
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == true && id == 1)
+        {
+            SetPlayerState(PLAYERTYPE.Hacker);
+            //transform.position = new Vector3(-999, 999, 999);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     public void Update()
     {
         id = OwnerClientId;
-        if(SmileYourDayTaskList.instance.hostIsRunner.Value == true)
+        CheckAssignment();
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == true)
         {
             if(IsHost)
             {
