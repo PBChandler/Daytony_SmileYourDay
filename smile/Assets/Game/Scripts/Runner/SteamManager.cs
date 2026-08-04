@@ -248,10 +248,11 @@ public class SteamManager : MonoBehaviour
         if(SceneManager.GetActiveScene().name != cheatScene)
         SceneManager.LoadScene(cheatScene, LoadSceneMode.Additive);
         
-        SmileYourDayTaskList.instance.client = OpponentSteamId;
-        SmileYourDayTaskList.instance.host = steamId;
+       
         if(I_AM_HOST)
         {
+            SmileYourDayTaskList.instance.client = OpponentSteamId;
+            SmileYourDayTaskList.instance.host = steamId;
             NetworkManager.Singleton.StartHost();
         }
         else
