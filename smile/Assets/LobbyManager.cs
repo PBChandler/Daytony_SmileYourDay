@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using Steamworks;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -6,6 +7,9 @@ using UnityEngine.UI;
 public class LobbyManager : MonoBehaviour
 {
     public RawImage imageOne, imageTwo;
+    SteamId runner, hacker;
+    public bool frontways = true;
+    public FriendRole[] roleState = new FriendRole[2];
     void Start()
     {
         pop();
@@ -13,15 +17,42 @@ public class LobbyManager : MonoBehaviour
 
     public async void pop()
     {
-        await Populate(SmileYourDayTaskList.instance.host, imageOne);
-        await Populate(SmileYourDayTaskList.instance.client, imageTwo);
+        await Populate(SmileYourDayTaskList.instance.host, imageOne, "run");
+        await Populate(SmileYourDayTaskList.instance.client, imageTwo, "hck");
     }
-    public async Task Populate(SteamId ID_FRIEND, RawImage var)
+
+    public async void Swap()
+    {
+        frontways = !frontways;
+        if(frontways)
+        {
+            await Populate(SmileYourDayTaskList.instance.host, imageOne, "run");
+            await Populate(SmileYourDayTaskList.instance.client, imageTwo, "hck");
+        }
+        else
+        {
+            await Populate(SmileYourDayTaskList.instance.client, imageOne, "run");
+            await Populate(SmileYourDayTaskList.instance.host, imageTwo, "hck");
+        }
+       
+    }
+    public async Task Populate(SteamId ID_FRIEND, RawImage var, string ste)
     {
         //meRightNow = ID_FRIEND;
         Steamworks.Data.Image? im = await SteamFriends.GetSmallAvatarAsync(ID_FRIEND);
         var.texture = Convert(im.Value);
-        
+        switch (ste)
+        {
+            case "run":
+                roleState[0] = new FriendRole() { id = ID_FRIEND, role = ste };
+                break;
+            case "hck":
+                roleState[1] = new FriendRole() { id = ID_FRIEND, role = ste };
+                break;
+            default:
+                break;
+        }
+
         //ProfileName.text = meRightNow.Name;
     }
 
@@ -51,4 +82,10 @@ public class LobbyManager : MonoBehaviour
     {
         
     }
+}
+[System.Serializable]
+public struct FriendRole
+{
+    public SteamId id;
+    public string role;
 }
