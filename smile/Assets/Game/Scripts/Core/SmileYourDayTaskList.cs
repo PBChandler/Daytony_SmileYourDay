@@ -20,6 +20,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public NetworkVariable<int> funValue;
     public delegate void onFunValueChanged(int newValue);
     public onFunValueChanged dg_onFunValueChanged;
+    public NetworkVariable<List<PlayerHeaven>> player;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
     private void Awake()
     {
@@ -93,6 +94,17 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public void SetHostIsRunnerRpc(bool state)
     {
         hostIsRunner.Value = state;
+    }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void InitializePlayersRpc()
+    {
+        player.Value[0].SetPlayerStateRpc(PLAYERTYPE.Hacker);
+        player.Value[1].SetPlayerStateRpc(PLAYERTYPE.Runner);
+    }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void AddNetworkedPlayerRpc(PlayerHeaven john)
+    {
+        player.Value.Add(john);
     }
 }
 

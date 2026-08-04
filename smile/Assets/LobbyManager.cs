@@ -74,6 +74,7 @@ public class LobbyManager : MonoBehaviour
         {
             case "run":
                 roleState[0] = new FriendRole() { id = ID_FRIEND, role = ste, name = ID_FRIEND.Value + "" };
+                
                 break;
             case "hck":
                 roleState[1] = new FriendRole() { id = ID_FRIEND, role = ste, name = ID_FRIEND.Value + "" };
@@ -81,7 +82,7 @@ public class LobbyManager : MonoBehaviour
             default:
                 break;
         }
-
+        SmileYourDayTaskList.instance.InitializePlayersRpc();
         //ProfileName.text = meRightNow.Name;
     }
 

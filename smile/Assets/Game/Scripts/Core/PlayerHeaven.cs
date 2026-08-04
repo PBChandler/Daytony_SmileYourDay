@@ -8,13 +8,16 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public GameObject PlayerScreen, HackerScreen;
     public SmileYourDayManager manager; //statics crash everything, frown;
     public Camera localRunnersEyes;
+    public ulong id;
 
     public void OnEnable()
     {
         manager = GameObject.Find("[SmileYourDayManager]").GetComponent<SmileYourDayManager>();
+        SmileYourDayTaskList.instance.AddNetworkedPlayerRpc(this);
     }
     public void Update()
     {
+        id = OwnerClientId;
         if(SmileYourDayTaskList.instance.hostIsRunner.Value == true)
         {
             if(IsHost)
@@ -26,6 +29,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
                 SetPlayerStateRpc(PLAYERTYPE.Hacker);
             }
         }
+        
         if(!IsOwner) return;
         if(Input.GetKeyDown(KeyCode.H))
         {
