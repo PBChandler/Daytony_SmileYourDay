@@ -50,7 +50,7 @@ public class LobbyManager : MonoBehaviour
     }
     public async void SwapRpc()
     {
-        frontways = !frontways;
+       
         if(frontways)
         {
             await Populate(SmileYourDayTaskList.instance.host, imageOne, "run");
@@ -61,7 +61,7 @@ public class LobbyManager : MonoBehaviour
             await Populate(SmileYourDayTaskList.instance.client, imageOne, "run");
             await Populate(SmileYourDayTaskList.instance.host, imageTwo, "hck");
         }
-       
+        frontways = !frontways;
     }
     public async Task Populate(SteamId ID_FRIEND, RawImage var, string ste)
     {
