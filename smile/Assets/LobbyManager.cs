@@ -31,8 +31,10 @@ public class LobbyManager : MonoBehaviour
 
     public void lobby_swapRpcCheck(string input)
     {
+        Debug.Log("HEAVEN'S CALL SENT");
         if(input == "lobby_swapRPC")
         {
+            Debug.Log("HEAVEN'S CALL RETRIEVED");
             SwapRpc();
         }
     }
