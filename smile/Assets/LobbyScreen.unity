@@ -2993,7 +2993,7 @@ GameObject:
   - component: {fileID: 868639858}
   - component: {fileID: 868639857}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: hacker_pfp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5628,7 +5628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9ae9fc2276afa4f8db097591c97c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  imageOne: {fileID: 868639857}
+  imageOne: {fileID: 1778450687}
   imageTwo: {fileID: 868639857}
 --- !u!1 &1579795475
 GameObject:
@@ -6864,7 +6864,7 @@ GameObject:
   - component: {fileID: 1778450688}
   - component: {fileID: 1778450687}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: runner_pfp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7483,7 +7483,7 @@ GameObject:
   - component: {fileID: 1906955188}
   - component: {fileID: 1906955187}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: SPACE_HACKER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
