@@ -1,5 +1,6 @@
 using System;
 using Unity.Netcode;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
@@ -24,19 +25,24 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == true && id == 0)
         {
             SetPlayerState(PLAYERTYPE.Runner);
+            NetworkManager.Singleton.ConnectedClients[1].PlayerObject.transform.GetChild(1).gameObject.SetActive(false);
         }
+        //if this user is the host and the host is not the runner
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == false && id == 0)
         {
             SetPlayerState(PLAYERTYPE.Hacker);
-           // transform.position = new Vector3(-999, 999, 999);
+           
+            // transform.position = new Vector3(-999, 999, 999);
             Cursor.lockState = CursorLockMode.None;
         }
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == false && id == 1)
         {
             SetPlayerState(PLAYERTYPE.Runner);
+            NetworkManager.Singleton.ConnectedClients[0].PlayerObject.transform.GetChild(1).gameObject.SetActive(false);
         }
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == true && id == 1)
         {
+            
             SetPlayerState(PLAYERTYPE.Hacker);
             //transform.position = new Vector3(-999, 999, 999);
             Cursor.lockState = CursorLockMode.None;
@@ -74,6 +80,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     {
         switch(typeGuy)
         {
+            //the issue is the hacker screen is not hidden
             case PLAYERTYPE.Hacker:
                 playerType = PLAYERTYPE.Hacker;
                 HackerScreen.gameObject.SetActive(true);

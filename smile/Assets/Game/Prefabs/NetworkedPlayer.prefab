@@ -241,6 +241,7 @@ MonoBehaviour:
   HackerScreen: {fileID: 4853125958408559409}
   manager: {fileID: 0}
   localRunnersEyes: {fileID: 0}
+  id: 0
 --- !u!1001 &4233426576477660795
 PrefabInstance:
   m_ObjectHideFlags: 0
