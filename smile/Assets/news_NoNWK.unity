@@ -1038,8 +1038,8 @@ MonoBehaviour:
   timeRequired: 1
   container: {fileID: 2006341948}
   buttonPressedAtAll: 0
-  direct: {fileID: 0}
-  jumpToTime: 0
+  direct: {fileID: 1921440206}
+  jumpToTime: 55
 --- !u!1 &430133230
 GameObject:
   m_ObjectHideFlags: 0
