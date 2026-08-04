@@ -39,6 +39,11 @@ public class LobbyManager : MonoBehaviour
         locked = false;
     }
 
+    public void Complete()
+    {
+        SmileYourDayTaskList.instance.CallHeavenRpc("p1_hacker");
+        SmileYourDayTaskList.instance.CallHeavenRpc("p2_runner");
+    }
     public void lobby_swapRpcCheck(string input)
     {
         Debug.Log("HEAVEN'S CALL SENT");

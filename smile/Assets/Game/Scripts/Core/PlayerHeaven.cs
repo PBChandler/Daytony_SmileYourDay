@@ -13,7 +13,36 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public void OnEnable()
     {
         manager = GameObject.Find("[SmileYourDayManager]").GetComponent<SmileYourDayManager>();
-        SmileYourDayTaskList.instance.AddNetworkedPlayerRpc(gameObject.name);
+        SmileYourDayTaskList.instance.dg_Heaven += CheckAssignment;
+    }
+
+    public void CheckAssignment(string input)
+    {
+        if (!IsOwner) return;
+        if (IsHost)
+        {
+            if (input == "p1_hacker")
+            {
+                SetPlayerState(PLAYERTYPE.Hacker);
+                transform.position = new Vector3(-999, -999, -999);
+            }
+            else if (input == "p1_runner")
+            {
+                SetPlayerState(PLAYERTYPE.Runner);
+            }
+        }
+        else
+        {
+            if (input == "p2_hacker")
+            {
+                SetPlayerState(PLAYERTYPE.Hacker);
+                transform.position = new Vector3(-999, -999, -999);
+            }
+            else if (input == "p2_runner")
+            {
+                SetPlayerState(PLAYERTYPE.Runner);
+            }
+        }
     }
     public void Update()
     {
