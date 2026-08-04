@@ -11,6 +11,7 @@ public class LobbyManager : MonoBehaviour
     SteamId runner, hacker;
     public bool frontways = false;
     public FriendRole[] roleState = new FriendRole[2];
+    public bool locked = false;
     void Start()
     {
         pop();
@@ -26,7 +27,16 @@ public class LobbyManager : MonoBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void SwappySwappyRpc()
     {
+        if (locked) return;
+        locked = true;
+        
         SmileYourDayTaskList.instance.CallHeavenRpc("lobby_swapRPC");
+        Invoke("unlock", 0.1f);
+    }
+
+    public void unlock()
+    {
+        locked = false;
     }
 
     public void lobby_swapRpcCheck(string input)
