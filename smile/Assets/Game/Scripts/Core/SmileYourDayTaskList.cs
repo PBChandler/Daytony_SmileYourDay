@@ -85,7 +85,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
         NetworkManager.SceneManager.LoadScene("Avery_Runner_Building", UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
-    public void CallHeaven(string message)
+    public void CallHeavenRpc(string message)
     {
         dg_Heaven(message);
     }
