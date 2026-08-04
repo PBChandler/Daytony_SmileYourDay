@@ -25,7 +25,8 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == true && id == 0)
         {
             SetPlayerState(PLAYERTYPE.Runner);
-            NetworkManager.Singleton.ConnectedClients[1].PlayerObject.transform.GetChild(1).gameObject.SetActive(false);
+            if(IsOwner)
+                NetworkManager.Singleton.ConnectedClients[1].PlayerObject.transform.GetChild(1).gameObject.SetActive(false);
         }
         //if this user is the host and the host is not the runner
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == false && id == 0)
@@ -38,7 +39,8 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == false && id == 1)
         {
             SetPlayerState(PLAYERTYPE.Runner);
-            NetworkManager.Singleton.ConnectedClients[0].PlayerObject.transform.GetChild(1).gameObject.SetActive(false);
+            if (IsOwner)
+                NetworkManager.Singleton.ConnectedClients[0].PlayerObject.transform.GetChild(1).gameObject.SetActive(false);
         }
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == true && id == 1)
         {
