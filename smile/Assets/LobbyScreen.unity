@@ -5630,6 +5630,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   imageOne: {fileID: 1778450687}
   imageTwo: {fileID: 868639857}
+  frontways: 0
+  roleState:
+  - role: 
+  - role: 
 --- !u!1 &1579795475
 GameObject:
   m_ObjectHideFlags: 0
