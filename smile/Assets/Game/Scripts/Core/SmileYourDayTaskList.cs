@@ -98,8 +98,8 @@ public class SmileYourDayTaskList : NetworkBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void InitializePlayersRpc()
     {
-        player.Value[0].SetPlayerStateRpc(PLAYERTYPE.Hacker);
-        player.Value[1].SetPlayerStateRpc(PLAYERTYPE.Runner);
+        player.Value[0].SetPlayerState(PLAYERTYPE.Hacker);
+        player.Value[1].SetPlayerState(PLAYERTYPE.Runner);
     }
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void AddNetworkedPlayerRpc(PlayerHeaven john)
