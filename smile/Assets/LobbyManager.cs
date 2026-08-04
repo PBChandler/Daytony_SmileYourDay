@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using Steamworks;
 using System.Threading.Tasks;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +22,8 @@ public class LobbyManager : MonoBehaviour
         await Populate(SmileYourDayTaskList.instance.client, imageTwo, "hck");
     }
 
-    public async void Swap()
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public async void SwapRpc()
     {
         frontways = !frontways;
         if(frontways)
