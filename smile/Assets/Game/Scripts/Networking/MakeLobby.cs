@@ -16,7 +16,7 @@ public class MakeLobby : MonoBehaviour
         SetupCallbacks();
     }
 
-    public UnityEvent onGameHosted;
+    public UnityEvent onGameend;
 
 
     public void SetupCallbacks()

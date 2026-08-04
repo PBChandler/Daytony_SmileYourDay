@@ -1,4 +1,3 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -24,6 +23,7 @@ public class NetworkedLobbyUIManager : MonoBehaviour
 
     public void hostClicked(string burger)
     {
+        if (burger != "p_startGame") return;
         baroness++;
         if(burger.Contains("hacker"))
         SetHostButtonClicked();
@@ -31,6 +31,7 @@ public class NetworkedLobbyUIManager : MonoBehaviour
 
     public void clientClicked(string burger)
     {
+        if (burger != "p_startGame") return;
         baroness++;
         if(burger.Contains("runner"))
         SetClientButtonClicked();

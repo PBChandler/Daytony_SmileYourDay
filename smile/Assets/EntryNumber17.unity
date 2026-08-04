@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 0482817e66c80344eb64ad6368182bbb, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: cf1332f99728a5e4ea18570913d84893, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -156,6 +156,7 @@ MonoBehaviour:
   portal: {fileID: 0}
   justRotation: 1
   basepos: {fileID: 801981139}
+  deadWeight: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &194244185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,8 +800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2441e876d83fd6741a5cafac9d558bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NetworkSceneLoader
-  timeTillThanging: 1.67
-  sceneName: LobbyScreen
+  timeTillThanging: 0
+  sceneName: tv-bootup
   isGaster: 1
   forceClient: 0
 --- !u!4 &1285052954
@@ -994,6 +995,7 @@ MonoBehaviour:
   portal: {fileID: 0}
   justRotation: 0
   basepos: {fileID: 0}
+  deadWeight: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1727616700
 GameObject:
   m_ObjectHideFlags: 0

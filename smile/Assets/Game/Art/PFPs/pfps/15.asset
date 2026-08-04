@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cba248151d19c744af7baf9e76cb45a, type: 3}
+  m_Name: 15
+  m_EditorClassIdentifier: Assembly-CSharp::SquawkrProfileScriptableObject
+  profilePicture: {fileID: 21300000, guid: 46a6637238be5a249bc179a4b2c70706, type: 3}
+  DisplayName: hankalicious
+  Handle: '@hanklovescats60'
+  bio: I'm hank and I like cats, send me pictures of your cats smile.
+  followerCount: 24
+  likeCount: 24
+  retweetCount: 2
+  Posts:
+  - TweetText: Dan Nightly doesn't know guff about Lifted Spirits
+    Date: 6/22/2014
+    Time: 9:28 AM
+    SentFrom: BOSTON, MA
+    likeCount: 1
+    retweetCount: 0
+    replies: []
+  - TweetText: 'Check out my cats <color=blue>[hyperlink broken]'
+    Date: 6/13/2014
+    Time: 6:09 PM
+    SentFrom: BOSTON, MA
+    likeCount: 5
+    retweetCount: 0
+    replies: []
