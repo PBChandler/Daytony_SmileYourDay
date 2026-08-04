@@ -12697,6 +12697,7 @@ GameObject:
   - component: {fileID: 272527136}
   - component: {fileID: 272527135}
   - component: {fileID: 272527137}
+  - component: {fileID: 272527138}
   m_Layer: 5
   m_Name: opt_JOINAFRIEND
   m_TagString: Untagged
@@ -12830,7 +12831,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272527133}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -12867,6 +12868,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &272527138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272527133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4b1336131cbce4bb806be626aca5d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  tmpro: {fileID: 272527135}
+  m_button: {fileID: 272527137}
 --- !u!1001 &284780290
 PrefabInstance:
   m_ObjectHideFlags: 0
