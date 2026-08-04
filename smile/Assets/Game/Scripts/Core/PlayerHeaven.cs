@@ -15,6 +15,17 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     }
     public void Update()
     {
+        if(SmileYourDayTaskList.instance.hostIsRunner.Value == true)
+        {
+            if(IsHost)
+            {
+                SetPlayerState(PLAYERTYPE.Runner);
+            }
+            else
+            {
+                SetPlayerState(PLAYERTYPE.Hacker);
+            }
+        }
         if(!IsOwner) return;
         if(Input.GetKeyDown(KeyCode.H))
         {

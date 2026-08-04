@@ -11,7 +11,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public static SmileYourDayTaskList instance;
 
     public SteamId host, client;
-//  
+    public NetworkVariable<bool> hostIsRunner;
     public delegate void HeavensCall(string input);
     public HeavensCall dg_Heaven;
     public TextMeshProUGUI display;
@@ -88,6 +88,11 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public void CallHeavenRpc(string message)
     {
         dg_Heaven(message);
+    }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void SetHostIsRunner(bool state)
+    {
+        hostIsRunner.Value = state;
     }
 }
 
