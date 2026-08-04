@@ -14,6 +14,7 @@ public class LobbyManager : MonoBehaviour
     void Start()
     {
         pop();
+        SmileYourDayTaskList.instance.dg_Heaven += lobby_swapRpcCheck;
     }
 
     public async void pop()
@@ -25,7 +26,15 @@ public class LobbyManager : MonoBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void SwappySwappyRpc()
     {
-        SwapRpc();
+        SmileYourDayTaskList.instance.dg_Heaven("lobby_swapRPC");
+    }
+
+    public void lobby_swapRpcCheck(string input)
+    {
+        if(input == "lobby_swapRPC")
+        {
+            SwapRpc();
+        }
     }
     public async void SwapRpc()
     {
