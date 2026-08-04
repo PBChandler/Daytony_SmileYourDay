@@ -247,7 +247,8 @@ public class SteamManager : MonoBehaviour
         NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
         if(SceneManager.GetActiveScene().name != cheatScene)
         SceneManager.LoadScene(cheatScene, LoadSceneMode.Additive);
-        SmileYourDayTaskList.instance.client = steamId;
+        
+        SmileYourDayTaskList.instance.client = OpponentSteamId;
         SmileYourDayTaskList.instance.host = steamId;
         if(I_AM_HOST)
         {

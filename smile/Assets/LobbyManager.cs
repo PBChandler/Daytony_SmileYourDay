@@ -44,10 +44,10 @@ public class LobbyManager : MonoBehaviour
         switch (ste)
         {
             case "run":
-                roleState[0] = new FriendRole() { id = ID_FRIEND, role = ste };
+                roleState[0] = new FriendRole() { id = ID_FRIEND, role = ste, name = ID_FRIEND.Value + "" };
                 break;
             case "hck":
-                roleState[1] = new FriendRole() { id = ID_FRIEND, role = ste };
+                roleState[1] = new FriendRole() { id = ID_FRIEND, role = ste, name = ID_FRIEND.Value + "" };
                 break;
             default:
                 break;
@@ -87,5 +87,6 @@ public class LobbyManager : MonoBehaviour
 public struct FriendRole
 {
     public SteamId id;
+    public string name;
     public string role;
 }
