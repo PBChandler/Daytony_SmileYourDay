@@ -26,7 +26,7 @@ public class LobbyManager : MonoBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void SwappySwappyRpc()
     {
-        SmileYourDayTaskList.instance.dg_Heaven("lobby_swapRPC");
+        SmileYourDayTaskList.instance.CallHeaven("lobby_swapRPC");
     }
 
     public void lobby_swapRpcCheck(string input)
