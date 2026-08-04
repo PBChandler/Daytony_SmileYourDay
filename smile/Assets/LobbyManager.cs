@@ -87,7 +87,7 @@ public class LobbyManager : MonoBehaviour
             default:
                 break;
         }
-        SmileYourDayTaskList.instance.InitializePlayersRpc();
+        //SmileYourDayTaskList.instance.InitializePlayersRpc();
         //ProfileName.text = meRightNow.Name;
     }
 
