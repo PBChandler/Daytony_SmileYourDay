@@ -5198,7 +5198,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1547076656}
         m_TargetAssemblyTypeName: LobbyManager, Assembly-CSharp
-        m_MethodName: SwapRpc
+        m_MethodName: SwappySwappyRpc
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

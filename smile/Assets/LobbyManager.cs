@@ -23,6 +23,10 @@ public class LobbyManager : MonoBehaviour
     }
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void SwappySwappyRpc()
+    {
+        SwapRpc();
+    }
     public async void SwapRpc()
     {
         frontways = !frontways;
