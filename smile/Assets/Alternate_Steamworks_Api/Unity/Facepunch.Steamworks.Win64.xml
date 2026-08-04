@@ -191,7 +191,8 @@
             Does fragmentation/re-assembly of messages under the hood, as well as a sliding window for
             efficient sends of large chunks of data.
         </member>
-        <member name="P:Steamworks.Data.NetIdentity.LocalHost">
+        <member name="P:Steamworks.Data.NetIdentity.Local
+				">
             <summary>
             Return a NetIdentity that represents LocalHost
             </summary>

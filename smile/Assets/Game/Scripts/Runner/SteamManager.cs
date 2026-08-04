@@ -472,8 +472,8 @@ public class SteamManager : MonoBehaviour
 
     public async Task<bool> CreateLobby(int lobbyParameters)
     {
-        //try
-        //{
+        try
+        {
             var createLobbyOutput = await SteamMatchmaking.CreateLobbyAsync(2);
             if (!createLobbyOutput.HasValue)
             {
@@ -485,18 +485,19 @@ public class SteamManager : MonoBehaviour
             hostedMultiplayerLobby = createLobbyOutput.Value;
             hostedMultiplayerLobby.SetPublic();
             hostedMultiplayerLobby.SetJoinable(true);
+            staticDataString = "test";
             hostedMultiplayerLobby.SetData(staticDataString, lobbyParameters+"");
-
+            
             currentLobby = hostedMultiplayerLobby;
 
             return true;
-        //}
-        //catch (Exception exception)
-        //{
-        //    Debug.Log("Failed to create multiplayer lobby");
-        //    Debug.Log(exception.ToString());
-        //    return false;
-        //}
+    }
+        catch (Exception exception)
+        {
+            Debug.Log("Failed to create multiplayer lobby");
+            Debug.Log(exception.ToString());
+            return false;
+        }
     }
 
     // Allows you to open friends list where game invites will have lobby id
