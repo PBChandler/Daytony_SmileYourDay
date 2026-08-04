@@ -9,7 +9,7 @@ public class LobbyManager : MonoBehaviour
 {
     public RawImage imageOne, imageTwo;
     SteamId runner, hacker;
-    public bool frontways = true;
+    public bool frontways = false;
     public FriendRole[] roleState = new FriendRole[2];
     void Start()
     {
