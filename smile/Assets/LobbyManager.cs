@@ -55,13 +55,13 @@ public class LobbyManager : MonoBehaviour
         {
             await Populate(SmileYourDayTaskList.instance.host, imageOne, "run");
             await Populate(SmileYourDayTaskList.instance.client, imageTwo, "hck");
-            SmileYourDayTaskList.instance.SetHostIsRunner(true);
+            SmileYourDayTaskList.instance.SetHostIsRunnerRpc(true);
         }
         else
         {
             await Populate(SmileYourDayTaskList.instance.client, imageOne, "run");
             await Populate(SmileYourDayTaskList.instance.host, imageTwo, "hck");
-            SmileYourDayTaskList.instance.SetHostIsRunner(false);
+            SmileYourDayTaskList.instance.SetHostIsRunnerRpc(false);
         }
         frontways = !frontways;
     }
