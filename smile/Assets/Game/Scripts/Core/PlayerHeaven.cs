@@ -19,26 +19,26 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
         {
             if(IsHost)
             {
-                SetPlayerState(PLAYERTYPE.Runner);
+                SetPlayerStateRpc(PLAYERTYPE.Runner);
             }
             else
             {
-                SetPlayerState(PLAYERTYPE.Hacker);
+                SetPlayerStateRpc(PLAYERTYPE.Hacker);
             }
         }
         if(!IsOwner) return;
         if(Input.GetKeyDown(KeyCode.H))
         {
-            SetPlayerState(PLAYERTYPE.Hacker);
+            SetPlayerStateRpc(PLAYERTYPE.Hacker);
         }
         if(Input.GetKeyDown(KeyCode.R))
         {
-            SetPlayerState(PLAYERTYPE.Runner);
+            SetPlayerStateRpc(PLAYERTYPE.Runner);
             
         }
     }
 
-    public void SetPlayerState(PLAYERTYPE typeGuy)
+    public void SetPlayerStateRpc(PLAYERTYPE typeGuy)
     {
         switch(typeGuy)
         {
