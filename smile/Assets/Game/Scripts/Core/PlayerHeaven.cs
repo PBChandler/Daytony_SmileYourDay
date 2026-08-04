@@ -13,7 +13,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public void OnEnable()
     {
         manager = GameObject.Find("[SmileYourDayManager]").GetComponent<SmileYourDayManager>();
-        SmileYourDayTaskList.instance.AddNetworkedPlayerRpc(this);
+        SmileYourDayTaskList.instance.AddNetworkedPlayerRpc(gameObject.name);
     }
     public void Update()
     {
