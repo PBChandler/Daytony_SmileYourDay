@@ -9,6 +9,9 @@ public class EnemyBehavior : MonoBehaviour
     public int suspicionLevel;
     NavMeshAgent agent;
     bool susCooldown;
+    [SerializeField] bool inSafeZone;
+    [HideInInspector] public bool noticedPlayer;
+    [HideInInspector] public bool inDangerMode = false;
 
     void Start()
     {
@@ -19,13 +22,20 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Current Suspicion is " + suspicionLevel);
-        if (suspicionLevel > 10 && stateMachine.currentState == stateMachine.GetStateFromName("Idle"))
-            stateMachine.ChangeState("Suspicious");
+        if (suspicionLevel > 10 && stateMachine.currentState == stateMachine.GetStateFromName("Idle") && !inSafeZone)
+        {
+            if (inDangerMode)
+                stateMachine.ChangeState("Alarmed");
+            else
+                stateMachine.ChangeState("Suspicious");
+        }
     }
+
     IEnumerator SuspicionTick(float sec)
     {
         susCooldown = true;
+        if (inDangerMode)
+            suspicionLevel = 15;
         yield return new WaitForSeconds(sec);
         susCooldown = false;
     }

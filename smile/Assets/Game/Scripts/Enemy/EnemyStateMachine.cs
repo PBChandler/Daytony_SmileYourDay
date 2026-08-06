@@ -44,6 +44,17 @@ public class EnemyStateMachine : MonoBehaviour
         dg_OnStateChanged?.Invoke();
     }
 
+    public bool IsCurrentState(string stateName) => currentState.GetType().Name == stateName;
+    public bool IsCurrentState(string[] stateNames)
+    {
+        foreach(string s in stateNames)
+        {
+            if (currentState.GetType().Name == s)
+                return true;
+        }
+        return false;
+    }
+
     public EnemyState GetStateFromName(string stateName)
     {
         if (stateDictionary.ContainsKey(stateName))

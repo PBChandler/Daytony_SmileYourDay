@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -50,28 +51,29 @@ public class EnemyVision : MonoBehaviour
         sightCast.direction = (other.transform.position - sightCast.origin).normalized;
         if (Physics.Raycast(sightCast, out hit, 8, sightMask))
         {
-            if (hit.collider.tag == "Player")
+            if (machine.IsCurrentState(new string[] { "Idle", "Distracted" }))
             {
-                if (machine.currentState == machine.GetStateFromName("Idle") || machine.currentState == machine.GetStateFromName("Distracted"))
+                if (!behavior.noticedPlayer)
                 {
                     if (!fpc.isCrouched) behavior.AddSuspicion(10 - Mathf.FloorToInt(hit.distance), .5f);
 
                     else if (hit.distance < 4) behavior.AddSuspicion(8 - Mathf.FloorToInt(hit.distance), 1);
                 }
-                else if (machine.currentState == machine.GetStateFromName("Alarmed") || machine.currentState == machine.GetStateFromName("Suspicious"))
-                {
-                    Debug.Log("got eyes");
-                    playerInView = true;
-                    agent.SetDestination(fpc.transform.position);
-                }
-                else if (machine.currentState == machine.GetStateFromName("Searching"))
-                {
-                    Debug.Log("YOU !!!!");
-                    machine.ChangeState(machine.currentState.prevState.GetType().ToString());
-                }
+                else if (fpc.isCrouched) behavior.AddSuspicion(10 - Mathf.FloorToInt(hit.distance), .5f);
+            }
+            else if (machine.IsCurrentState(new string[] { "Alarmed", "Suspicious" }))
+            {
+                Debug.Log("got eyes");
+                playerInView = true;
+                agent.SetDestination(fpc.transform.position);
+            }
+            else if (machine.IsCurrentState("Searching"))
+            {
+                Debug.Log("YOU !!!!");
+                machine.ChangeState(machine.currentState.prevState.GetType().ToString());
             }
         }
-        else if (machine.currentState == machine.GetStateFromName("Alarmed") || machine.currentState == machine.GetStateFromName("Suspicious"))
+        else if (machine.IsCurrentState(new string[] {"Alarmed", "Suspicious"}))
             playerInView = false;
     }
 
