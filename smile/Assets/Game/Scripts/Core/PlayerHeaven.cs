@@ -53,7 +53,8 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public void Update()
     {
         id = OwnerClientId;
-        CheckAssignment();
+        if(SmileYourDayTaskList.instance.gameHasStarted)
+            CheckAssignment();
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == true)
         {
             if(IsHost)

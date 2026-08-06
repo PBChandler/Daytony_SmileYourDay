@@ -3,33 +3,11 @@ using UnityEngine;
 
 public class HackerCamera : MonoBehaviour
 {
-    public List<SO_HackerCameraOBJ> hacker;
-    public Camera cam;
-    public int index = 0;
+    public string camSystemID;
+    public Transform cameraOutlook;
 
-    public void Update()
+    public void OnEnable()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow))
-        SetNextCamera();
-    }
-    public void SetNextCamera()
-    {
-        if(index > hacker.Count-2)
-        {
-            index = 0;
-        }
-        else
-        {
-            index++;
-        }
-        cam.transform.position = hacker[index].position;
-        cam.transform.rotation = Quaternion.Euler(hacker[index].rotationEulers);
-    }
-
-    public void SetCameraFromButton(int id)
-    {
-        index = id;
-        cam.transform.position = hacker[id].position;
-        cam.transform.rotation = Quaternion.Euler(hacker[id].rotationEulers);
+        SmileYourDayTaskList.instance.hackerCamera.cams.Add(this);
     }
 }

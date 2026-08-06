@@ -5,7 +5,9 @@ using TMPro;
 using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
-
+/// <summary>
+/// This script has effectively become the real game manager and is responsible for sending RPCs through a janky system cos I hate the syntax of RPC calls.
+/// </summary>
 public class SmileYourDayTaskList : NetworkBehaviour
 {
     public static SmileYourDayTaskList instance;
@@ -16,11 +18,12 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public HeavensCall dg_Heaven;
     public TextMeshProUGUI display;
     public NetworkVariable<List<GameTask>> tasks;
-
+    public SecurityCamera hackerCamera;
     public NetworkVariable<int> funValue;
     public delegate void onFunValueChanged(int newValue);
     public onFunValueChanged dg_onFunValueChanged;
     public List<GameObject> player;
+    public bool gameHasStarted;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
     private void Awake()
     {
@@ -100,6 +103,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
     {
         player[0].GetComponent<PlayerHeaven>().SetPlayerState(PLAYERTYPE.Hacker);
         player[1].GetComponent<PlayerHeaven>().SetPlayerState(PLAYERTYPE.Runner);
+        gameHasStarted = true;
     }
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void AddNetworkedPlayerRpc(string john)

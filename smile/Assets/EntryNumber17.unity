@@ -568,6 +568,7 @@ GameObject:
   - component: {fileID: 1160998704}
   - component: {fileID: 1160998706}
   - component: {fileID: 1160998705}
+  - component: {fileID: 1160998707}
   m_Layer: 0
   m_Name: SECURITY_CAMERA
   m_TagString: Untagged
@@ -602,7 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf4b91725ce5eb47923bde84a41fccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  epic: {fileID: 0}
+  cams: []
 --- !u!114 &1160998705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,6 +699,18 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1160998707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160998702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc969201f8a731d4a916afc52c70b0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DontDestroyOnLoad
 --- !u!1 &1273353229
 GameObject:
   m_ObjectHideFlags: 0
