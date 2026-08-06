@@ -47,6 +47,7 @@ public class NetworkedLobbyUIManager : MonoBehaviour
         if(baroness >1)
         {
             SmileYourDayTaskList.instance.LoadNextSceneRpc("");
+            SmileYourDayTaskList.instance.gameHasStarted = true;
         }
     }
 
