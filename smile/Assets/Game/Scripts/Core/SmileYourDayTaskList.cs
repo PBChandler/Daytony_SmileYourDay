@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 /// <summary>
 /// This script has effectively become the real game manager and is responsible for sending RPCs through a janky system cos I hate the syntax of RPC calls.
 /// </summary>
@@ -86,6 +87,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void LoadNextSceneRpc(string sceneName)
     {
+        
         NetworkManager.SceneManager.LoadScene("Avery_Runner_Building", UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]

@@ -44,7 +44,7 @@ public class NetworkedLobbyUIManager : MonoBehaviour
 
     public void Update()
     {
-        if(baroness >1)
+        if(baroness >1 && !SmileYourDayTaskList.instance.gameHasStarted)
         {
             SmileYourDayTaskList.instance.LoadNextSceneRpc("");
             SmileYourDayTaskList.instance.gameHasStarted = true;
