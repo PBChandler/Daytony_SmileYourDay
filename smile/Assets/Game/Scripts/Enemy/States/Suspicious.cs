@@ -44,6 +44,7 @@ public class Suspicious : EnemyState
         {
             case 2:
                 machine.ChangeState("Alarmed");
+                manager.EnterDangerMode();
                 break;
             case 1:
                 enemyB.SetSuspicion(5, 3, true);
@@ -57,6 +58,7 @@ public class Suspicious : EnemyState
                 machine.ChangeState("Idle");
                 enemyB.AddSuspicion(0, 8);
                 sight.SightCooldown(8);
+                enemyB.noticedPlayer = true;
                 talk.enabled = false;
                 break;
             default:

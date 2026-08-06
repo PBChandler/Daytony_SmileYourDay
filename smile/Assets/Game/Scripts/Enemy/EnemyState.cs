@@ -5,6 +5,7 @@ public abstract class EnemyState : MonoBehaviour
 {
     [HideInInspector] public bool isCurrentState = false;
     public EnemyStateMachine machine;
+    protected EnemyManager manager;
     protected int stateTimer;
     protected NavMeshAgent agent;
     protected GameObject runnerRef;
@@ -23,6 +24,7 @@ public abstract class EnemyState : MonoBehaviour
         enemyB = GetComponent<EnemyBehavior>();
         talk = GetComponent<SphereCollider>();
         sight = GetComponentInChildren<EnemyVision>();
+        manager = transform.parent.GetComponent<EnemyManager>();
 
         // will eventually be simplified when we have a clearer distinction between runner and hacker
         foreach (GameObject o in GameObject.FindGameObjectsWithTag("Player"))

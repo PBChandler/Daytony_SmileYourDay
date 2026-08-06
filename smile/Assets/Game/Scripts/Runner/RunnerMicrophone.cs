@@ -82,6 +82,10 @@ public class RunnerMicrophone : MonoBehaviour
             return;
 
         eBehavior = other.GetComponent<EnemyBehavior>();
+
+        if (eBehavior.noticedPlayer)
+            return;
+
         esm = other.GetComponent<EnemyStateMachine>();
 
         voiceCast.origin = transform.position;
