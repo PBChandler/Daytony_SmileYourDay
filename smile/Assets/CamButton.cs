@@ -11,6 +11,7 @@ public class CamButton : MonoBehaviour
         else
         {
             SmileYourDayTaskList.instance.hackerCamera.GetCam(idMap).HackWithChild(SmileYourDayTaskList.instance.guardInQueue);
+            SmileYourDayTaskList.instance.hackerQueue = false;
         }
     }
 }

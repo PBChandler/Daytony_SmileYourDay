@@ -19,7 +19,10 @@ public class RadioAOE : MonoBehaviour
     public void Update()
     {
         //testing
-        
+        if(!SmileYourDayTaskList.instance.hackerQueue)
+        {
+            SmileYourDayTaskList.instance.guardInQueue = nearbyGuards[0];
+        }
     }
     public void HackGuard(EnemyStateMachine guard)
     {
