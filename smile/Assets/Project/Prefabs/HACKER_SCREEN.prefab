@@ -5864,7 +5864,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4471469005514711187}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8411916635718999200}
+        m_TargetAssemblyTypeName: CamButton, Assembly-CSharp
+        m_MethodName: SetCamBasedOnID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8411916635718999200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5990,7 +6002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -233.22021, y: -528.47656}
+  m_AnchoredPosition: {x: 461, y: -528.47656}
   m_SizeDelta: {x: 640, y: 527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &613462685746656057
@@ -9063,7 +9075,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7116134392308976584}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7128515776934727370}
+        m_TargetAssemblyTypeName: CamButton, Assembly-CSharp
+        m_MethodName: SetCamBasedOnID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7128515776934727370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13600,7 +13624,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3028469875845776136}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3581115824200512227}
+        m_TargetAssemblyTypeName: CamButton, Assembly-CSharp
+        m_MethodName: SetCamBasedOnID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3581115824200512227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18100,7 +18136,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7722896521111439537}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7241461613943619014}
+        m_TargetAssemblyTypeName: CamButton, Assembly-CSharp
+        m_MethodName: SetCamBasedOnID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7241461613943619014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24157,7 +24205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3725574345961718355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4790473248772695503}
+        m_TargetAssemblyTypeName: CamButton, Assembly-CSharp
+        m_MethodName: SetCamBasedOnID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4790473248772695503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34620,7 +34680,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8104876245464083158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1841277669599372405}
+        m_TargetAssemblyTypeName: CamButton, Assembly-CSharp
+        m_MethodName: SetCamBasedOnID
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1841277669599372405
 MonoBehaviour:
   m_ObjectHideFlags: 0

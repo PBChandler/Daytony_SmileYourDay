@@ -25,6 +25,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public onFunValueChanged dg_onFunValueChanged;
     public List<GameObject> player;
     public bool gameHasStarted;
+    public Vector3 hackerDistractionLocation;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
     private void Awake()
     {

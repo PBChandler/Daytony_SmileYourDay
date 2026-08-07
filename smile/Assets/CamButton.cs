@@ -6,6 +6,6 @@ public class CamButton : MonoBehaviour
 
     public void SetCamBasedOnID()
     {
-
+        SmileYourDayTaskList.instance.hackerCamera.PullUpCamera(idMap);
     }
 }

@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 5033727951161424030}
   - component: {fileID: 3885613873875115611}
   - component: {fileID: 5356898338978790184}
+  - component: {fileID: 2279025523751561367}
   m_Layer: 7
   m_Name: NetworkedEnemy
   m_TagString: Enemy
@@ -300,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1671187410
+  GlobalObjectIdHash: 2258399947
   InScenePlacedSourceGlobalObjectIdHash: 1671187410
   DeferredDespawnTick: 0
   Ownership: 1
@@ -326,6 +327,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBehavior
   suspicionLevel: 0
+  inSafeZone: 0
+  noticedPlayer: 0
+  inDangerMode: 0
 --- !u!114 &6146731799950609241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,6 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Idle
   isCurrentState: 0
   machine: {fileID: 0}
+  prevState: {fileID: 0}
   stationary: 0
   destinations: []
   idleSpeed: 3.5
@@ -371,8 +376,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Suspicious
   isCurrentState: 0
   machine: {fileID: 0}
+  prevState: {fileID: 0}
   chaseSpeed: 4
   possibleDialogs: []
+  fpc: {fileID: 0}
+  caught: 0
 --- !u!114 &660391108042134472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Alarmed
   isCurrentState: 0
   machine: {fileID: 0}
+  prevState: {fileID: 0}
   alarmedSpd: 6
 --- !u!114 &2435487230790868102
 MonoBehaviour:
@@ -402,6 +411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Searching
   isCurrentState: 0
   machine: {fileID: 0}
+  prevState: {fileID: 0}
 --- !u!114 &8833694796879815849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Distracted
   isCurrentState: 0
   machine: {fileID: 0}
+  prevState: {fileID: 0}
 --- !u!195 &6987658393324032894
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -485,6 +496,14 @@ MonoBehaviour:
       NameHash: 1035320983
       Synchronize: 1
       ParameterType: 4
+    - name: isTalking
+      NameHash: -9499574
+      Synchronize: 1
+      ParameterType: 4
+    - name: suspiciousmeter
+      NameHash: -825420078
+      Synchronize: 1
+      ParameterType: 1
   AnimatorParametersExpanded: 0
 --- !u!114 &5356898338978790184
 MonoBehaviour:
@@ -504,6 +523,35 @@ MonoBehaviour:
   talking: {fileID: 885944232402757753, guid: d97b2303512225f40933ce1acb298dea, type: 3}
   anim: {fileID: 3885613873875115611}
   agn: {fileID: 6987658393324032894}
+  lash: {fileID: 0}
+  LockedIn: 0
+--- !u!54 &2279025523751561367
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508136699541135168}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &4038592614375367955
 PrefabInstance:
   m_ObjectHideFlags: 0

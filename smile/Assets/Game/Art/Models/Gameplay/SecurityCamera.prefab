@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5376955581859649236}
+  - component: {fileID: 2392653424459843597}
+  - component: {fileID: 1888594079764860286}
   m_Layer: 0
   m_Name: SecurityCamera
   m_TagString: Untagged
@@ -33,6 +35,43 @@ Transform:
   - {fileID: 450553138000637075}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2392653424459843597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3060916341142075431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556c211e04905be4989c77b26925820e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  CamID: 
+  guardsStandNearHere: {fileID: 0}
+  nearbyGuards: []
+  camIsActive: 0
+--- !u!65 &1888594079764860286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3060916341142075431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.8282, y: 5.889355, z: 11.540393}
+  m_Center: {x: -2.073633, y: -0.81368375, z: -0.6082022}
 --- !u!1001 &128940606378101624
 PrefabInstance:
   m_ObjectHideFlags: 0
