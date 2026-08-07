@@ -13,16 +13,17 @@ public class RadioAOE : MonoBehaviour
         if(other.tag == "Enemy")
         {
             nearbyGuards.Add(other.GetComponent<EnemyStateMachine>());
+            SmileYourDayTaskList.instance.toothblue.Initialize(nearbyGuards);
         }
     }
 
     public void Update()
     {
         //testing
-        if(!SmileYourDayTaskList.instance.hackerQueue)
-        {
-            SmileYourDayTaskList.instance.guardInQueue = nearbyGuards[0];
-        }
+        //if(!SmileYourDayTaskList.instance.hackerQueue)
+        //{
+        //    SmileYourDayTaskList.instance.guardInQueue = nearbyGuards[0];
+        //}
     }
     public void HackGuard(EnemyStateMachine guard)
     {
@@ -34,6 +35,7 @@ public class RadioAOE : MonoBehaviour
         if(other.tag == "Enemy")
         {
             nearbyGuards.Remove(other.GetComponent<EnemyStateMachine>());
+            SmileYourDayTaskList.instance.toothblue.Initialize(nearbyGuards);
         }
     }
 }

@@ -29,6 +29,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public RadioAOE ActiveHackerCameraInWorld;
     public bool hackerQueue; //while the hacker is queueing the camera.
     public EnemyStateMachine guardInQueue;
+    public ToothblueGrouper toothblue;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
     private void Awake()
     {

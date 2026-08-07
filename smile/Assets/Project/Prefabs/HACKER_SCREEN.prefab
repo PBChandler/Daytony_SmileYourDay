@@ -8525,6 +8525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2610993892380465614}
   - component: {fileID: 8748643683090709372}
+  - component: {fileID: 7334502778473046851}
   m_Layer: 5
   m_Name: grid
   m_TagString: Untagged
@@ -8581,6 +8582,25 @@ MonoBehaviour:
   m_Spacing: {x: 10, y: 5}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &7334502778473046851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484359677352900001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdcc2f1f91e41094cb595f178cb96ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  hackerQueueOptions:
+  - {fileID: 436977381862975156}
+  - {fileID: 1873158309540722783}
+  - {fileID: 7282263808937632074}
+  - {fileID: 802807255862860233}
+  - {fileID: 556672900232880577}
+  - {fileID: 26462813429793690}
 --- !u!1 &2496810090466160111
 GameObject:
   m_ObjectHideFlags: 0
@@ -12651,7 +12671,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556672900232880577}
+      - m_Target: {fileID: 7282263808937632074}
         m_TargetAssemblyTypeName: HackerQueueButton, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -29789,7 +29809,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556672900232880577}
+      - m_Target: {fileID: 1873158309540722783}
         m_TargetAssemblyTypeName: HackerQueueButton, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -31407,7 +31427,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556672900232880577}
+      - m_Target: {fileID: 802807255862860233}
         m_TargetAssemblyTypeName: HackerQueueButton, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -32451,7 +32471,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556672900232880577}
+      - m_Target: {fileID: 26462813429793690}
         m_TargetAssemblyTypeName: HackerQueueButton, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -35601,7 +35621,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 556672900232880577}
+      - m_Target: {fileID: 436977381862975156}
         m_TargetAssemblyTypeName: HackerQueueButton, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
