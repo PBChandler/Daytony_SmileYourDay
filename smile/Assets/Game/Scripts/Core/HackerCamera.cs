@@ -10,6 +10,7 @@ public class HackerCamera : MonoBehaviour
     {
         Invoke("builddelay", 0.5f);
         kidLogic = GetComponentInChildren<RadioAOE>();
+        
     }
 
     public void builddelay()
@@ -17,10 +18,16 @@ public class HackerCamera : MonoBehaviour
         SmileYourDayTaskList.instance.hackerCamera.cams.Add(this);
     }
 
+    public void HackWithChild(EnemyStateMachine guard)
+    {
+        SmileYourDayTaskList.instance.hackerDistractionLocation = kidLogic.guardsStandNearHere.transform.position;
+        kidLogic.HackGuard(guard);
+    }
     
     public void setCustomActive(bool aBool)
     {
         kidLogic.camIsActive = aBool;
+        SmileYourDayTaskList.instance.ActiveHackerCameraInWorld = kidLogic;
     }
 
     

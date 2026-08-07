@@ -19,15 +19,7 @@ public class RadioAOE : MonoBehaviour
     public void Update()
     {
         //testing
-        if(Input.GetKeyDown(KeyCode.N))
-        {
-            try
-            {
-                SmileYourDayTaskList.instance.hackerDistractionLocation = transform.right * 5;
-                HackGuard(nearbyGuards[0]);
-            }
-            catch { }
-        }
+        
     }
     public void HackGuard(EnemyStateMachine guard)
     {

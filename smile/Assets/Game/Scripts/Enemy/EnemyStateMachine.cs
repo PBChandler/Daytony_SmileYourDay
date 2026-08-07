@@ -7,7 +7,7 @@ public class EnemyStateMachine : MonoBehaviour
     Dictionary<string, EnemyState> stateDictionary = new Dictionary<string, EnemyState>();
     public EnemyState currentState;
     [HideInInspector] public EnemyBehavior behavior;
-
+    public string guardRadioID; //for the Security Camera system, we need a Displayname to make it clear which guard is which.
     public delegate void OnStateChanged();
     public OnStateChanged dg_OnStateChanged;
 

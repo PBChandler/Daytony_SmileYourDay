@@ -26,6 +26,9 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public List<GameObject> player;
     public bool gameHasStarted;
     public Vector3 hackerDistractionLocation;
+    public RadioAOE ActiveHackerCameraInWorld;
+    public bool hackerQueue; //while the hacker is queueing the camera.
+    public EnemyStateMachine guardInQueue;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
     private void Awake()
     {

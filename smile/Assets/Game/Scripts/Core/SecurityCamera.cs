@@ -35,6 +35,20 @@ public class SecurityCamera : MonoBehaviour
         }
     }
 
+    public HackerCamera GetCam(string id)
+    {
+        foreach (HackerCamera c in cams)
+        {
+            if (c == null) continue; //idk why null cameras appear but we're crunching on time so uhhhhh don't mattah
+            if (c.camSystemID == id)
+            {
+                return c;
+            }
+            
+        }
+        return null;
+    }
+
     // Update is called once per frame
     void Update()
     {
