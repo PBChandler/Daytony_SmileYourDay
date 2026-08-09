@@ -5,21 +5,31 @@ using TMPro;
 using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+/// <summary>
+/// This script has effectively become the real game manager and is responsible for sending RPCs through a janky system cos I hate the syntax of RPC calls.
+/// </summary>
 public class SmileYourDayTaskList : NetworkBehaviour
 {
     public static SmileYourDayTaskList instance;
 
     public SteamId host, client;
-//  
+    public NetworkVariable<bool> hostIsRunner;
     public delegate void HeavensCall(string input);
     public HeavensCall dg_Heaven;
     public TextMeshProUGUI display;
     public NetworkVariable<List<GameTask>> tasks;
-
+    public SecurityCamera hackerCamera;
     public NetworkVariable<int> funValue;
     public delegate void onFunValueChanged(int newValue);
     public onFunValueChanged dg_onFunValueChanged;
+    public List<GameObject> player;
+    public bool gameHasStarted;
+    public Vector3 hackerDistractionLocation;
+    public RadioAOE ActiveHackerCameraInWorld;
+    public bool hackerQueue; //while the hacker is queueing the camera.
+    public EnemyStateMachine guardInQueue;
+    public ToothblueGrouper toothblue;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
     private void Awake()
     {
@@ -82,12 +92,30 @@ public class SmileYourDayTaskList : NetworkBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void LoadNextSceneRpc(string sceneName)
     {
+        
         NetworkManager.SceneManager.LoadScene("Avery_Runner_Building", UnityEngine.SceneManagement.LoadSceneMode.Single);
     }
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void CallHeavenRpc(string message)
     {
         dg_Heaven(message);
+    }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void SetHostIsRunnerRpc(bool state)
+    {
+        hostIsRunner.Value = state;
+    }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void InitializePlayersRpc()
+    {
+        player[0].GetComponent<PlayerHeaven>().SetPlayerState(PLAYERTYPE.Hacker);
+        player[1].GetComponent<PlayerHeaven>().SetPlayerState(PLAYERTYPE.Runner);
+        gameHasStarted = true;
+    }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void AddNetworkedPlayerRpc(string john)
+    {
+        player.Add(GameObject.Find(john));
     }
 }
 

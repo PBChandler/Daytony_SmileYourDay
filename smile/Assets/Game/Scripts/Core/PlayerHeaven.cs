@@ -1,5 +1,6 @@
 using System;
 using Unity.Netcode;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
@@ -8,13 +9,64 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public GameObject PlayerScreen, HackerScreen;
     public SmileYourDayManager manager; //statics crash everything, frown;
     public Camera localRunnersEyes;
+    public ulong id;
 
     public void OnEnable()
     {
         manager = GameObject.Find("[SmileYourDayManager]").GetComponent<SmileYourDayManager>();
+        
+    }
+
+
+    public void CheckAssignment()
+    {
+        //this should not be running every frame but PLEASE let it work.
+        //also this will have to only run once the playable scene is actually loaded, because we fake one player in the world by warping the other to HELL.
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == true && id == 0)
+        {
+            SetPlayerState(PLAYERTYPE.Runner);
+            if(IsOwner)
+                NetworkManager.Singleton.ConnectedClients[1].PlayerObject.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        //if this user is the host and the host is not the runner
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == false && id == 0)
+        {
+            SetPlayerState(PLAYERTYPE.Hacker);
+           
+            // transform.position = new Vector3(-999, 999, 999);
+            Cursor.lockState = CursorLockMode.None;
+        }
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == false && id == 1)
+        {
+            SetPlayerState(PLAYERTYPE.Runner);
+            if (IsOwner)
+                NetworkManager.Singleton.ConnectedClients[0].PlayerObject.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == true && id == 1)
+        {
+            
+            SetPlayerState(PLAYERTYPE.Hacker);
+            //transform.position = new Vector3(-999, 999, 999);
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
     public void Update()
     {
+        id = OwnerClientId;
+        if(SmileYourDayTaskList.instance.gameHasStarted)
+            CheckAssignment();
+        if (SmileYourDayTaskList.instance.hostIsRunner.Value == true)
+        {
+            if(IsHost)
+            {
+                SetPlayerState(PLAYERTYPE.Runner);
+            }
+            else
+            {
+                SetPlayerState(PLAYERTYPE.Hacker);
+            }
+        }
+        
         if(!IsOwner) return;
         if(Input.GetKeyDown(KeyCode.H))
         {
@@ -31,6 +83,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     {
         switch(typeGuy)
         {
+            //the issue is the hacker screen is not hidden
             case PLAYERTYPE.Hacker:
                 playerType = PLAYERTYPE.Hacker;
                 HackerScreen.gameObject.SetActive(true);

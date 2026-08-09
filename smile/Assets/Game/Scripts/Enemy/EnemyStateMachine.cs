@@ -7,7 +7,7 @@ public class EnemyStateMachine : MonoBehaviour
     Dictionary<string, EnemyState> stateDictionary = new Dictionary<string, EnemyState>();
     public EnemyState currentState;
     [HideInInspector] public EnemyBehavior behavior;
-
+    public string guardRadioID; //for the Security Camera system, we need a Displayname to make it clear which guard is which.
     public delegate void OnStateChanged();
     public OnStateChanged dg_OnStateChanged;
 
@@ -42,6 +42,17 @@ public class EnemyStateMachine : MonoBehaviour
         currentState.machine = this;
         currentState.OnEnterState();
         dg_OnStateChanged?.Invoke();
+    }
+
+    public bool IsCurrentState(string stateName) => currentState.GetType().Name == stateName;
+    public bool IsCurrentState(string[] stateNames)
+    {
+        foreach(string s in stateNames)
+        {
+            if (currentState.GetType().Name == s)
+                return true;
+        }
+        return false;
     }
 
     public EnemyState GetStateFromName(string stateName)

@@ -3,33 +3,32 @@ using UnityEngine;
 
 public class HackerCamera : MonoBehaviour
 {
-    public List<SO_HackerCameraOBJ> hacker;
-    public Camera cam;
-    public int index = 0;
-
-    public void Update()
+    public string camSystemID;
+    public Transform cameraOutlook;
+    [HideInInspector] public RadioAOE kidLogic;
+    public void Start()
     {
-        if(Input.GetKeyDown(KeyCode.RightArrow))
-        SetNextCamera();
-    }
-    public void SetNextCamera()
-    {
-        if(index > hacker.Count-2)
-        {
-            index = 0;
-        }
-        else
-        {
-            index++;
-        }
-        cam.transform.position = hacker[index].position;
-        cam.transform.rotation = Quaternion.Euler(hacker[index].rotationEulers);
+        Invoke("builddelay", 0.5f);
+        kidLogic = GetComponentInChildren<RadioAOE>();
+        
     }
 
-    public void SetCameraFromButton(int id)
+    public void builddelay()
     {
-        index = id;
-        cam.transform.position = hacker[id].position;
-        cam.transform.rotation = Quaternion.Euler(hacker[id].rotationEulers);
+        SmileYourDayTaskList.instance.hackerCamera.cams.Add(this);
     }
+
+    public void HackWithChild(EnemyStateMachine guard)
+    {
+        SmileYourDayTaskList.instance.hackerDistractionLocation = kidLogic.guardsStandNearHere.transform.position;
+        kidLogic.HackGuard(guard);
+    }
+    
+    public void setCustomActive(bool aBool)
+    {
+        kidLogic.camIsActive = aBool;
+        SmileYourDayTaskList.instance.ActiveHackerCameraInWorld = kidLogic;
+    }
+
+    
 }

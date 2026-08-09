@@ -11,7 +11,6 @@ public class Idle : EnemyState
     [SerializeField] float idleSpeed;
     Vector3 gizmoSize = new Vector3(.5f, .5f, .5f);
     int destinationIndex = 1;
-    bool counting;
     bool backwards;
 
     public override void OnEnterState()
@@ -32,6 +31,7 @@ public class Idle : EnemyState
             destinationIndex = 1;
         }
         agent.speed = idleSpeed;
+        sight.SetSight(true);
         Debug.Log("current SuspicionLevel is " + suspicionLevel);
     }
 

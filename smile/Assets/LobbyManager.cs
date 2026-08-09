@@ -11,6 +11,7 @@ public class LobbyManager : MonoBehaviour
     SteamId runner, hacker;
     public bool frontways = false;
     public FriendRole[] roleState = new FriendRole[2];
+    public bool locked = false;
     void Start()
     {
         pop();
@@ -26,9 +27,23 @@ public class LobbyManager : MonoBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void SwappySwappyRpc()
     {
+        if (locked) return;
+        locked = true;
+        
         SmileYourDayTaskList.instance.CallHeavenRpc("lobby_swapRPC");
+        Invoke("unlock", 0.1f);
     }
 
+    public void unlock()
+    {
+        locked = false;
+    }
+
+    public void Complete()
+    {
+        //SmileYourDayTaskList.instance.CallHeavenRpc("p1_hacker");
+        //SmileYourDayTaskList.instance.CallHeavenRpc("p2_runner");
+    }
     public void lobby_swapRpcCheck(string input)
     {
         Debug.Log("HEAVEN'S CALL SENT");
@@ -40,18 +55,20 @@ public class LobbyManager : MonoBehaviour
     }
     public async void SwapRpc()
     {
-        frontways = !frontways;
+       
         if(frontways)
         {
             await Populate(SmileYourDayTaskList.instance.host, imageOne, "run");
             await Populate(SmileYourDayTaskList.instance.client, imageTwo, "hck");
+            SmileYourDayTaskList.instance.SetHostIsRunnerRpc(true);
         }
         else
         {
             await Populate(SmileYourDayTaskList.instance.client, imageOne, "run");
             await Populate(SmileYourDayTaskList.instance.host, imageTwo, "hck");
+            SmileYourDayTaskList.instance.SetHostIsRunnerRpc(false);
         }
-       
+        frontways = !frontways;
     }
     public async Task Populate(SteamId ID_FRIEND, RawImage var, string ste)
     {
@@ -62,6 +79,7 @@ public class LobbyManager : MonoBehaviour
         {
             case "run":
                 roleState[0] = new FriendRole() { id = ID_FRIEND, role = ste, name = ID_FRIEND.Value + "" };
+                
                 break;
             case "hck":
                 roleState[1] = new FriendRole() { id = ID_FRIEND, role = ste, name = ID_FRIEND.Value + "" };
@@ -69,7 +87,7 @@ public class LobbyManager : MonoBehaviour
             default:
                 break;
         }
-
+        //SmileYourDayTaskList.instance.InitializePlayersRpc();
         //ProfileName.text = meRightNow.Name;
     }
 
