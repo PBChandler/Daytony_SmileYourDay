@@ -10,6 +10,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public SmileYourDayManager manager; //statics crash everything, frown;
     public Camera localRunnersEyes;
     public ulong id;
+    bool flipflop;
 
     public void OnEnable()
     {
@@ -20,10 +21,16 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
 
     public void CheckAssignment()
     {
+        //TESTING, NEEDS TO BE REMOVED IN THE ACTUAL BUILD:
+#if UNITY_EDITOR
+        SmileYourDayTaskList.instance.hostIsRunner.Value = true;
+ #endif
+        //REMOVE ABOVE REMOVE ABOVE REMOVE ABOVE REMOVE ABOVE
         //this should not be running every frame but PLEASE let it work.
         //also this will have to only run once the playable scene is actually loaded, because we fake one player in the world by warping the other to HELL.
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == true && id == 0)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             SetPlayerState(PLAYERTYPE.Runner);
             if(IsOwner)
                 NetworkManager.Singleton.ConnectedClients[1].PlayerObject.transform.GetChild(1).gameObject.SetActive(false);
@@ -53,8 +60,12 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public void Update()
     {
         id = OwnerClientId;
-        if(SmileYourDayTaskList.instance.gameHasStarted)
+        if(SmileYourDayTaskList.instance.gameHasStarted && !flipflop)
+        {
+            flipflop = true;
             CheckAssignment();
+        }
+            
         if (SmileYourDayTaskList.instance.hostIsRunner.Value == true)
         {
             if(IsHost)
@@ -75,7 +86,8 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
         if(Input.GetKeyDown(KeyCode.R))
         {
             SetPlayerState(PLAYERTYPE.Runner);
-            
+            CheckAssignment();
+
         }
     }
 

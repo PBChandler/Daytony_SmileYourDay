@@ -603,7 +603,7 @@ PrefabInstance:
     - target: {fileID: 8141604858023019795, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       propertyPath: m_TargetTexture
       value: 
-      objectReference: {fileID: 8400000, guid: 53c001b6f28adfb42abb5ce09c7e563f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 8141604858023019795, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       propertyPath: near clip plane
       value: 0.01
