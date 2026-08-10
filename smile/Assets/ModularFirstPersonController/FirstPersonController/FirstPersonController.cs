@@ -243,6 +243,12 @@ public class FirstPersonController : NetworkBehaviour
 
     private void Update()
     {
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+#endif
         if(!IsOwner)
             return;
         if (caught)
