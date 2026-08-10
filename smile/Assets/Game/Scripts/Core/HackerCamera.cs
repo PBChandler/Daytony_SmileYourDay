@@ -5,6 +5,7 @@ public class HackerCamera : MonoBehaviour
 {
     public string camSystemID;
     public Transform cameraOutlook;
+    public GameObject smosh;
     [HideInInspector] public RadioAOE kidLogic;
     public void Start()
     {
@@ -18,6 +19,10 @@ public class HackerCamera : MonoBehaviour
         SmileYourDayTaskList.instance.hackerCamera.cams.Add(this);
     }
 
+    public void Update()
+    {
+        smosh.SetActive(kidLogic.camIsActive);
+    }
     public void HackWithChild(EnemyStateMachine guard)
     {
         SmileYourDayTaskList.instance.hackerDistractionLocation = kidLogic.guardsStandNearHere.transform.position;

@@ -62,7 +62,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
         id = OwnerClientId;
         if(SmileYourDayTaskList.instance.gameHasStarted && !flipflop)
         {
-            flipflop = true;
+            flipflop = true;    
             CheckAssignment();
         }
             

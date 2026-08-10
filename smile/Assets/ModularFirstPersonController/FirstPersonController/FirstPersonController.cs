@@ -33,7 +33,9 @@ public class FirstPersonController : NetworkBehaviour
     public event DialogResponse currentResponse;
     public bool caught = false;
     public InteractInterface interactable;
-
+    public Sprite crosshairElse;
+   // public Image crosshair;
+   // public Sprite crosshairNothing, crosshairInteractable;
     public bool hasKeycard;
     public bool hasTanktop;
 
@@ -204,15 +206,7 @@ public class FirstPersonController : NetworkBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        if(crosshair)
-        {
-            crosshairObject.sprite = crosshairImage;
-            crosshairObject.color = crosshairColor;
-        }
-        else
-        {
-            crosshairObject.gameObject.SetActive(false);
-        }
+        
 
         #region Sprint Bar
 
@@ -384,11 +378,21 @@ public class FirstPersonController : NetworkBehaviour
 
         #endregion
 
-        if (interactable != null && Input.GetKeyDown(interactKey))
+        if ((interactable != null && Input.GetMouseButtonDown(0))) //(interactable != null && Input.GetKeyDown(interactKey)) || 
         {
             interactable.OnInteract();
         }
-
+        if (crosshair)
+        {
+            crosshairObject.sprite = interactable == null ? crosshairImage : crosshairElse;
+            crosshairObject.color = interactable == null ? crosshairColor : Color.white;
+            
+                crosshairObject.gameObject.transform.localScale = interactable == null ? new Vector3(0.05f, 0.05f, 0.05f) : new Vector3(0.5f, 0.5f, 0.5f);
+        }
+        else
+        {
+            crosshairObject.gameObject.SetActive(false);
+        }
         #region Crouch
 
         if (enableCrouch)
@@ -714,16 +718,19 @@ public class FirstPersonController : NetworkBehaviour
         fpc.lockCursor = EditorGUILayout.ToggleLeft(new GUIContent("Lock and Hide Cursor", "Turns off the cursor visibility and locks it to the middle of the screen."), fpc.lockCursor);
 
         fpc.crosshair = EditorGUILayout.ToggleLeft(new GUIContent("Auto Crosshair", "Determines if the basic crosshair will be turned on, and sets is to the center of the screen."), fpc.crosshair);
-
+        
         // Only displays crosshair options if crosshair is enabled
-        if(fpc.crosshair) 
+        if (fpc.crosshair) 
         { 
             EditorGUI.indentLevel++; 
             EditorGUILayout.BeginHorizontal(); 
             EditorGUILayout.PrefixLabel(new GUIContent("Crosshair Image", "Sprite to use as the crosshair.")); 
             fpc.crosshairImage = (Sprite)EditorGUILayout.ObjectField(fpc.crosshairImage, typeof(Sprite), false);
             EditorGUILayout.EndHorizontal();
-
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.PrefixLabel(new GUIContent("Crosshaieeer Image", "Sprite to use as the crosshair."));
+            fpc.crosshairElse = (Sprite)EditorGUILayout.ObjectField(fpc.crosshairElse, typeof(Sprite), false);
+            EditorGUILayout.EndHorizontal();
             EditorGUILayout.BeginHorizontal();
             fpc.crosshairColor = EditorGUILayout.ColorField(new GUIContent("Crosshair Color", "Determines the color of the crosshair."), fpc.crosshairColor);
             EditorGUILayout.EndHorizontal();

@@ -7290,7 +7290,7 @@ GameObject:
   - component: {fileID: 1679216296}
   - component: {fileID: 1679216300}
   m_Layer: 0
-  m_Name: Shrine_Keycard
+  m_Name: KEYCARD_ITEM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

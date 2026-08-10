@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HackerCamera
   camSystemID: f1_1
   cameraOutlook: {fileID: 3354784976023809025}
+  smosh: {fileID: 7709218085737245026}
+  kidLogic: {fileID: 0}
 --- !u!1 &8072035070284311390
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +89,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5108067368314574103}
     m_Modifications:
+    - target: {fileID: 388407120539462244, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+      propertyPath: m_Range
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 388407120539462244, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 940640519882029832, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.78786
+      objectReference: {fileID: 0}
+    - target: {fileID: 940640519882029832, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.78786
+      objectReference: {fileID: 0}
+    - target: {fileID: 940640519882029832, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.78786
+      objectReference: {fileID: 0}
+    - target: {fileID: 940640519882029832, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 940640519882029832, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 940640519882029832, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041293890424638636, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
     - target: {fileID: 3060916341142075431, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
       propertyPath: m_Name
       value: SecurityCamera
@@ -139,5 +177,10 @@ PrefabInstance:
 --- !u!4 &6843228579240431586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5376955581859649236, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
+  m_PrefabInstance: {fileID: 1470074258236447030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7709218085737245026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9122715867208200276, guid: 6425336f143eb1e489c77d0d8f4dca2a, type: 3}
   m_PrefabInstance: {fileID: 1470074258236447030}
   m_PrefabAsset: {fileID: 0}
