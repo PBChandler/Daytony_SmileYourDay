@@ -2,7 +2,7 @@ using UnityEngine;
 using Steamworks;
 public class GameNetworkManager : MonoBehaviour
 {
-    public uint appID = 480;
+    public uint appID = 4998170;
 
     private void Awake()
     {

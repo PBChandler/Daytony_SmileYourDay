@@ -14,7 +14,7 @@ using UnityEngine.SceneManagement;
 public class SteamManager : MonoBehaviour
 {
     public static SteamManager Instance;
-    private static uint gameAppId = 480;
+    private static uint gameAppId = 4998170;
     public string cheatScene = "Playground";
     public string PlayerName { get; set; }
     public SteamId PlayerSteamId { get; set; }
