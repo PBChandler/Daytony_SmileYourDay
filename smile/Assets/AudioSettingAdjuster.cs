@@ -31,6 +31,7 @@ public class AudioSettingAdjuster : MonoBehaviour
     }
     public void SetAudioMixerVolume(float reactive)
     {
+        
         mixing.SetFloat(id, reactive);
         PlayerPrefs.SetFloat(id, reactive);
     }

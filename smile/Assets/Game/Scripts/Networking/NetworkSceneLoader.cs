@@ -18,7 +18,7 @@ public class NetworkSceneLoader : MonoBehaviour
             if (isGaster && !Gaster.DEVICE_SCENE.Contains("_NoNWK") && Gaster.DEVICE_SCENE != "EntryNumber17") //can't have the funny infinite loop cos it breaks the multiplayer hting
             {
                 sceneName = Gaster.DEVICE_SCENE;
-                timeTillThanging = 0.67f; //SIX SEVEN
+                timeTillThanging = 1.67f; //SIX SEVEN
             }
             Invoke("DoYaThang", timeTillThanging);
         }

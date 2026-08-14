@@ -6,7 +6,8 @@
     <members>
         <member name="T:Steamworks.CallResult`1">
             <summary>
-            An awaitable version of a SteamAPICall_t
+            An awaitable version of a 
+			Call_t
             </summary>
         </member>
         <member name="M:Steamworks.CallResult`1.OnCompleted(System.Action)">

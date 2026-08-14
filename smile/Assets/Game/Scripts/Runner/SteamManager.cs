@@ -37,6 +37,7 @@ public class SteamManager : MonoBehaviour
     private bool daRealOne = false;
 
     public static string staticDataString;
+    
     public void Awake()
     {
         if (Instance == null)
@@ -77,6 +78,7 @@ public class SteamManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        SteamClient.RestartAppIfNecessary(4998170);
     }
 
     public bool TryToReconnectToSteam()
@@ -106,6 +108,7 @@ public class SteamManager : MonoBehaviour
             connectedToSteam = false;
             Debug.Log("Error connecting to Steam");
             Debug.Log(e);
+            Application.Quit();
             return false;
         }
     }
@@ -138,9 +141,9 @@ public class SteamManager : MonoBehaviour
     void Update()
     {
         SteamClient.RunCallbacks();
-
-        #if UNITY_EDITOR
-        if(Input.GetKeyDown(KeyCode.Y))
+      
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             SmileYourDayTaskList.instance.host = SteamClient.SteamId;
             SmileYourDayTaskList.instance.client = SteamClient.SteamId;
@@ -291,6 +294,7 @@ public class SteamManager : MonoBehaviour
         }
     }
 
+    
     public bool I_AM_HOST = false;
     // Called whenever you first enter lobby
     void OnLobbyEnteredCallback(Lobby lobby)
@@ -306,7 +310,8 @@ public class SteamManager : MonoBehaviour
             lobby.SendChatString("incoming player info");
             //probably important to fix
             //lobby.GetData(isFriendLobby);
-            SceneManager.LoadScene(cheatScene);
+            NetworkManager.Singleton.SceneManager.LoadScene(cheatScene, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+
             //we are charles white
             //NetworkManager.Singleton.StartClient();
         }
