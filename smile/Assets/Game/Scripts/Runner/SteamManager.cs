@@ -310,7 +310,7 @@ public class SteamManager : MonoBehaviour
             lobby.SendChatString("incoming player info");
             //probably important to fix
             //lobby.GetData(isFriendLobby);
-            NetworkManager.Singleton.SceneManager.LoadScene(cheatScene, UnityEngine.SceneManagement.LoadSceneMode.Additive);
+            SceneManager.LoadScene(cheatScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
 
             //we are charles white
             //NetworkManager.Singleton.StartClient();
