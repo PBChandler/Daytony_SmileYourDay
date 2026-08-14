@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TMPro;
 using Unity.Netcode;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -257,6 +258,7 @@ public class SteamManager : MonoBehaviour
             SmileYourDayTaskList.instance.client = OpponentSteamId;
             SmileYourDayTaskList.instance.host = steamId;
             NetworkManager.Singleton.StartHost();
+            NetworkManager.Singleton.SceneManager.LoadScene(cheatScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
         }
         else
         {
@@ -311,7 +313,7 @@ public class SteamManager : MonoBehaviour
             //probably important to fix
             //lobby.GetData(isFriendLobby);
             SceneManager.LoadScene(cheatScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
-
+            SmileYourDayTaskList.instance.LoadLobbySceneRPC(cheatScene);
             //we are charles white
             //NetworkManager.Singleton.StartClient();
         }
@@ -552,7 +554,7 @@ public class SteamManager : MonoBehaviour
         }
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode loadSceneMode)
     {
         UpdateRichPresenceStatus(scene.name);
     }
