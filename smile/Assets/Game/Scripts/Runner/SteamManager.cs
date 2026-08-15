@@ -313,7 +313,7 @@ public class SteamManager : MonoBehaviour
             //probably important to fix
             //lobby.GetData(isFriendLobby);
             NetworkManager.Singleton.StartClient();
-            SmileYourDayTaskList.instance.LoadLobbySceneRPC(cheatScene);
+           
             //we are charles white
 
         }
@@ -352,6 +352,7 @@ public class SteamManager : MonoBehaviour
             NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
             LobbyPartnerDisconnected = false;
             AcceptP2P(OpponentSteamId);
+            NetworkManager.Singleton.SceneManager.LoadScene(cheatScene, LoadSceneMode.Single);
             //SceneManager.LoadScene("Scene to load");
         }
     }
