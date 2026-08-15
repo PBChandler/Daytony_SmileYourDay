@@ -313,7 +313,7 @@ public class SteamManager : MonoBehaviour
             //probably important to fix
             //lobby.GetData(isFriendLobby);
             NetworkManager.Singleton.StartClient();
-            SmileYourDayTaskList.instance.LoadLobbySceneRPC(cheatScene);
+           
             //we are charles white
             
         }
@@ -322,6 +322,7 @@ public class SteamManager : MonoBehaviour
             I_AM_HOST = true;
             NetworkManager.Singleton.StartHost();
         }
+        NetworkManager.Singleton.SceneManager.LoadScene(cheatScene, LoadSceneMode.Single);
         Debug.Log("A goober has entered the lobby");
     }
 
