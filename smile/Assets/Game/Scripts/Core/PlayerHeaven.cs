@@ -55,6 +55,11 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
             //transform.position = new Vector3(-999, 999, 999);
             Cursor.lockState = CursorLockMode.None;
         }
+
+        if(IsOwner && playerType == PLAYERTYPE.Runner)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
     public void Update()
     {
