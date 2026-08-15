@@ -8,13 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using TMPro;
 using Unity.Netcode;
+using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SteamManager : MonoBehaviour
 {
     public static SteamManager Instance;
-    private static uint gameAppId = 480;
+    private static uint gameAppId = 4998170;
     public string cheatScene = "Playground";
     public string PlayerName { get; set; }
     public SteamId PlayerSteamId { get; set; }
@@ -37,6 +38,7 @@ public class SteamManager : MonoBehaviour
     private bool daRealOne = false;
 
     public static string staticDataString;
+    
     public void Awake()
     {
         if (Instance == null)
@@ -77,6 +79,7 @@ public class SteamManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        SteamClient.RestartAppIfNecessary(4998170);
     }
 
     public bool TryToReconnectToSteam()
@@ -106,6 +109,7 @@ public class SteamManager : MonoBehaviour
             connectedToSteam = false;
             Debug.Log("Error connecting to Steam");
             Debug.Log(e);
+            Application.Quit();
             return false;
         }
     }
@@ -138,9 +142,9 @@ public class SteamManager : MonoBehaviour
     void Update()
     {
         SteamClient.RunCallbacks();
-
-        #if UNITY_EDITOR
-        if(Input.GetKeyDown(KeyCode.Y))
+      
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.Y))
         {
             SmileYourDayTaskList.instance.host = SteamClient.SteamId;
             SmileYourDayTaskList.instance.client = SteamClient.SteamId;
@@ -254,6 +258,7 @@ public class SteamManager : MonoBehaviour
             SmileYourDayTaskList.instance.client = OpponentSteamId;
             SmileYourDayTaskList.instance.host = steamId;
             NetworkManager.Singleton.StartHost();
+            NetworkManager.Singleton.SceneManager.LoadScene(cheatScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
         }
         else
         {
@@ -291,6 +296,7 @@ public class SteamManager : MonoBehaviour
         }
     }
 
+    
     public bool I_AM_HOST = false;
     // Called whenever you first enter lobby
     void OnLobbyEnteredCallback(Lobby lobby)
@@ -306,15 +312,19 @@ public class SteamManager : MonoBehaviour
             lobby.SendChatString("incoming player info");
             //probably important to fix
             //lobby.GetData(isFriendLobby);
-            SceneManager.LoadScene(cheatScene);
+            NetworkManager.Singleton.StartClient();
+           
             //we are charles white
-            //NetworkManager.Singleton.StartClient();
+
         }
         else
         {
             I_AM_HOST = true;
-            //NetworkManager.Singleton.StartHost();
+            SmileYourDayTaskList.instance.host = SteamClient.SteamId;
+            SmileYourDayTaskList.instance.client = OpponentSteamId;
+            NetworkManager.Singleton.StartHost();
         }
+        
         Debug.Log("A goober has entered the lobby");
     }
 
@@ -344,6 +354,7 @@ public class SteamManager : MonoBehaviour
             NetworkManager.Singleton.GetComponent<FacepunchTransport>().targetSteamId = OpponentSteamId;
             LobbyPartnerDisconnected = false;
             AcceptP2P(OpponentSteamId);
+           
             //SceneManager.LoadScene("Scene to load");
         }
     }
@@ -370,6 +381,7 @@ public class SteamManager : MonoBehaviour
             OpponentSteamId = friend.Id;
             AcceptP2P(OpponentSteamId);
             LobbyPartnerDisconnected = false;
+            NetworkManager.Singleton.SceneManager.LoadScene(cheatScene, LoadSceneMode.Single);
         }
     }
 
@@ -547,7 +559,7 @@ public class SteamManager : MonoBehaviour
         }
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode loadSceneMode)
     {
         UpdateRichPresenceStatus(scene.name);
     }

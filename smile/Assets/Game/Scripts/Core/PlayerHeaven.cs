@@ -1,6 +1,5 @@
 using System;
 using Unity.Netcode;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
@@ -23,7 +22,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     {
         //TESTING, NEEDS TO BE REMOVED IN THE ACTUAL BUILD:
 #if UNITY_EDITOR
-        SmileYourDayTaskList.instance.hostIsRunner.Value = true;
+        //SmileYourDayTaskList.instance.hostIsRunner.Value = true;
  #endif
         //REMOVE ABOVE REMOVE ABOVE REMOVE ABOVE REMOVE ABOVE
         //this should not be running every frame but PLEASE let it work.
@@ -55,6 +54,12 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
             SetPlayerState(PLAYERTYPE.Hacker);
             //transform.position = new Vector3(-999, 999, 999);
             Cursor.lockState = CursorLockMode.None;
+        }
+
+        if(IsOwner && playerType == PLAYERTYPE.Runner)
+        {
+            
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
     public void Update()

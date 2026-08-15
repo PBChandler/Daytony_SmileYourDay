@@ -88,12 +88,25 @@ public class SmileYourDayTaskList : NetworkBehaviour
         }
         dg_Heaven(id);
     }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void endthevideogameRPC()
+    {
+        SteamManager.Instance.currentLobby.Leave();
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("Credits_NoNWK");
+    }
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void LoadNextSceneRpc(string sceneName)
     {
         
         NetworkManager.SceneManager.LoadScene("Avery_Runner_Building", UnityEngine.SceneManagement.LoadSceneMode.Single);
+    }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void LoadLobbySceneRPC(string sceneName)
+    {
+        NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+
     }
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void CallHeavenRpc(string message)

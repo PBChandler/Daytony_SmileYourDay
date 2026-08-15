@@ -159,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 4459864850019384750}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -288,7 +288,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  enemyDialog: {fileID: 0}
+  dialogOptions: []
   caught: 0
+  crosshairElse: {fileID: 0}
   hasKeycard: 0
   hasTanktop: 0
   playerCamera: {fileID: 4459864851310106426}
@@ -1117,6 +1120,14 @@ MonoBehaviour:
       NameHash: 1035320983
       Synchronize: 1
       ParameterType: 4
+    - name: isTalking
+      NameHash: -9499574
+      Synchronize: 1
+      ParameterType: 4
+    - name: suspiciousmeter
+      NameHash: -825420078
+      Synchronize: 1
+      ParameterType: 1
   AnimatorParametersExpanded: 0
 --- !u!114 &8470250806815835648
 MonoBehaviour:

@@ -14,10 +14,14 @@ public class LobbyManager : MonoBehaviour
     public bool locked = false;
     void Start()
     {
-        pop();
+        Invoke("andlock", 0.9f);
         SmileYourDayTaskList.instance.dg_Heaven += lobby_swapRpcCheck;
     }
 
+    public void andlock()
+    {
+        pop();
+    }
     public async void pop()
     {
         await Populate(SmileYourDayTaskList.instance.host, imageOne, "run");

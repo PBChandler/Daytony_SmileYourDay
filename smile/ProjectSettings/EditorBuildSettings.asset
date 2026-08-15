@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Playground/MVP_Playground.unity
     guid: d19593780b175114dbed493ec60dc510
+  - enabled: 1
+    path: Assets/Game/Scenes/Credits_NoNWK.unity
+    guid: b50c4382f0866864ebe695c9b0ce2b65
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

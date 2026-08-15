@@ -29,6 +29,11 @@ public class HostGameButton : MonoBehaviour
     
     }
 
+
+    public void killLobby()
+    {
+        SteamManager.Instance.currentLobby.Leave();
+    }
     public async Task startLobby()
     {
         await SteamManager.Instance.CreateLobby(0);
