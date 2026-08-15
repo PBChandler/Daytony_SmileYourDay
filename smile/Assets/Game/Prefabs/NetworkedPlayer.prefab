@@ -321,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RUNNER
       objectReference: {fileID: 0}
+    - target: {fileID: 1922726923187539840, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4204174770508415615, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
