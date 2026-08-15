@@ -98,7 +98,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void LoadLobbySceneRPC(string sceneName)
     {
-        SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
+        NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
 
     }
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]

@@ -313,7 +313,7 @@ public class SteamManager : MonoBehaviour
             //probably important to fix
             //lobby.GetData(isFriendLobby);
             NetworkManager.Singleton.StartClient();
-            NetworkManager.Singleton.SceneManager.LoadScene(cheatScene, LoadSceneMode.Single);
+            SmileYourDayTaskList.instance.LoadLobbySceneRPC(cheatScene);
             //we are charles white
 
         }
