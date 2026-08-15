@@ -320,6 +320,7 @@ public class SteamManager : MonoBehaviour
         else
         {
             I_AM_HOST = true;
+            SmileYourDayTaskList.instance.client = OpponentSteamId;
             NetworkManager.Singleton.StartHost();
         }
         
