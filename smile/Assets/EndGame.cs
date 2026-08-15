@@ -1,4 +1,5 @@
 using Steamworks;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,9 +9,8 @@ public class EndGame : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (lol) return;
-        SteamManager.Instance.currentLobby.Leave();
-        Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene("Credits_NoNWK");
+
+        SmileYourDayTaskList.instance.endthevideogameRPC();
     }
 
     public void ApplIcationqu()

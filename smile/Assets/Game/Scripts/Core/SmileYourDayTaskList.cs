@@ -88,6 +88,13 @@ public class SmileYourDayTaskList : NetworkBehaviour
         }
         dg_Heaven(id);
     }
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
+    public void endthevideogameRPC()
+    {
+        SteamManager.Instance.currentLobby.Leave();
+        Cursor.lockState = CursorLockMode.None;
+        SceneManager.LoadScene("Credits_NoNWK");
+    }
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
     public void LoadNextSceneRpc(string sceneName)
