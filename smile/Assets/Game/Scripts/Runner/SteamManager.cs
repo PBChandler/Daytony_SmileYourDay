@@ -312,15 +312,15 @@ public class SteamManager : MonoBehaviour
             lobby.SendChatString("incoming player info");
             //probably important to fix
             //lobby.GetData(isFriendLobby);
-            SceneManager.LoadScene(cheatScene, UnityEngine.SceneManagement.LoadSceneMode.Single);
+            NetworkManager.Singleton.StartClient();
             SmileYourDayTaskList.instance.LoadLobbySceneRPC(cheatScene);
             //we are charles white
-            //NetworkManager.Singleton.StartClient();
+            
         }
         else
         {
             I_AM_HOST = true;
-            //NetworkManager.Singleton.StartHost();
+            NetworkManager.Singleton.StartHost();
         }
         Debug.Log("A goober has entered the lobby");
     }
