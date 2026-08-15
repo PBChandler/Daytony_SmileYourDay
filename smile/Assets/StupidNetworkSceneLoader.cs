@@ -19,6 +19,7 @@ public class StupidNetworkSceneLoader : MonoBehaviour
     }
     public void doit()
     {
+        SceneManager.LoadScene(sceneName);
         try
         {
             NetworkManager.Singleton.SceneManager.LoadScene(sceneName, UnityEngine.SceneManagement.LoadSceneMode.Single);
