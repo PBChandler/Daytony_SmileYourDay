@@ -58,6 +58,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
 
         if(IsOwner && playerType == PLAYERTYPE.Runner)
         {
+            
             Cursor.lockState = CursorLockMode.Locked;
         }
     }
