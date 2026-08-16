@@ -26,6 +26,7 @@ public class LobbyManager : MonoBehaviour
     {
         await Populate(SmileYourDayTaskList.instance.host, imageOne, "run");
         await Populate(SmileYourDayTaskList.instance.client, imageTwo, "hck");
+        
     }
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Everyone)]
