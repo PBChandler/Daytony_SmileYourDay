@@ -9,7 +9,7 @@ public class EndGame : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (lol) return;
-
+        if(other.tag == "Player")
         SmileYourDayTaskList.instance.endthevideogameRPC();
     }
 
