@@ -65,6 +65,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public void Update()
     {
         id = OwnerClientId;
+
         if(SmileYourDayTaskList.instance.gameHasStarted && !flipflop)
         {
             flipflop = true;    
@@ -87,6 +88,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
         if(Input.GetKeyDown(KeyCode.H))
         {
             SetPlayerState(PLAYERTYPE.Hacker);
+            CheckAssignment();
         }
         if(Input.GetKeyDown(KeyCode.R))
         {

@@ -27,7 +27,7 @@ public abstract class EnemyState : MonoBehaviour
         manager = transform.parent.GetComponent<EnemyManager>();
 
         // will eventually be simplified when we have a clearer distinction between runner and hacker
-        foreach (GameObject o in GameObject.FindGameObjectsWithTag("Player"))
+        foreach (GameObject o in GameObject.FindGameObjectsWithTag("Runner"))
         {
             if (runnerRef == null)
             {
