@@ -44776,6 +44776,7 @@ MonoBehaviour:
           m_StringArgument: closedoor
           m_BoolArgument: 0
         m_CallState: 2
+  requiresKeycard: 0
 --- !u!1001 &902245962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71215,6 +71216,7 @@ MonoBehaviour:
           m_StringArgument: animator
           m_BoolArgument: 0
         m_CallState: 2
+  requiresKeycard: 1
 --- !u!135 &1408493772
 SphereCollider:
   m_ObjectHideFlags: 0
