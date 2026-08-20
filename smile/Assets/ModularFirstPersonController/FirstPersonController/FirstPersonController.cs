@@ -191,7 +191,7 @@ public class FirstPersonController : NetworkBehaviour
 
     void Start()
     {
-        
+        SmileYourDayTaskList.instance.fpc = this;
     }
 
     public override void OnNetworkSpawn()

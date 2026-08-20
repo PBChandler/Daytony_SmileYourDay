@@ -3,13 +3,16 @@ using UnityEngine.Events;
 public class KeyInteractable : Interactable, InteractInterface
 {
     public UnityEvent screen;
+    public bool requiresKeycard;
     public void OnInteract()
     {
+        if (requiresKeycard && !SmileYourDayTaskList.instance.keycardObtained) return;
         screen.Invoke();
     }
 
     public void Update()
     {
+      
         if(Input.GetKeyDown(KeyCode.Alpha5))
         {
             screen.Invoke();

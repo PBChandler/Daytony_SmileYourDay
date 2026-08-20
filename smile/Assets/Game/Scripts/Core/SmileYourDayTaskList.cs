@@ -30,6 +30,8 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public bool hackerQueue; //while the hacker is queueing the camera.
     public EnemyStateMachine guardInQueue;
     public ToothblueGrouper toothblue;
+    public bool keycardObtained;
+    public FirstPersonController fpc;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
     private void Awake()
     {

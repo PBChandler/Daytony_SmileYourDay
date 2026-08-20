@@ -4,14 +4,22 @@ public class Keycard : Interactable, InteractInterface
 {
     public void OnInteract()
     {
-        fpc.hasKeycard = true;
-
+        try
+        {
+            fpc.hasKeycard = true;
+        }
+        catch
+        {
+            SmileYourDayTaskList.instance.fpc.hasKeycard = true;
+        }
+       
+        SmileYourDayTaskList.instance.keycardObtained = true;
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "Player")
+        if (other.tag != "Runner")
             return;
 
         fpc = other.transform.parent.GetComponent<FirstPersonController>();
