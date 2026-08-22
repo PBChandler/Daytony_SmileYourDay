@@ -89,6 +89,7 @@ public class Suspicious : EnemyState
 
         fpc = other.transform.parent.GetComponent<FirstPersonController>();
         fpc.DisplayDialog(possibleDialogs[Random.Range(0, possibleDialogs.Count - 1)], this);
+       
         fpc.currentResponse += HandleResponse;
         talk.enabled = false;
     }

@@ -11,6 +11,10 @@ using UnityEngine.UI;
 using Unity.Netcode;
 using TMPro;
 using System.Threading.Tasks;
+using static UnityEngine.GraphicsBuffer;
+using System;
+
+
 
 
 
@@ -38,7 +42,9 @@ public class FirstPersonController : NetworkBehaviour
    // public Sprite crosshairNothing, crosshairInteractable;
     public bool hasKeycard;
     public bool hasTanktop;
-
+    public Vector3 oblivionRotation;
+    public Action doRot;
+    public bool inDialog;
     #region Camera Movement Variables
 
     public Camera playerCamera;
@@ -251,6 +257,10 @@ public class FirstPersonController : NetworkBehaviour
 #endif
         if(!IsOwner)
             return;
+        if (inDialog)
+        {
+            doRot();
+        }
         if (caught)
             return;
         #region Camera
@@ -428,6 +438,8 @@ public class FirstPersonController : NetworkBehaviour
         {
             HeadBob();
         }
+
+       
     }
 
     void FixedUpdate()
@@ -607,7 +619,7 @@ public class FirstPersonController : NetworkBehaviour
     {
         List<TextMeshProUGUI> temp = new List<TextMeshProUGUI>();
 
-        for (int i = Random.Range(0, options.Count); options.Count != 0; i = Random.Range(0, options.Count))
+        for (int i = UnityEngine.Random.Range(0, options.Count); options.Count != 0; i = UnityEngine.Random.Range(0, options.Count))
         {
             temp.Add(options[i]);
             options.RemoveAt(i);
@@ -618,6 +630,7 @@ public class FirstPersonController : NetworkBehaviour
 
     public void DisplayDialog(EncounterDialog dial, Suspicious s)
     {
+        if (inDialog) return; //don't do this if we're already talking to someone
         Cursor.lockState = CursorLockMode.None;
 
         //currentResponse += s.HandleResponse;
@@ -636,6 +649,13 @@ public class FirstPersonController : NetworkBehaviour
         dialogOptions[2].text = dial.badAnswer;
 
         currentDialog = dial;
+        Vector3 direction = s.transform.position - transform.position;
+        Quaternion r = Quaternion.LookRotation(direction);
+        inDialog = true;
+        s.agent.isStopped = true;
+        rb.linearVelocity = Vector3.zero;
+        
+        doRot = () => transform.rotation = Quaternion.Slerp(transform.rotation, r, 5f * Time.deltaTime);
     }
 
     public void OptionSelect(TextMeshProUGUI tmp)
@@ -676,6 +696,7 @@ public class FirstPersonController : NetworkBehaviour
         caught = false;
         Cursor.lockState = CursorLockMode.Locked;
         currentResponse.Invoke(resNum);
+        inDialog = false;
     }
 }
 
