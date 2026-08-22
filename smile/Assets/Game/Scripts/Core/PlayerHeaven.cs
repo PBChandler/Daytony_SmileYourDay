@@ -65,9 +65,9 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     public void Update()
     {
         id = OwnerClientId;
-#if UNITY_EDITOR
-        SetPlayerState(PLAYERTYPE.Runner);
-            #endif
+//#if UNITY_EDITOR
+//        SetPlayerState(PLAYERTYPE.Runner);
+//            #endif
         if(SmileYourDayTaskList.instance.gameHasStarted && !flipflop)
         {
             flipflop = true;    
