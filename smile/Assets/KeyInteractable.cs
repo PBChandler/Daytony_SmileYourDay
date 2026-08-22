@@ -6,7 +6,12 @@ public class KeyInteractable : Interactable, InteractInterface
     public bool requiresKeycard;
     public void OnInteract()
     {
-        if (requiresKeycard && !SmileYourDayTaskList.instance.keycardObtained) return;
+        if (requiresKeycard && !SmileYourDayTaskList.instance.keycardObtained)
+        {
+            SmileYourDayTaskList.instance.gamerText.SetText("KEYCARD REQUIRED", 0.2f);
+            return;
+        }
+       
         screen.Invoke();
     }
 
