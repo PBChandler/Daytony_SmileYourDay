@@ -32,6 +32,7 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public ToothblueGrouper toothblue;
     public bool keycardObtained;
     public FirstPersonController fpc;
+    public  GamerText gamerText;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
     private void Awake()
     {

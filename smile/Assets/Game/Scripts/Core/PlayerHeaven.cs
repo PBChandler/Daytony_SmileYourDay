@@ -67,8 +67,8 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
         id = OwnerClientId;
 #if UNITY_EDITOR
         SetPlayerState(PLAYERTYPE.Runner);
-            #endif
-        if(SmileYourDayTaskList.instance.gameHasStarted && !flipflop)
+#endif
+        if (SmileYourDayTaskList.instance.gameHasStarted && !flipflop)
         {
             flipflop = true;    
             CheckAssignment();

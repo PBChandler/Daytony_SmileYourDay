@@ -7,7 +7,7 @@ public abstract class EnemyState : MonoBehaviour
     public EnemyStateMachine machine;
     protected EnemyManager manager;
     protected int stateTimer;
-    protected NavMeshAgent agent;
+    public NavMeshAgent agent;
     protected GameObject runnerRef;
     public GameObject _runnerRef { get { return runnerRef; } set { runnerRef = value; } }
     public EnemyState prevState;

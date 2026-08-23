@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 1185173071
+  GlobalObjectIdHash: 3868523893
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -325,6 +325,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3925521130356467885, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4204174770508415615, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -365,6 +369,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4219943574233054664, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8141604856734396295, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       propertyPath: m_TagString
       value: Runner
@@ -380,6 +388,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8141604858023019793, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6667576624036293770}
+    - targetCorrespondingSourceObject: {fileID: 6430129369101744690, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6816838711538835606}
   m_SourcePrefab: {fileID: 100100000, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
 --- !u!114 &344234284734834116 stripped
 MonoBehaviour:
@@ -413,6 +424,35 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 512
+--- !u!1 &3244374791523889275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6430129369101744690, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+  m_PrefabInstance: {fileID: 8375073773113494089}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6816838711538835606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244374791523889275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3ce38107b237d94d9e75f3ed4f5f0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  me: {fileID: 4773953672292934372}
+--- !u!114 &4773953672292934372 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3925521130356467885, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
+  m_PrefabInstance: {fileID: 8375073773113494089}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244374791523889275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!4 &5648085218801649718 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4204174770508415615, guid: 0ae314c2407bd0e408eb7454f7977d74, type: 3}
