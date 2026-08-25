@@ -13,6 +13,8 @@ using TMPro;
 using System.Threading.Tasks;
 using static UnityEngine.GraphicsBuffer;
 using System;
+using Unity.Netcode.Components;
+
 
 
 
@@ -615,6 +617,13 @@ public class FirstPersonController : NetworkBehaviour
 
     }
 
+    public void OnLevelWasLoaded(int level)
+    {
+        if(GetComponent<NetworkTransform>().NetworkObject.IsOwner && level == 6)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
     List<TextMeshProUGUI> MixupOptions(List<TextMeshProUGUI> options)
     {
         List<TextMeshProUGUI> temp = new List<TextMeshProUGUI>();

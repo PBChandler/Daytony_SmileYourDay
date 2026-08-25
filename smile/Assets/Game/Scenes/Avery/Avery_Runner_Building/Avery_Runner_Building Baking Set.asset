@@ -1090,7 +1090,7 @@ MonoBehaviour:
         elementCount: 1
       - offset: 368640
         elementCount: 1
-    m_Asset: {fileID: 4900000, guid: 083778140c9eaf24e86dd52acc9491d6, type: 3}
+    m_Asset: {fileID: 0}
   scenarios:
     m_Keys:
     - Default
@@ -1115,7 +1115,7 @@ MonoBehaviour:
             elementCount: 1
           - offset: 5898240
             elementCount: 1
-        m_Asset: {fileID: 4900000, guid: 7d6edb2c8b06bc846b6a829b5cc94843, type: 3}
+        m_Asset: {fileID: 0}
       cellOptionalDataAsset:
         m_AssetGUID: ac2c404fbc2f33b40afe2f941a71edd0
         m_StreamableAssetPath: APVStreamingAssets\f79fb79c3410bc646a8eae1018b4e94a\ac2c404fbc2f33b40afe2f941a71edd0.bytes
@@ -1135,7 +1135,7 @@ MonoBehaviour:
             elementCount: 1
           - offset: 5898240
             elementCount: 1
-        m_Asset: {fileID: 4900000, guid: ac2c404fbc2f33b40afe2f941a71edd0, type: 3}
+        m_Asset: {fileID: 0}
       cellProbeOcclusionDataAsset:
         m_AssetGUID: 0d4074147b1ed7f4abd38502c8dc2a38
         m_StreamableAssetPath: APVStreamingAssets\f79fb79c3410bc646a8eae1018b4e94a\0d4074147b1ed7f4abd38502c8dc2a38.bytes
@@ -1155,7 +1155,7 @@ MonoBehaviour:
             elementCount: 1
           - offset: 1474560
             elementCount: 1
-        m_Asset: {fileID: 4900000, guid: 0d4074147b1ed7f4abd38502c8dc2a38, type: 3}
+        m_Asset: {fileID: 0}
   cellBricksDataAsset:
     m_AssetGUID: da59b2dc2ca816e4589aeede55a2f0e8
     m_StreamableAssetPath: APVStreamingAssets\f79fb79c3410bc646a8eae1018b4e94a\da59b2dc2ca816e4589aeede55a2f0e8.bytes
@@ -1175,7 +1175,7 @@ MonoBehaviour:
         elementCount: 70
       - offset: 87776
         elementCount: 70
-    m_Asset: {fileID: 4900000, guid: da59b2dc2ca816e4589aeede55a2f0e8, type: 3}
+    m_Asset: {fileID: 0}
   cellSupportDataAsset:
     m_AssetGUID: d221a70135ab0f6488bc5e5fb0af311d
     m_StreamableAssetPath: APVStreamingAssets\f79fb79c3410bc646a8eae1018b4e94a\d221a70135ab0f6488bc5e5fb0af311d.bytes
@@ -1195,7 +1195,7 @@ MonoBehaviour:
         elementCount: 1
       - offset: 11796480
         elementCount: 1
-    m_Asset: {fileID: 4900000, guid: d221a70135ab0f6488bc5e5fb0af311d, type: 3}
+    m_Asset: {fileID: 0}
   chunkSizeInBricks: 128
   maxCellPosition: {x: 1, y: 1, z: 2}
   minCellPosition: {x: -1, y: 0, z: -1}
