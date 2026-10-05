@@ -19,6 +19,12 @@ public class HCK_TabSystem : MonoBehaviour
             garfield.MainSystem = this;
             dg_OnTabClicked += garfield.TabSwitchReaction;
         }
+        Invoke("setup", 0.2f);
+    }
+
+    public void setup()
+    {
+        SwitchTab(1);
     }
 
 }

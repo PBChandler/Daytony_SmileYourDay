@@ -66,7 +66,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
     {
         id = OwnerClientId;
 #if UNITY_EDITOR
-        SetPlayerState(PLAYERTYPE.Runner);
+        SetPlayerState(PLAYERTYPE.Hacker);
 #endif
         if (SmileYourDayTaskList.instance.gameHasStarted && !flipflop)
         {
@@ -109,6 +109,7 @@ public class PlayerHeaven : NetworkBehaviour, IEquatable<PlayerHeaven>
                 playerType = PLAYERTYPE.Hacker;
                 HackerScreen.gameObject.SetActive(true);
                 PlayerScreen.gameObject.SetActive(false);
+                Cursor.lockState = CursorLockMode.None;
             break;
             case PLAYERTYPE.Runner:
                 playerType = PLAYERTYPE.Runner;

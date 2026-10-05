@@ -163,6 +163,10 @@ public class FirstPersonController : NetworkBehaviour
 
     public KeyCode interactKey = KeyCode.E;
 
+    private void OnEnable()
+    {
+        SmileYourDayTaskList.instance.fpc = this;
+    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -637,6 +641,35 @@ public class FirstPersonController : NetworkBehaviour
         return temp;
     }
 
+    public void DisplayDialog(EncounterDialog dial, Transform s)
+    {
+        if (inDialog) return; //don't do this if we're already talking to someone
+        Cursor.lockState = CursorLockMode.None;
+
+        //currentResponse += s.HandleResponse;
+
+        caught = true;
+        dialogDisplay.gameObject.SetActive(true);
+        enemyDialog.text = dial.dialog;
+
+        foreach (TextMeshProUGUI t in dialogOptions)
+            t.transform.parent.gameObject.SetActive(true);
+
+        dialogOptions = MixupOptions(dialogOptions);
+
+        dialogOptions[0].text = dial.correctAnswer;
+        dialogOptions[1].text = dial.okAnswer;
+        dialogOptions[2].text = dial.badAnswer;
+
+        currentDialog = dial;
+        Vector3 direction = s.transform.position - transform.position;
+        Quaternion r = Quaternion.LookRotation(direction);
+        inDialog = true;
+        //s.agent.isStopped = true;
+        rb.linearVelocity = Vector3.zero;
+
+        doRot = () => transform.rotation = Quaternion.Slerp(transform.rotation, r, 5f * Time.deltaTime);
+    }
     public void DisplayDialog(EncounterDialog dial, Suspicious s)
     {
         if (inDialog) return; //don't do this if we're already talking to someone
@@ -723,6 +756,7 @@ public class FirstPersonController : NetworkBehaviour
     {
         fpc = (FirstPersonController)target;
         SerFPC = new SerializedObject(fpc);
+        
     }
 
     public override void OnInspectorGUI()

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f7977db55b42284f8623731e5f7bd0f, type: 3}
+  m_Name: Assayer_Dialog1
+  m_EditorClassIdentifier: Assembly-CSharp::EncounterDialog
+  dialog: I wasn't expecting an Assessment today, what can I help you with?
+  correctDialog: Of course, it seems I don't have my Slates. Bring me them from the
+    back office, and we can start the procedure.
+  okDialog: Of course, it seems I don't have my Slates. Bring me them from the back
+    office, and we can start the procedure.
+  badDialog: You are not one of us. Smile Your Day!
+  correctAnswer: I need my Soul Lifted.
+  okAnswer: I was told to see you.
+  badAnswer: I need access to the next floor.

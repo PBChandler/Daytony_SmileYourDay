@@ -24,13 +24,13 @@ public class SmileYourDayTaskList : NetworkBehaviour
     public delegate void onFunValueChanged(int newValue);
     public onFunValueChanged dg_onFunValueChanged;
     public List<GameObject> player;
-    public bool gameHasStarted;
+    public bool gameHasStarted, garments;
     public Vector3 hackerDistractionLocation;
     public RadioAOE ActiveHackerCameraInWorld;
     public bool hackerQueue; //while the hacker is queueing the camera.
     public EnemyStateMachine guardInQueue;
     public ToothblueGrouper toothblue;
-    public bool keycardObtained;
+    public bool keycardObtained, thumbprintObtained, slateObtained;
     public FirstPersonController fpc;
     public  GamerText gamerText;
     //public List<GameTask> sourceTasks; //has to copy from inspector;
